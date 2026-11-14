@@ -1,0 +1,266 @@
+{%- style -%}
+  .values-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .values-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .values-breadcrumb--align-left { justify-content: flex-start; }
+  .values-breadcrumb--align-center { justify-content: center; }
+  .values-breadcrumb--align-right { justify-content: flex-end; }
+
+  .values-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .values-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Banner */
+  .values-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .values-hero--position-left { margin-left: 0; margin-right: auto; }
+  .values-hero--position-center { margin-left: auto; margin-right: auto; }
+  .values-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .values-hero--align-left { text-align: left; }
+  .values-hero--align-center { text-align: center; }
+  .values-hero--align-right { text-align: right; }
+
+  .values-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .values-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .values-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .values-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .values-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .values-hero__quote {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .values-hero__description {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.65;
+  }
+
+  /* 5 Values Grid */
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .values-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 2rem;
+    }
+  }
+
+  .value-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+  }
+
+  .value-card__number {
+    font-family: var(--font-body-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.65rem;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .value-card__body {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.7;
+  }
+
+  /* Ethos Banner */
+  .values-ethos-banner {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .values-ethos-quote {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+{%- endstyle -%}
+
+<div class="values-section">
+  <!-- Breadcrumb -->
+  <div class="values-breadcrumb values-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>Our Values</span>
+  </div>
+
+  <!-- Hero Banner -->
+  <div class="values-hero values-hero--position-{{ section.settings.content_position }} values-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="values-hero__title values-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.quote != blank %}
+      <div class="values-hero__quote">
+        "{{ section.settings.quote | escape }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="values-hero__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 5 Brand Values Grid -->
+  <div class="values-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'value_pillar' %}
+        <div class="value-card" {{ block.shopify_attributes }}>
+          <span class="value-card__number">Value 0{{ forloop.index }}</span>
+          <h2 class="value-card__title">{{ block.settings.title | escape }}</h2>
+          <div class="value-card__body">
+            {{ block.settings.description }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Ethos Banner -->
+  <div class="values-ethos-banner">
+    <div class="values-ethos-quote">"Every shell has already completed its journey before becoming part of yours."</div>
+    <div style="font-family:var(--font-body-family); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--color-muted);">
+      &mdash; Daisy Chains Philosophy
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Values Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Nature is Our Partner" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "quote", "label": "Quote", "default": "We don't take from nature—we treasure what she leaves behind." },
+    { "type": "richtext", "id": "description", "label": "Hero Description", "default": "<p>Not manufacturing identical products. We are collaborating with nature. No two shells, pearls, or stones are ever alike.</p>" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value_pillar",
+      "name": "Value Pillar",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Value Title", "default": "Nature is our Partner" },
+        { "type": "richtext", "id": "description", "label": "Value Description", "default": "<p>We believe nature is the greatest artist. Rather than taking from it, we work with the treasures it freely offers.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Values Page"
+    }
+  ]
+}
+{% endschema %}

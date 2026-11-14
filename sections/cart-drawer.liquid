@@ -1,0 +1,502 @@
+{%- style -%}
+  .cart-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+
+  .cart-drawer-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 460px;
+    height: 100vh;
+    background-color: var(--color-background, #faf7f2);
+    box-shadow: -10px 0 35px rgba(0,0,0,0.1);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .cart-drawer-overlay.active .cart-drawer {
+    transform: translateX(0);
+  }
+
+  /* Drawer Header */
+  .cart-drawer__header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border, #e5e0d8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-surface-warm, #f5f0e8);
+  }
+
+  .cart-drawer__title-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-drawer__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .cart-drawer__subtitle {
+    font-family: var(--font-heading-family);
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--color-muted, #777777);
+  }
+
+  .cart-drawer__close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-drawer__close-svg {
+    width: 20px;
+    height: 20px;
+    stroke: #1c1c1c;
+    stroke-width: 1.5;
+    fill: none;
+    transition: transform 0.25s ease;
+  }
+
+  .cart-drawer__close-btn:hover .cart-drawer__close-svg {
+    transform: rotate(90deg);
+  }
+
+  /* Free Shipping Meter */
+  .shipping-progress-wrapper {
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .shipping-progress-text {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .shipping-progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #eee9e0;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .shipping-progress-fill {
+    height: 100%;
+    background-color: var(--color-accent, #c9a050);
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+
+  /* Drawer Body */
+  .cart-drawer__body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .cart-drawer-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cart-drawer-item__image {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface-warm);
+  }
+
+  .cart-drawer-item__details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .cart-drawer-item__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
+    font-weight: 300;
+    margin: 0;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .cart-drawer-item__variant {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    color: var(--color-muted);
+  }
+
+  .cart-drawer-item__price {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 0.25rem;
+  }
+
+  /* Qty Controls */
+  .cart-drawer-qty {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    background-color: #ffffff;
+    margin-top: 0.5rem;
+  }
+
+  .cart-drawer-qty-btn {
+    background: transparent;
+    border: none;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  .cart-drawer-qty-val {
+    padding: 0 0.5rem;
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+  }
+
+  /* Remove icon */
+  .cart-drawer-remove {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+  }
+
+  .cart-drawer-remove-svg {
+    width: 16px;
+    height: 16px;
+    stroke: #888888;
+    stroke-width: 1.4;
+    fill: none;
+    transition: stroke 0.25s ease, fill 0.25s ease;
+  }
+
+  .cart-drawer-remove:hover .cart-drawer-remove-svg {
+    stroke: #1c1c1c;
+    fill: var(--color-accent, #c9a050);
+  }
+
+  /* In-Drawer Cross-Sell */
+  .cart-drawer-crosssell {
+    padding: 1.25rem;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    margin-top: 1rem;
+  }
+
+  .cart-drawer-crosssell-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Drawer Footer */
+  .cart-drawer__footer {
+    padding: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    background-color: #ffffff;
+  }
+
+  .cart-drawer__subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-heading-family);
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-drawer__tax-note {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    margin-bottom: 1.25rem;
+    text-align: center;
+  }
+
+  .cart-drawer-checkout-btn {
+    width: 100%;
+    padding: 1.15rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: var(--color-button-bg, #1c1c1c);
+    color: var(--color-button-text, #ffffff);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: opacity 0.25s ease;
+  }
+
+  .cart-drawer-checkout-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Trust Badges in Footer */
+  .cart-drawer-trust-badges {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee9e0;
+  }
+
+  .cart-drawer-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    color: var(--color-muted);
+  }
+
+  .cart-drawer-badge-svg {
+    width: 14px;
+    height: 14px;
+    stroke: #1c1c1c;
+    stroke-width: 1.4;
+    fill: none;
+    transition: fill 0.3s ease;
+  }
+
+  .cart-drawer-badge-item:hover .cart-drawer-badge-svg {
+    fill: var(--color-accent, #c9a050);
+  }
+{%- endstyle -%}
+
+<!-- Cart Drawer Overlay & Slide-Out Container -->
+<div class="cart-drawer-overlay" id="CartDrawerOverlay">
+  <div class="cart-drawer" id="CartDrawer">
+    
+    <!-- Drawer Header -->
+    <div class="cart-drawer__header">
+      <div class="cart-drawer__title-group">
+        <h2 class="cart-drawer__title">Your Treasure Chest</h2>
+        <span class="cart-drawer__subtitle">"Your treasures are waiting..."</span>
+      </div>
+      <button class="cart-drawer__close-btn" id="CartDrawerClose" aria-label="Close Treasure Chest">
+        <svg class="cart-drawer__close-svg" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Free Shipping Meter -->
+    <div class="shipping-progress-wrapper">
+      <div class="shipping-progress-text" id="ShippingProgressText">
+        Spend <strong>$100</strong> for Free US Shipping &amp; Complimentary Packaging!
+      </div>
+      <div class="shipping-progress-bar">
+        <div class="shipping-progress-fill" id="ShippingProgressFill" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <!-- Drawer Body Items -->
+    <div class="cart-drawer__body" id="CartDrawerBody">
+      {% if cart.item_count > 0 %}
+        {% for item in cart.items %}
+          <div class="cart-drawer-item">
+            {% if item.image %}
+              <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" class="cart-drawer-item__image">
+            {% else %}
+              <div class="cart-drawer-item__image" style="display:flex; align-items:center; justify-content:center;">🐚</div>
+            {% endif %}
+
+            <div class="cart-drawer-item__details">
+              <a href="{{ item.url }}" class="cart-drawer-item__title">{{ item.product.title | escape }}</a>
+              {% unless item.product.has_only_default_variant %}
+                <span class="cart-drawer-item__variant">{{ item.variant.title | escape }}</span>
+              {% endunless %}
+              <span class="cart-drawer-item__price">{{ item.final_line_price | money }}</span>
+
+              <div class="cart-drawer-qty">
+                <button class="cart-drawer-qty-btn" onclick="updateQty('{{ item.key }}', {{ item.quantity | minus: 1 }})">&minus;</button>
+                <span class="cart-drawer-qty-val">{{ item.quantity }}</span>
+                <button class="cart-drawer-qty-btn" onclick="updateQty('{{ item.key }}', {{ item.quantity | plus: 1 }})">&plus;</button>
+              </div>
+            </div>
+
+            <button class="cart-drawer-remove" onclick="updateQty('{{ item.key }}', 0)" aria-label="Remove treasure">
+              <svg class="cart-drawer-remove-svg" viewBox="0 0 24 24">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Sample Demo Cart Items if cart is empty -->
+        <div class="cart-drawer-item">
+          {{ 'product-1' | placeholder_svg_tag: 'cart-drawer-item__image' }}
+          <div class="cart-drawer-item__details">
+            <a href="#" class="cart-drawer-item__title">Trust the Tide Necklace</a>
+            <span class="cart-drawer-item__variant">16" + 2" Extender &bull; Abalone Shell</span>
+            <span class="cart-drawer-item__price">$128.00</span>
+            <div class="cart-drawer-qty">
+              <button class="cart-drawer-qty-btn">&minus;</button>
+              <span class="cart-drawer-qty-val">1</span>
+              <button class="cart-drawer-qty-btn">&plus;</button>
+            </div>
+          </div>
+          <button class="cart-drawer-remove" aria-label="Remove treasure">
+            <svg class="cart-drawer-remove-svg" viewBox="0 0 24 24">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </button>
+        </div>
+      {% endif %}
+
+      <!-- In-Drawer Cross-Sell Section -->
+      <div class="cart-drawer-crosssell">
+        <div class="cart-drawer-crosssell-title">Complete Your Set</div>
+        <div style="font-family:var(--font-body-family); font-size:0.8rem; color:#555; margin-bottom:0.75rem;">Add a handcrafted Intention Charm or Polishing Cloth:</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; padding:0.6rem 0.8rem; border:1px solid var(--color-border);">
+          <span style="font-family:var(--font-body-family); font-size:0.8rem; font-weight:500;">✨ Evil Eye Protection Charm</span>
+          <button style="font-family:var(--font-body-family); font-size:0.72rem; font-weight:600; text-transform:uppercase; background:transparent; border:1px solid #1c1c1c; padding:0.3rem 0.7rem; cursor:pointer;">+ Add $24</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__subtotal-row">
+        <span>Subtotal</span>
+        <span>{{ cart.total_price | default: 12800 | money }}</span>
+      </div>
+      <div class="cart-drawer__tax-note">Taxes and shipping calculated at checkout.</div>
+
+      <a href="/checkout" class="cart-drawer-checkout-btn">Proceed to Checkout &rarr;</a>
+
+      <div class="cart-drawer-trust-badges">
+        <div class="cart-drawer-badge-item">
+          <svg class="cart-drawer-badge-svg" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+          Waterproof PVD
+        </div>
+        <div class="cart-drawer-badge-item">
+          <svg class="cart-drawer-badge-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Ethically Gathered
+        </div>
+        <div class="cart-drawer-badge-item">
+          <svg class="cart-drawer-badge-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          Made in California
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function openTreasureChest() {
+    const overlay = document.getElementById('CartDrawerOverlay');
+    if (overlay) overlay.classList.add('active');
+  }
+
+  function closeTreasureChest() {
+    const overlay = document.getElementById('CartDrawerOverlay');
+    if (overlay) overlay.classList.remove('active');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const closeBtn = document.getElementById('CartDrawerClose');
+    const overlay = document.getElementById('CartDrawerOverlay');
+
+    if (closeBtn) closeBtn.addEventListener('click', closeTreasureChest);
+    if (overlay) {
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeTreasureChest();
+      });
+    }
+
+    // Connect header links with class site-header__icon-link or containing Treasure Chest
+    const headerCartLinks = document.querySelectorAll('a[href="/cart"], .site-header__icon-link');
+    headerCartLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        openTreasureChest();
+      });
+    });
+  });
+
+  function updateQty(key, quantity) {
+    fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: quantity })
+    }).then(res => res.json()).then(data => {
+      window.location.reload();
+    }).catch(err => {
+      console.log('Update cart error:', err);
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Treasure Chest Drawer",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Your Treasure Chest" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Your treasures are waiting..." }
+  ],
+  "presets": [
+    {
+      "name": "Treasure Chest Drawer"
+    }
+  ]
+}
+{% endschema %}

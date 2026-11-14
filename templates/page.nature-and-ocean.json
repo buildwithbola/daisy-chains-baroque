@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "sea_turtle": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Minimalist_Sea_Turtle_Pendant_Tiny_Cute_Turtle_Pendant_14K_Gold_Turtle_Pendant_Gift_for_Nature_Lovers_Turtle_Lovers_Gift_Ocean_Jewelry.jpg",
+            "title": "Sea Turtle",
+            "tagline": "Wisdom • Endurance • Protection",
+            "description": "<p>The Sea Turtle symbolizes wisdom, perseverance, and a lifelong journey guided by instinct, reminding us to move through life with patience and steady progress.</p>",
+            "link_label": "Shop Turtle Treasures",
+            "shop_link": ""
+          }
+        },
+        "wave": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Wave_Necklace_Wave_Pendant_Perfect_for_Ocean_Lovers_Personalized_Pendant_Birthday_Gift_Unique_Gift_18K_Gold_plated_Pendant.jpg",
+            "title": "The Wave",
+            "tagline": "Flow • Change • Resilience",
+            "description": "<p>The Wave represents life's constant movement, encouraging us to embrace change with grace, adapt to every season, and trust the rhythm of the ocean tide.</p>",
+            "link_label": "Shop Wave Treasures",
+            "shop_link": ""
+          }
+        },
+        "whale_tail": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Whale_Tail_gold_Plated_Necklace_Water_Fish_Ocean_Majestic_Sea_Creature_Nature.jpg",
+            "title": "Whale Tail",
+            "tagline": "Strength • Freedom • Adventure",
+            "description": "<p>A majestic symbol of ocean beauty, the Whale Tail represents strength, freedom, and the courage to explore new horizons while remaining grounded.</p>",
+            "link_label": "Shop Ocean Treasures",
+            "shop_link": ""
+          }
+        },
+        "starfish": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Solid_Gold_Starfish_Necklace_-_Ocean_Treasure_Jewellery.jpg",
+            "title": "Starfish",
+            "tagline": "Renewal • Healing • Resilience",
+            "description": "<p>Known for its ability to regenerate, the Starfish symbolizes healing and resilience, serving as a reminder that growth often follows life's greatest challenges.</p>",
+            "link_label": "Shop Starfish Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "sea_turtle",
+        "wave",
+        "whale_tail",
+        "starfish"
+      ],
+      "settings": {
+        "title": "Nature & Ocean Treasures",
+        "title_size": "small",
+        "subtitle": "Treasures gathered from the shoreline and inspired by marine life.",
+        "subtitle_size": "medium",
+        "description": "<p>Carry the calm rhythm of coastal tides and ocean wildlife close to your heart. Explore wild sea shells, sea turtles, waves, and ocean charms.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

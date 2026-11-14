@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+        "title_size": "medium",
+        "show_author": true,
+        "show_date": true,
+        "show_social_share": true,
+        "show_author_bio": true,
+        "author_name": "Jenny Higgins",
+        "author_role": "Founder & Jewelry Designer",
+        "author_bio": "Jenny designs and wire-wraps every Daisy Chains treasure in her California studio, crafting one-of-a-kind jewelry inspired by nature and extraordinary women.",
+        "show_next_prev": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Treasures Featured in This Story",
+        "subtitle": "Shop handcrafted pieces mentioned in this journal article.",
+        "recommendation_type": "auto",
+        "products_to_show": 4
+      }
+    }
+  },
+  "order": ["main", "recommendations"]
+}

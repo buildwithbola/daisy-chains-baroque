@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "evil_eye": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Dewdrops_Evil_Eye_Gemstone_Bracelet_1.jpg",
+            "title": "Evil Eye",
+            "tagline": "Protection • Positivity • Peace",
+            "description": "<p>Cherished across cultures for centuries, the Evil Eye is believed to protect against negativity, envy, and unwanted energy. It serves as a reminder to protect your peace, trust your path, and welcome positivity into your life.</p>",
+            "link_label": "Shop Evil Eye Treasures",
+            "shop_link": ""
+          }
+        },
+        "hamsa_hand": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Gold_Hamsa_Necklace___Turquoise_Hamsa_Necklace___Henryka_UK.jpg",
+            "title": "Hamsa Hand",
+            "tagline": "Protection • Blessings • Strength",
+            "description": "<p>A timeless symbol of protection and good fortune, the Hamsa Hand is believed to bring blessings, inner strength, and positive energy. It serves as a reminder to lead with compassion, trust your intuition, and embrace life's journey with confidence.</p>",
+            "link_label": "Shop Hamsa Treasures",
+            "shop_link": ""
+          }
+        },
+        "feather": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Women_s_Accessories___Jewelry_Socks_Sunglasses_Bags___ModCloth.jpg",
+            "title": "The Feather",
+            "tagline": "Guidance • Freedom • Spiritual Connection",
+            "description": "<p>Light and graceful, the Feather symbolizes freedom, guidance, and a connection to something greater than ourselves. It serves as a reminder to trust where life is leading you, embrace new possibilities, and let your spirit soar.</p>",
+            "link_label": "Shop Feather Treasures",
+            "shop_link": ""
+          }
+        },
+        "dragonfly": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Dragonfly_Necklace__925_Sterling_Silver_18k_Gold_Plated_Rebirth_Pendant.jpg",
+            "title": "The Dragonfly",
+            "tagline": "Transformation • Adaptability • Wisdom",
+            "description": "<p>The Dragonfly is a symbol of transformation, resilience, and embracing change with grace. It serves as a reminder to adapt to life's changing seasons, trust your inner wisdom, and find beauty in every stage of your journey.</p>",
+            "link_label": "Shop Dragonfly Treasures",
+            "shop_link": ""
+          }
+        },
+        "scarab": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Gold_Vermeil_Scarab_Necklace_Sterling_Silver_Egyptian_Amulet.jpg",
+            "title": "The Scarab",
+            "tagline": "Transformation • Renewal • Protection",
+            "description": "<p>The Scarab has been treasured for thousands of years as one of the most powerful symbols of ancient Egypt. Representing the daily cycle of the sun, it symbolizes resilience, personal growth, and the courage to embrace new beginnings.</p>",
+            "link_label": "Shop Scarab Treasures",
+            "shop_link": ""
+          }
+        },
+        "tigers_eye": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Minimalist_Tiger_s_Eye_Pendant_--_Natural_gemstone_necklace_18k_gold-plated.jpg",
+            "title": "Golden Tiger's Eye",
+            "tagline": "Confidence • Courage • Protection",
+            "description": "<p>Known for its golden bands that shimmer in the light, Tiger's Eye inspires confidence, courage, and personal strength. It serves as a quiet reminder that protection and strength often accompany us in the moments we least expect.</p>",
+            "link_label": "Shop Tiger's Eye Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "evil_eye",
+        "hamsa_hand",
+        "feather",
+        "dragonfly",
+        "scarab",
+        "tigers_eye"
+      ],
+      "settings": {
+        "title": "Protection & Guidance",
+        "title_size": "small",
+        "subtitle": "Treasures that shield your inner peace, offer spiritual guidance, and welcome positivity.",
+        "subtitle_size": "medium",
+        "description": "<p>Protect your peace and navigate life's journey with confidence. Explore sacred talismans and ancient symbols designed to ward off negativity and guide your path.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

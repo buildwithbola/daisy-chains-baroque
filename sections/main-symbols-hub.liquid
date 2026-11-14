@@ -1,0 +1,452 @@
+{%- style -%}
+  .symbols-hub-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Hero Section Alignment & Position */
+  .symbols-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .symbols-hero--position-left { margin-left: 0; margin-right: auto; }
+  .symbols-hero--position-center { margin-left: auto; margin-right: auto; }
+  .symbols-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .symbols-hero--align-left { text-align: left; }
+  .symbols-hero--align-center { text-align: center; }
+  .symbols-hero--align-right { text-align: right; }
+
+  .symbols-hero__title--small { font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+  .symbols-hero__title--medium { font-size: clamp(2.4rem, 4.8vw, 3.5rem); }
+  .symbols-hero__title--large { font-size: clamp(3rem, 6vw, 4.5rem); }
+  .symbols-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .symbols-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  .symbols-hero__letter--small { font-size: clamp(1rem, 1.6vw, 1.25rem); }
+  .symbols-hero__letter--medium { font-size: clamp(1.15rem, 2vw, 1.45rem); }
+  .symbols-hero__letter--large { font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
+
+  .symbols-hero__letter {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .symbols-hero__disclaimer {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: var(--color-muted);
+    line-height: 1.65;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--color-surface-warm);
+    border-left: 2px solid var(--color-accent);
+    text-align: left;
+    margin-top: 1.5rem;
+  }
+
+  /* Section Titles */
+  .symbols-section-header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .symbols-section-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .symbols-section-subtitle {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+  }
+
+  /* 10 Intention Portals Grid */
+  .intention-portals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    .intention-portals-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .intention-portals-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem 1.5rem;
+    }
+  }
+
+  .portal-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  }
+
+  .portal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  .portal-card__image-wrapper {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .portal-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .portal-card:hover .portal-card__image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .portal-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .portal-card__number {
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .portal-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.45rem;
+    font-weight: 300;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  .portal-card__symbols-list {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: #666666;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+
+  .portal-card__link {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    align-self: flex-start;
+  }
+
+  /* 4 Special Master Guides Grid (With High-Res Editorial Photography) */
+  .special-guides-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    .special-guides-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .guide-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  .guide-card__image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .guide-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .guide-card:hover .guide-card__image-wrapper img {
+    transform: scale(1.04);
+  }
+
+  .guide-card__content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .guide-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.7rem;
+    font-weight: 300;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
+  }
+
+  .guide-card__description {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  /* Closing Quote Banner */
+  .symbols-closing-banner {
+    text-align: center;
+    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    background-color: var(--color-surface-warm);
+    border-top: 1px solid var(--color-border);
+    margin-top: 2rem;
+  }
+
+  .symbols-closing-quote {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .symbols-closing-author {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-muted);
+  }
+{%- endstyle -%}
+
+<div class="symbols-hub-section">
+  <!-- Hero Section -->
+  <div class="symbols-hero symbols-hero--position-{{ section.settings.content_position }} symbols-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="symbols-hero__title symbols-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.hero_letter != blank %}
+      <div class="symbols-hero__letter symbols-hero__letter--{{ section.settings.letter_size }}">
+        "{{ section.settings.hero_letter }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.disclaimer != blank %}
+      <div class="symbols-hero__disclaimer">
+        <strong>A Note on Meanings:</strong> {{ section.settings.disclaimer }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- SECTION 1: 10 Intention Sub-Page Portals -->
+  <div class="symbols-section-header">
+    <h2 class="symbols-section-title">Find Your Intention</h2>
+    <div class="symbols-section-subtitle">Explore our 10 intention pillars to discover the story meant for your journey.</div>
+  </div>
+
+  <div class="intention-portals-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'intention_portal' %}
+        <a href="{{ block.settings.portal_link }}" class="portal-card" {{ block.shopify_attributes }}>
+          <div class="portal-card__image-wrapper">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 900 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+          <div class="portal-card__content">
+            <span class="portal-card__number">Intention 0{{ forloop.index }}</span>
+            <h3 class="portal-card__title">{{ block.settings.title | escape }}</h3>
+            <div class="portal-card__symbols-list">{{ block.settings.featured_symbols | escape }}</div>
+            <span class="portal-card__link link-underlined">Explore Intention &rarr;</span>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- SECTION 2: 4 Special Master Guides (With High-Res Editorial Photography) -->
+  <div class="symbols-section-header">
+    <h2 class="symbols-section-title">Explore Master Symbol Guides</h2>
+    <div class="symbols-section-subtitle">Deep-dive libraries into gemstones, pearls, angel numbers, and birth flowers.</div>
+  </div>
+
+  <div class="special-guides-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'master_guide' %}
+        <a href="{{ block.settings.guide_link }}" class="guide-card" {{ block.shopify_attributes }}>
+          <div class="guide-card__image-wrapper">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+          <div class="guide-card__content">
+            <h3 class="guide-card__title">{{ block.settings.title | escape }}</h3>
+            <div class="guide-card__description">{{ block.settings.description }}</div>
+            <span class="portal-card__link link-underlined">{{ block.settings.link_label | default: "Explore Guide" | escape }} &rarr;</span>
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Closing Quote Banner -->
+<div class="symbols-closing-banner">
+  <div class="symbols-closing-quote">"The ocean shared it. Nature shaped it. We simply helped tell its story."</div>
+  <div class="symbols-closing-author">&mdash; Jenny, Founder &amp; Designer</div>
+</div>
+
+{% schema %}
+{
+  "name": "Meanings & Symbols Hub",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Meanings & Symbolism" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_letter",
+      "label": "Founder Hero Letter",
+      "default": "I've always loved hidden meanings. A gemstone chosen for courage. An angel number that appears at just the right moment. A pearl that reminds us to embrace our imperfections. A tiny charm carrying a message that only the wearer may know is there. Many of the elements used in Daisy Chains designs have long been associated with stories, symbolism, and intention. Whether you're drawn to a stone for its meaning or simply because it catches your eye, my hope is that you'll find something here that resonates with your own journey. After all, sometimes the smallest details carry the greatest meaning."
+    },
+    {
+      "type": "select",
+      "id": "letter_size",
+      "label": "Letter Text Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Folklore Disclaimer Note",
+      "default": "The meanings shared throughout this guide are drawn from folklore, cultural traditions, and spiritual beliefs from around the world. They are offered as inspiration and personal reflection, allowing you to choose the stones and symbols that resonate with your own journey."
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "intention_portal",
+      "name": "Intention Sub-Page Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Intention Title", "default": "Love & Connection" },
+        { "type": "text", "id": "featured_symbols", "label": "Included Symbols List", "default": "Heart, Rose, Infinity Symbol, Rabbit, Fu Bead" },
+        { "type": "url", "id": "portal_link", "label": "Sub-Page Link" }
+      ]
+    },
+    {
+      "type": "master_guide",
+      "name": "Master Guide Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Guide Cover Image" },
+        { "type": "text", "id": "title", "label": "Guide Title", "default": "Gem Stones A–Z Library" },
+        { "type": "richtext", "id": "description", "label": "Description", "default": "<p>Browse our complete alphabetical library of 35+ natural gemstones, raw crystals, and their spiritual energies.</p>" },
+        { "type": "text", "id": "link_label", "label": "Link Text", "default": "Explore Gemstone Library" },
+        { "type": "url", "id": "guide_link", "label": "Guide Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Meanings & Symbols Hub"
+    }
+  ]
+}
+{% endschema %}

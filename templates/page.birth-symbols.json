@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "january": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Garnet___Carnation_202608082020.jpg",
+            "title": "January — Garnet & Carnation",
+            "tagline": "Love • Devotion • Admiration",
+            "description": "<p>Known for blooming even during colder months, the Carnation symbolizes love, devotion, and enduring affection. Paired with Garnet, it represents a commitment that remains strong through every season.</p>",
+            "link_label": "Shop January Treasures",
+            "shop_link": ""
+          }
+        },
+        "february": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Amethyst___Violet_202608082023.jpg",
+            "title": "February — Amethyst & Violet",
+            "tagline": "Loyalty • Faithfulness • Wisdom",
+            "description": "<p>The delicate Violet symbolizes loyalty, humility, and quiet strength. Paired with calming Amethyst, it serves as a reminder that meaningful connections don't need to be loud to be powerful.</p>",
+            "link_label": "Shop February Treasures",
+            "shop_link": ""
+          }
+        },
+        "march": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Aquamarine___Daffodil_202608082025.jpg",
+            "title": "March — Aquamarine & Daffodil",
+            "tagline": "New Beginnings • Hope • Joy",
+            "description": "<p>One of the first flowers to appear as winter fades, the Daffodil symbolizes renewal and hope. Paired with sea-hued Aquamarine, it encourages you to welcome new chapters with optimism.</p>",
+            "link_label": "Shop March Treasures",
+            "shop_link": ""
+          }
+        },
+        "april": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Diamond_and_Daisy_studio_shot_202608082027.jpg",
+            "title": "April — Diamond & Daisy",
+            "tagline": "Joy • Innocence • New Beginnings",
+            "description": "<p>Simple, cheerful, and remarkably resilient, the Daisy symbolizes joy and fresh starts. Paired with Diamond, it inspires you to appreciate life's simple pleasures and bloom wherever life plants you.</p>",
+            "link_label": "Shop April Treasures",
+            "shop_link": ""
+          }
+        },
+        "may": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Emerald_stone_and_lily_flower_202608082028.jpg",
+            "title": "May — Emerald & Lily of the Valley",
+            "tagline": "Happiness • Renewal • Hope",
+            "description": "<p>With tiny bell-shaped blossoms, Lily of the Valley symbolizes happiness and the return of brighter days. Paired with Emerald, it reminds us that happiness is found in life's smallest moments.</p>",
+            "link_label": "Shop May Treasures",
+            "shop_link": ""
+          }
+        },
+        "june": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Pearl___Rose_FLOWER_202608082030.jpg",
+            "title": "June — Pearl & Rose",
+            "tagline": "Wisdom • Authenticity • Love",
+            "description": "<p>For centuries, the Rose has been a cherished symbol of love and heartfelt connection. Paired with natural Freshwater Pearls, it celebrates wisdom, beauty, and authenticity.</p>",
+            "link_label": "Shop June Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "january",
+        "february",
+        "march",
+        "april",
+        "may",
+        "june"
+      ],
+      "settings": {
+        "title": "Birth Symbols & Flowers Guide",
+        "title_size": "small",
+        "subtitle": "Discover your monthly birthstone and birth flower pairings to choose a deeply personal heirloom treasure.",
+        "subtitle_size": "medium",
+        "description": "<p>Like birthstones, birth flowers connect each month of the year with a flower and its own special symbolism. Whether chosen for yourself or as a meaningful gift, a birth symbol transforms a beautiful botanical element into something deeply personal.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

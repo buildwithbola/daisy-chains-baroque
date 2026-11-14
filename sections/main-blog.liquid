@@ -1,0 +1,463 @@
+{%- style -%}
+  .blog-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .blog-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .blog-breadcrumb--align-left { justify-content: flex-start; }
+  .blog-breadcrumb--align-center { justify-content: center; }
+  .blog-breadcrumb--align-right { justify-content: flex-end; }
+
+  .blog-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .blog-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Header */
+  .blog-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .blog-hero--position-left { margin-left: 0; margin-right: auto; }
+  .blog-hero--position-center { margin-left: auto; margin-right: auto; }
+  .blog-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .blog-hero--align-left { text-align: left; }
+  .blog-hero--align-center { text-align: center; }
+  .blog-hero--align-right { text-align: right; }
+
+  .blog-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .blog-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .blog-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .blog-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .blog-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .blog-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+  }
+
+  /* Featured Article Banner */
+  .featured-article-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 900px) {
+    .featured-article-card {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .featured-article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+  }
+
+  .featured-article-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .featured-article-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .featured-article-card:hover .featured-article-image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .featured-article-content {
+    padding: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .article-tag-badge {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+  }
+
+  .featured-article-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--color-text);
+  }
+
+  .article-meta {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Articles Grid */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.25rem 1.75rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .articles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .articles-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop | default: 3 }}, 1fr);
+    }
+  }
+
+  .article-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    overflow: hidden;
+  }
+
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    border-color: var(--color-text);
+  }
+
+  .article-card-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: {{ section.settings.aspect_ratio | default: '3 / 4' }};
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .article-card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .article-card:hover .article-card-image-wrapper img {
+    transform: scale(1.06);
+  }
+
+  .article-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+  }
+
+  .article-card-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    font-weight: 300;
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .article-card-excerpt {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: #666666;
+    line-height: 1.6;
+  }
+
+  .article-card-cta {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-text);
+    margin-top: auto;
+    padding-top: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.25s ease;
+  }
+
+  .article-card:hover .article-card-cta {
+    color: var(--color-accent);
+  }
+{%- endstyle -%}
+
+<div class="blog-section">
+  <!-- Breadcrumb -->
+  <div class="blog-breadcrumb blog-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ blog.title | default: section.settings.title | escape }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="blog-hero blog-hero--position-{{ section.settings.content_position }} blog-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="blog-hero__title blog-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="blog-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Featured Hero Post (If Enabled) -->
+  {% if section.settings.show_featured_post and blog.articles.size > 0 %}
+    {% assign featured_article = blog.articles.first %}
+    <a href="{{ featured_article.url }}" class="featured-article-card">
+      <div class="featured-article-image-wrapper">
+        {% if featured_article.image %}
+          <img src="{{ featured_article.image | image_url: width: 1200 }}" alt="{{ featured_article.title | escape }}" loading="lazy">
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+      </div>
+
+      <div class="featured-article-content">
+        <span class="article-tag-badge">{{ featured_article.tags.first | default: 'Featured Journal' }}</span>
+        <h2 class="featured-article-title">{{ featured_article.title | escape }}</h2>
+        
+        <div class="article-meta">
+          {% if section.settings.show_author %}<span>By {{ featured_article.author | default: 'Jenny Higgins' }}</span>{% endif %}
+          {% if section.settings.show_author and section.settings.show_date %}&bull;{% endif %}
+          {% if section.settings.show_date %}<span>{{ featured_article.published_at | date: "%b %d, %Y" }}</span>{% endif %}
+        </div>
+
+        <p class="article-card-excerpt">
+          {{ featured_article.excerpt_or_content | strip_html | truncate: 180 }}
+        </p>
+
+        <span class="article-card-cta">Read Full Story &rarr;</span>
+      </div>
+    </a>
+  {% endif %}
+
+  <!-- Articles Grid -->
+  {% paginate blog.articles by section.settings.articles_per_page %}
+    <div class="articles-grid">
+      {% for article in blog.articles %}
+        <a href="{{ article.url }}" class="article-card">
+          <div class="article-card-image-wrapper">
+            {% if article.image %}
+              <img src="{{ article.image | image_url: width: 800 }}" alt="{{ article.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+
+          <div class="article-card-content">
+            {% if section.settings.show_tags and article.tags.size > 0 %}
+              <span class="article-tag-badge">{{ article.tags.first }}</span>
+            {% endif %}
+
+            <h3 class="article-card-title">{{ article.title | escape }}</h3>
+
+            <div class="article-meta">
+              {% if section.settings.show_author %}<span>By {{ article.author | default: 'Jenny Higgins' }}</span>{% endif %}
+              {% if section.settings.show_author and section.settings.show_date %}&bull;{% endif %}
+              {% if section.settings.show_date %}<span>{{ article.published_at | date: "%b %d, %Y" }}</span>{% endif %}
+            </div>
+
+            <p class="article-card-excerpt">
+              {{ article.excerpt_or_content | strip_html | truncate: 120 }}
+            </p>
+
+            <span class="article-card-cta">Read Story &rarr;</span>
+          </div>
+        </a>
+      {% else %}
+        <!-- Demo Articles if Blog Has 0 Articles -->
+        <a href="#" class="article-card">
+          <div class="article-card-image-wrapper">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="article-card-content">
+            <span class="article-tag-badge">Symbolism &amp; Folklore</span>
+            <h3 class="article-card-title">The Healing Meaning Behind Abalone Shells</h3>
+            <div class="article-meta">By Jenny Higgins &bull; Oct 14, 2026</div>
+            <p class="article-card-excerpt">Discover why Abalone Shell has long been treasured across coastal folklore for resilience, emotional balance, and sea wisdom.</p>
+            <span class="article-card-cta">Read Story &rarr;</span>
+          </div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-card-image-wrapper">
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="article-card-content">
+            <span class="article-tag-badge">Founder Story</span>
+            <h3 class="article-card-title">Behind the Bench: Wire Wrapping in California</h3>
+            <div class="article-meta">By Jenny Higgins &bull; Sep 28, 2026</div>
+            <p class="article-card-excerpt">Jenny Higgins shares her journey from crafting beaded daisy chains in childhood to designing bespoke 18K gold wire-wrapped treasures.</p>
+            <span class="article-card-cta">Read Story &rarr;</span>
+          </div>
+        </a>
+
+        <a href="#" class="article-card">
+          <div class="article-card-image-wrapper">
+            {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="article-card-content">
+            <span class="article-tag-badge">Care Guide</span>
+            <h3 class="article-card-title">How to Care for Your Baroque Freshwater Pearls</h3>
+            <div class="article-meta">By Jenny Higgins &bull; Aug 19, 2026</div>
+            <p class="article-card-excerpt">Simple rituals and tips to keep your organic pearls, Abalone shells, and 18K Gold PVD charms shining brightly for decades.</p>
+            <span class="article-card-cta">Read Story &rarr;</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div style="margin-top:3rem; text-align:center;">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Blog Listing Section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Stories & Journal" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Behind the design, coastal folklore, gemstone meanings, and California lifestyle." },
+    { "type": "checkbox", "id": "show_featured_post", "label": "Show Featured Hero Article", "default": true },
+    { "type": "checkbox", "id": "show_author", "label": "Show Author Byline", "default": true },
+    { "type": "checkbox", "id": "show_date", "label": "Show Publish Date", "default": true },
+    { "type": "checkbox", "id": "show_tags", "label": "Show Category Badges", "default": true },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "min": 3,
+      "max": 18,
+      "step": 3,
+      "label": "Articles per Page",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Desktop Grid Columns",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Article Image Aspect Ratio",
+      "options": [
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "16 / 9", "label": "Landscape (16:9)" },
+        { "value": "1 / 1", "label": "Square (1:1)" }
+      ],
+      "default": "3 / 4"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Listing Section"
+    }
+  ]
+}
+{% endschema %}

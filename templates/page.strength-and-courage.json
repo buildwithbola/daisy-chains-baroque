@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "lion": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/aca6b45ddd12848d9143b78db5506896.jpg",
+            "title": "The Lion",
+            "tagline": "Strength • Courage • Leadership",
+            "description": "<p>For centuries, the Lion has symbolized bravery, confidence, and inner strength. It serves as a reminder to lead with courage, trust yourself, and face life's challenges with poise.</p>",
+            "link_label": "Shop Lion Treasures",
+            "shop_link": ""
+          }
+        },
+        "dragon": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/JFASHOP_Drachen_Kette_fur_Damen_Herren_925_Sterling_Silber_Unisex_Schmuck_Anhanger_Oxidierter_Drachenschmuck_Halskette_Unisex_Geschenk.jpg",
+            "title": "The Dragon",
+            "tagline": "Power • Protection • Wisdom",
+            "description": "<p>A revered symbol of strength and prosperity across cultures, the Dragon inspires you to embrace your personal power and pursue your dreams with boldness.</p>",
+            "link_label": "Shop Dragon Treasures",
+            "shop_link": ""
+          }
+        },
+        "wolf": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Wolf_Pendant___Gold_Plated_Wolf_Pendant___Marcozo.jpg",
+            "title": "The Wolf",
+            "tagline": "Strength • Loyalty • Instinct",
+            "description": "<p>The Wolf symbolizes resilience, loyalty, and trusting your instincts. It reminds us to find strength within ourselves while honoring the connections that guide our path.</p>",
+            "link_label": "Shop Wolf Treasures",
+            "shop_link": ""
+          }
+        },
+        "mountain": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/16_Wanderlust_Jewelry_for_Travel_Lovers__Gift_ideas.jpg",
+            "title": "The Mountain",
+            "tagline": "Strength • Determination • Achievement",
+            "description": "<p>The Mountain represents perseverance, stability, and overcoming obstacles. It serves as a reminder that every challenge is an opportunity to grow stronger.</p>",
+            "link_label": "Shop Mountain Treasures",
+            "shop_link": ""
+          }
+        },
+        "arrow": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/A_Few_Favorites_from_JCK_LUXURY_Prive_New_York___Jewels_du_Jour.jpg",
+            "title": "The Arrow",
+            "tagline": "Courage • Direction • Purpose",
+            "description": "<p>An Arrow reminds us that sometimes we must be pulled backward before moving forward. It symbolizes courage, purpose, and trusting the journey ahead.</p>",
+            "link_label": "Shop Arrow Treasures",
+            "shop_link": ""
+          }
+        },
+        "phoenix": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Phoenix_Necklace.jpg",
+            "title": "The Phoenix",
+            "tagline": "Renewal • Strength • Transformation",
+            "description": "<p>The legendary Phoenix symbolizes rising stronger after adversity. It serves as a reminder that every ending creates space for a powerful new beginning.</p>",
+            "link_label": "Shop Phoenix Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "lion",
+        "dragon",
+        "wolf",
+        "mountain",
+        "arrow",
+        "phoenix"
+      ],
+      "settings": {
+        "title": "Strength & Courage",
+        "title_size": "small",
+        "subtitle": "Treasures that inspire inner bravery, resilience, and unwavering personal power.",
+        "subtitle_size": "medium",
+        "description": "<p>Embrace your personal power and stand firm through life's storms. Explore symbols of quiet confidence, determination, and enduring bravery.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

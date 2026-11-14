@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-search",
+      "settings": {
+        "title": "Search Treasures",
+        "title_size": "medium",
+        "subtitle": "Discover handcrafted baroque jewelry, intention charms, and gemstone folklore stories.",
+        "show_quick_search_tags": true,
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,1153 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-gemstones-az",
+      "blocks": {
+        "afghanite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Afghanite_ON_PURE_WHITE_BACKGROUND_202608082041.jpg",
+            "title": "Afghanite",
+            "tagline": "Intuition • Truth • Inner Wisdom",
+            "description": "<p>Afghanite is believed to encourage self-discovery, clarity, and spiritual awareness. Associated with truth and intuition, it inspires confidence in following your inner voice and embracing your authentic path.</p>",
+            "tags": "Wisdom & Intuition • Protection & Guidance",
+            "link_label": "Shop Afghanite Treasures",
+            "shop_link": ""
+          }
+        },
+        "african_turquoise": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/African_turquoise_202608082042.jpg",
+            "title": "African Turquoise",
+            "tagline": "Growth • Transformation • Possibility",
+            "description": "<p>Despite its name, African Turquoise is a form of jasper often called the \"Stone of Evolution.\" It is believed to inspire personal growth, positive change, and the confidence to embrace new opportunities.</p>",
+            "tags": "Growth & New Beginnings • Strength & Courage",
+            "link_label": "Shop African Turquoise Treasures",
+            "shop_link": ""
+          }
+        },
+        "agate": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Agate_ON_PURE_WHITE_BACKGROUND_202608082045.jpg",
+            "title": "Agate",
+            "tagline": "Balance • Stability • Inner Strength",
+            "description": "<p>Known as a grounding stone, Agate is believed to promote emotional balance, inner strength, and a sense of calm. Formed in beautiful natural layers, it serves as a reminder that growth often happens over time and that every experience adds to our unique story.</p>",
+            "tags": "Protection & Guidance • Strength & Courage • Growth & New Beginnings",
+            "link_label": "Shop Agate Treasures",
+            "shop_link": ""
+          }
+        },
+        "amazonite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Amazonite_ON_PURE_WHITE_BACKGROUND_202608082046.jpg",
+            "title": "Amazonite",
+            "tagline": "Balance • Truth • Harmony",
+            "description": "<p>Amazonite is believed to encourage honest communication, emotional balance, and inner peace. A symbol of truth and harmony, it serves as a reminder to speak from the heart, trust your intuition, and live authentically.</p>",
+            "tags": "Love & Connection • Wisdom & Intuition • Protection & Guidance",
+            "link_label": "Shop Amazonite Treasures",
+            "shop_link": ""
+          }
+        },
+        "amber": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Amber_ON_PURE_WHITE_BACKGROUND_202608082047.jpg",
+            "title": "Amber",
+            "tagline": "Warmth • Healing • Protection",
+            "description": "<p>Formed from ancient tree resin, Amber is associated with comfort, positivity, and renewal. It is believed to absorb negative energy, inspire optimism, and carry the warmth of the sun wherever it goes.</p>",
+            "tags": "Protection & Guidance • Growth & New Beginnings • Nature & Ocean",
+            "link_label": "Shop Amber Treasures",
+            "shop_link": ""
+          }
+        },
+        "amethyst": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Amethyst_ON_PURE_WHITE_BACKGROUND_202608082048.jpg",
+            "title": "Amethyst",
+            "tagline": "Peace • Intuition • Wisdom",
+            "description": "<p>Amethyst is associated with calm, balance, and spiritual awareness. It is believed to encourage clarity of thought, inner peace, and trust in your intuition.</p>",
+            "tags": "Wisdom & Intuition • Protection & Guidance",
+            "link_label": "Shop Amethyst Treasures",
+            "shop_link": ""
+          }
+        },
+        "ametrine": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Ametrine",
+            "tagline": "Balance • Clarity • Harmony",
+            "description": "<p>A natural blend of Amethyst and Citrine, Ametrine is believed to unite calm wisdom with positive energy. It symbolizes balance, clarity, and the confidence to move forward while staying grounded in your truth.</p>",
+            "tags": "Wisdom & Intuition • Strength & Courage • Joy & Creativity",
+            "link_label": "Shop Ametrine Treasures",
+            "shop_link": ""
+          }
+        },
+        "andamooka_black_matrix_opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Andamooka Black Matrix Opal",
+            "tagline": "Creativity • Transformation • Individuality",
+            "description": "<p>Andamooka Matrix Opal originates from the Andamooka opal fields of South Australia and is known for flashes of brilliant color appearing throughout its natural host rock. Often darkened through traditional treatment to enhance its play of color, it symbolizes creativity, transformation, and the extraordinary beauty that can emerge from within.</p>",
+            "tags": "Joy & Creativity • Growth & New Beginnings • Wisdom & Intuition",
+            "link_label": "Shop Andamooka Black Matrix Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "andesine": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Andesine",
+            "tagline": "Confidence • Transformation • Courage",
+            "description": "<p>Andesine is believed to inspire personal growth, inner strength, and positive change. Associated with courage and self-discovery, it encourages you to embrace new opportunities and trust the path ahead.</p>",
+            "tags": "Strength & Courage • Growth & New Beginnings",
+            "link_label": "Shop Andesine Treasures",
+            "shop_link": ""
+          }
+        },
+        "angelite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Angelite",
+            "tagline": "Peace • Guidance • Compassion",
+            "description": "<p>Angelite is believed to promote calm, understanding, and spiritual connection. Often associated with comfort and gentle guidance, it serves as a reminder to trust your intuition, speak with kindness, and embrace inner peace.</p>",
+            "tags": "Protection & Guidance • Wisdom & Intuition • Love & Connection",
+            "link_label": "Shop Angelite Treasures",
+            "shop_link": ""
+          }
+        },
+        "aquamarine": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Aquamarine_ON_PURE_WHITE_BACKGROUND_202608082050_1.jpg",
+            "title": "Aquamarine",
+            "tagline": "Serenity • Courage • Communication",
+            "description": "<p>Inspired by the sea, Aquamarine symbolizes tranquility, courage, and clear communication. It encourages you to move through life with grace and confidence.</p>",
+            "tags": "Nature & Ocean • Strength & Courage • Love & Connection",
+            "link_label": "Shop Aquamarine Treasures",
+            "shop_link": ""
+          }
+        },
+        "bamboo_agate": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Bamboo Agate",
+            "tagline": "Resilience • Growth • Stability",
+            "description": "<p>Inspired by the strength and flexibility of bamboo, Bamboo Agate symbolizes perseverance, adaptability, and steady growth. It reminds us to stay rooted while remaining open to life's changes.</p>",
+            "tags": "Growth & New Beginnings • Strength & Courage • Nature & Ocean",
+            "link_label": "Shop Bamboo Agate Treasures",
+            "shop_link": ""
+          }
+        },
+        "bamboo_coral": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Bamboo Coral",
+            "tagline": "Strength • Balance • Ocean Connection",
+            "description": "<p>Formed naturally beneath the sea, Bamboo Coral symbolizes resilience, harmony, and a deep connection to the ocean. It serves as a reminder to stay grounded while embracing life's natural rhythms.</p>",
+            "tags": "Nature & Ocean • Strength & Courage • Protection & Guidance",
+            "link_label": "Shop Bamboo Coral Treasures",
+            "shop_link": ""
+          }
+        },
+        "baroque_pearl": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Baroque_pearl_on_white_background_202608082052.jpg",
+            "title": "Baroque Pearl",
+            "tagline": "Wisdom • Authenticity • Beauty in Imperfection",
+            "description": "<p>No two baroque pearls are ever alike. Their unique shapes are celebrated as a reminder that true beauty lies in individuality and authenticity. Pearls have long symbolized wisdom, intuition, and the confidence that comes from embracing who you are.</p>",
+            "tags": "Nature & Ocean • Wisdom & Intuition • Love & Connection",
+            "link_label": "Shop Baroque Pearl Treasures",
+            "shop_link": ""
+          }
+        },
+        "black_old_ore_african_turquoise": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Black Old Ore African Turquoise",
+            "tagline": "Transformation • Strength • Possibility",
+            "description": "<p>Black Old Ore African Turquoise is a trade-name material prized for its dramatic dark matrix and earthy blue-green tones. Associated with the transformative symbolism of African Turquoise, it represents personal growth, resilience, and the courage to embrace change.</p>",
+            "tags": "Growth & New Beginnings • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Black Old Ore African Turquoise Treasures",
+            "shop_link": ""
+          }
+        },
+        "black_rutilated_quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Black Rutilated Quartz",
+            "tagline": "Clarity • Transformation • Manifestation",
+            "description": "<p>Rutilated Quartz is a striking variety of Quartz containing natural needle-like strands of rutile that appear suspended within the crystal, often in shades of black. It is believed to amplify intentions, clear away uncertainty, and encourage transformation, confidence, and forward movement.</p>",
+            "tags": "Growth & New Beginnings • Wisdom & Intuition • Strength & Courage • Luck & Abundance",
+            "link_label": "Shop Black Rutilated Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "black_tourmaline": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Black Tourmaline",
+            "tagline": "Protection • Grounding • Strength",
+            "description": "<p>Black Tourmaline is one of the most widely recognized stones associated with protection and grounding. Believed to help absorb and deflect negative energy, it symbolizes resilience, stability, and personal strength, serving as a reminder to protect your peace, stay grounded, and move through life with confidence.</p>",
+            "tags": "Protection & Guidance • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Black Tourmaline Treasures",
+            "shop_link": ""
+          }
+        },
+        "blue_aventurine": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Blue Aventurine",
+            "tagline": "Confidence • Communication • Inner Strength",
+            "description": "<p>Blue Aventurine encourages clear communication, self-discipline, and confidence in expressing your truth.</p>",
+            "tags": "Strength & Courage • Wisdom & Intuition • Love & Connection",
+            "link_label": "Shop Blue Aventurine Treasures",
+            "shop_link": ""
+          }
+        },
+        "blue_goldstone": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Blue Goldstone (Blue Sandstone)",
+            "tagline": "Ambition • Confidence • Possibility",
+            "description": "<p>Known for its star-like sparkle, Blue Goldstone is a man-made stone believed to symbolize ambition, confidence, and limitless possibility. It serves as a reminder to reach for your dreams, trust your abilities, and remember that even the darkest skies are filled with stars.</p>",
+            "tags": "Strength & Courage • Growth & New Beginnings • Celestial Symbols",
+            "link_label": "Shop Blue Goldstone Treasures",
+            "shop_link": ""
+          }
+        },
+        "blue_opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Blue Opal",
+            "tagline": "Peace • Communication • Serenity",
+            "description": "<p>With its tranquil blue hues, Blue Opal is believed to encourage calm, clear communication, and emotional balance. It serves as a reminder to speak your truth with confidence, embrace authenticity, and find peace within yourself.</p>",
+            "tags": "Love & Connection • Wisdom & Intuition • Protection & Guidance",
+            "link_label": "Shop Blue Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "blue_sponge_coral": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Blue Sponge Coral",
+            "tagline": "Resilience • Harmony • Ocean Connection",
+            "description": "<p>Blue Sponge Coral is treasured for its organic texture and ocean-inspired beauty. Coral symbolizes resilience, harmony, and our connection to the sea, serving as a reminder to remain strong while moving gracefully with life's changing tides.</p>",
+            "tags": "Nature & Ocean • Strength & Courage • Protection & Guidance",
+            "link_label": "Shop Blue Sponge Coral Treasures",
+            "shop_link": ""
+          }
+        },
+        "blue_topaz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Blue Topaz",
+            "tagline": "Clarity • Communication • Confidence",
+            "description": "<p>With its luminous blue color reminiscent of clear skies and tranquil waters, Blue Topaz is associated with clarity, honest communication, and self-confidence. It is believed to encourage thoughtful expression and clear thinking, serving as a reminder to trust your voice, speak your truth, and move forward with confidence.</p>",
+            "tags": "Wisdom & Intuition • Love & Connection • Strength & Courage • Birthstone",
+            "link_label": "Shop Blue Topaz Treasures",
+            "shop_link": ""
+          }
+        },
+        "cacoxenite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Cacoxenite",
+            "tagline": "Growth • Possibility • Transformation",
+            "description": "<p>Cacoxenite forms as delicate golden, brown, or reddish mineral inclusions within other stones, sometimes creating beautiful radiating patterns. It is associated with personal growth, optimism, and transformation, serving as a reminder that unexpected elements can become part of something extraordinary.</p>",
+            "tags": "Growth & New Beginnings • Wisdom & Intuition • Joy & Creativity",
+            "link_label": "Shop Cacoxenite Treasures",
+            "shop_link": ""
+          }
+        },
+        "carnelian": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Carnelian_ON_PURE_WHITE_BACKGROUND_202608082054.jpg",
+            "title": "Carnelian",
+            "tagline": "Courage • Creativity • Confidence",
+            "description": "<p>Radiating warm, fiery tones, Carnelian is believed to inspire courage, creativity, and confidence. It serves as a reminder to embrace your passions, take bold action, and pursue your dreams with enthusiasm.</p>",
+            "tags": "Strength & Courage • Joy & Creativity • Love & Connection",
+            "link_label": "Shop Carnelian Treasures",
+            "shop_link": ""
+          }
+        },
+        "citrine": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Citrine_ON_PURE_WHITE_BACKGROUND_202608082056.jpg",
+            "title": "Citrine",
+            "tagline": "Abundance • Joy • Confidence",
+            "description": "<p>Often called the \"Stone of Success,\" Citrine is believed to attract abundance, inspire optimism, and encourage personal confidence. It serves as a reminder to embrace life's opportunities, celebrate your achievements, and welcome prosperity with gratitude.</p>",
+            "tags": "Luck & Abundance • Joy & Creativity • Strength & Courage",
+            "link_label": "Shop Citrine Treasures",
+            "shop_link": ""
+          }
+        },
+        "clear_quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Clear Quartz",
+            "tagline": "Clarity • Energy • Amplification",
+            "description": "<p>Known as the \"Master Healer,\" Clear Quartz is believed to amplify energy, intentions, and clarity of thought. It serves as a reminder to focus on what matters most, trust your inner wisdom, and bring your dreams into clear focus.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Love & Connection",
+            "link_label": "Shop Clear Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "dalmatian_jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Dalmatian_Jasper_on_white_backgr__202608082057.jpg",
+            "title": "Dalmatian Jasper",
+            "tagline": "Joy • Protection • Playfulness",
+            "description": "<p>With its distinctive spotted pattern, Dalmatian Jasper is believed to encourage joy, resilience, and a lighthearted spirit. It serves as a reminder to embrace life's adventures, stay grounded through challenges, and never lose your sense of curiosity and play. Dalmatian Jasper isn't technically a true jasper. It's an igneous rock composed primarily of feldspar and quartz with black inclusions of arfvedsonite or other minerals.</p>",
+            "tags": "Joy & Creativity • Protection & Guidance • Strength & Courage",
+            "link_label": "Shop Dalmatian Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "diopside": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Diopside",
+            "tagline": "Growth • Compassion • Renewal",
+            "description": "<p>Known for its rich forest-green color, Diopside is associated with compassion, emotional renewal, and connection to the natural world. It serves as a reminder to open your heart, release what no longer serves you, and make space for growth and new possibilities.</p>",
+            "tags": "Love & Connection • Growth & New Beginnings • Nature & Ocean",
+            "link_label": "Shop Diopside Treasures",
+            "shop_link": ""
+          }
+        },
+        "disco_opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Disco Opal",
+            "tagline": "Joy • Creativity • Possibility",
+            "description": "<p>Named for its dazzling flashes of color, Disco Opal comes alive as it catches the light, revealing a vibrant display of shimmering hues. Believed to inspire creativity, optimism, and self-expression, it serves as a reminder to embrace your individuality and let your inner light shine.</p>",
+            "tags": "Joy & Creativity • Growth & New Beginnings",
+            "link_label": "Shop Disco Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "dragon_blood_jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Dragon Blood Jasper",
+            "tagline": "Strength • Courage • Vitality",
+            "description": "<p>Dragon Blood Jasper is believed to inspire courage, resilience, and personal strength. It encourages you to face life's challenges with confidence while remaining grounded in your values.</p>",
+            "tags": "Strength & Courage • Protection & Guidance • Growth & New Beginnings",
+            "link_label": "Shop Dragon Blood Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "dumortierite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Dumortierite",
+            "tagline": "Patience • Focus • Inner Strength",
+            "description": "<p>Known for its beautiful denim-to-deep-blue tones, Dumortierite is associated with patience, discipline, and mental clarity. It is believed to encourage confidence and focus, serving as a reminder to trust yourself and remain steady when facing challenges.</p>",
+            "tags": "Wisdom & Intuition • Strength & Courage • Protection & Guidance",
+            "link_label": "Shop Dumortierite Treasures",
+            "shop_link": ""
+          }
+        },
+        "emerald": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Emerald_ON_PURE_WHITE_BACKGROUND_202608082059.jpg",
+            "title": "Emerald",
+            "tagline": "Renewal • Growth • Abundance",
+            "description": "<p>Emerald has long been associated with love, prosperity, and new beginnings. It symbolizes growth, wisdom, and a heart-centered approach to life.</p>",
+            "tags": "Love & Connection • Luck & Abundance • Growth & New Beginnings • Wisdom & Intuition",
+            "link_label": "Shop Emerald Treasures",
+            "shop_link": ""
+          }
+        },
+        "ethiopian_black_opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Ethiopian Black Opal",
+            "tagline": "Transformation • Intuition • Possibility",
+            "description": "<p>Ethiopian Black Opal is treasured for its dramatic dark body color and brilliant flashes of color that seem to dance with the light. Believed to inspire intuition, creativity, and personal transformation, it serves as a reminder that even in life's darkest moments, beauty and possibility can shine through.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Joy & Creativity",
+            "link_label": "Shop Ethiopian Black Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "fire_agate": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Fire Agate",
+            "tagline": "Protection • Courage • Vitality",
+            "description": "<p>Fire Agate is believed to spark confidence, creativity, and personal power. Its fiery colors symbolize passion, motivation, and the courage to pursue your dreams.</p>",
+            "tags": "Protection & Guidance • Strength & Courage • Joy & Creativity",
+            "link_label": "Shop Fire Agate Treasures",
+            "shop_link": ""
+          }
+        },
+        "firework_jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Firework Jasper",
+            "tagline": "Joy • Creativity • Celebration",
+            "description": "<p>With its vibrant bursts of color, Firework Jasper symbolizes optimism, creativity, and embracing life's adventures. It serves as a reminder to celebrate every moment and let your unique spirit shine.</p>",
+            "tags": "Joy & Creativity • Growth & New Beginnings • Strength & Courage",
+            "link_label": "Shop Firework Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "flame_yooperlite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Flame Yooperlite",
+            "tagline": "Inner Light • Discovery • Transformation",
+            "description": "<p>Flame Yooperlite is celebrated for the hidden beauty it reveals. By day, its striking patterns resemble dancing flames, but under ultraviolet (UV) light, it glows with brilliant fiery orange veins—a breathtaking reminder that some of life's greatest beauty is found beneath the surface. Believed to inspire self-discovery, confidence, and transformation, Flame Yooperlite encourages you to embrace your authentic self and let your inner light shine.</p>",
+            "tags": "Growth & New Beginnings • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Flame Yooperlite Treasures",
+            "shop_link": ""
+          }
+        },
+        "fossil_agate": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Fossil Agate",
+            "tagline": "Ancient Wisdom • Grounding • Connection",
+            "description": "<p>Formed over millions of years, Fossil Agate symbolizes stability, patience, and a deep connection to nature. Its ancient patterns remind us that every experience shapes our journey and that beauty can be found in the passage of time.</p>",
+            "tags": "Love & Connection • Nature & Ocean • Wisdom & Intuition • Protection & Guidance",
+            "link_label": "Shop Fossil Agate Treasures",
+            "shop_link": ""
+          }
+        },
+        "garnet": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Garnet_ON_PURE_WHITE_BACKGROUND_202608082100.jpg",
+            "title": "Garnet",
+            "tagline": "Protection • Strength • Passion",
+            "description": "<p>Known as a stone of commitment and courage, Garnet inspires strength, confidence, and perseverance while encouraging deep connections and devotion.</p>",
+            "tags": "Strength & Courage • Protection & Guidance • Love & Connection",
+            "link_label": "Shop Garnet Treasures",
+            "shop_link": ""
+          }
+        },
+        "hematite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Hematite",
+            "tagline": "Grounding • Strength • Focus",
+            "description": "<p>Hematite is known as a grounding stone, associated with stability, courage, and mental clarity. Believed to encourage focus, confidence, and emotional balance, it serves as a reminder to stay present, resilient, and connected to your inner strength.</p>",
+            "tags": "Love & Connection • Protection & Guidance • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Hematite Treasures",
+            "shop_link": ""
+          }
+        },
+        "herkimer_diamond": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Herkimer Diamond",
+            "tagline": "Clarity • Energy • Manifestation",
+            "description": "<p>Prized for its natural brilliance, Herkimer Diamond is believed to amplify intentions, promote spiritual growth, and inspire clear thinking.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Luck & Abundance",
+            "link_label": "Shop Herkimer Diamond Treasures",
+            "shop_link": ""
+          }
+        },
+        "hessonite_garnet": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Hessonite Garnet",
+            "tagline": "Confidence • Courage • Abundance",
+            "description": "<p>Hessonite Garnet is a distinctive variety of Garnet known for its warm honey, cinnamon, and reddish-orange hues. It is associated with confidence, courage, and prosperity, serving as a reminder to trust your abilities, release self-doubt, and move toward new opportunities with purpose.</p>",
+            "tags": "Strength & Courage • Luck & Abundance • Growth & New Beginnings",
+            "link_label": "Shop Hessonite Garnet Treasures",
+            "shop_link": ""
+          }
+        },
+        "hubei_turquoise": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Hubei Turquoise",
+            "tagline": "Protection • Wisdom • Good Fortune",
+            "description": "<p>Mined in China's Hubei Province, Hubei Turquoise is admired for colors ranging from vibrant blue and blue-green to deep green, often accented by a beautiful dark matrix. Like other natural Turquoise, it is associated with protection, wisdom, and good fortune, while its distinctive coloring and matrix give each stone its own character.</p>",
+            "tags": "Protection & Guidance • Wisdom & Intuition • Luck & Abundance • Nature & Ocean",
+            "link_label": "Shop Hubei Turquoise Treasures",
+            "shop_link": ""
+          }
+        },
+        "imperial_jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Imperial Jasper",
+            "tagline": "Strength • Balance • Wholeness",
+            "description": "<p>Imperial Jasper is prized for its beautiful natural patterns and wide range of earthy and vibrant colors. Associated with stability, resilience, and emotional balance, it serves as a reminder to embrace every part of your journey and find strength in becoming fully yourself.</p>",
+            "tags": "Strength & Courage • Protection & Guidance • Growth & New Beginnings",
+            "link_label": "Shop Imperial Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "indian_agate": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Indian Agate (also known as Indian Jasper)",
+            "tagline": "Grounding • Growth • Harmony",
+            "description": "<p>Known for its rich earth tones, Indian Agate is believed to promote balance, stability, and personal growth. It serves as a reminder to stay grounded, embrace change with confidence, and find beauty in every step of your journey.</p>",
+            "tags": "Growth & New Beginnings • Protection & Guidance • Strength & Courage • Nature & Ocean",
+            "link_label": "Shop Indian Agate Treasures",
+            "shop_link": ""
+          }
+        },
+        "jade": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Jade_ON_PURE_WHITE_BACKGROUND_202608082101.jpg",
+            "title": "Jade",
+            "tagline": "Harmony • Good Fortune • Prosperity",
+            "description": "<p>A revered stone of harmony and luck, Jade is believed to bring good fortune, emotional peace, and prosperity, serving as a reminder to live in balance.</p>",
+            "tags": "Luck & Abundance • Protection & Guidance • Love & Connection",
+            "link_label": "Shop Jade Treasures",
+            "shop_link": ""
+          }
+        },
+        "jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Jasper",
+            "tagline": "Stability • Nurturing • Strength",
+            "description": "<p>Known as the \"Supreme Nurturer,\" Jasper is associated with grounding, resilience, and emotional balance. It encourages strength, stability, and finding peace through life's changing seasons.</p>",
+            "tags": "Protection & Guidance • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "kyanite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Kyanite",
+            "tagline": "Alignment • Balance • Communication",
+            "description": "<p>Kyanite is believed to promote balance, clear communication, and energetic alignment. It is often chosen by those seeking focus, harmony, and personal growth.</p>",
+            "tags": "Wisdom & Intuition • Love & Connection • Growth & New Beginnings",
+            "link_label": "Shop Kyanite Treasures",
+            "shop_link": ""
+          }
+        },
+        "labradorite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Labradorite",
+            "tagline": "Transformation • Intuition • Magic",
+            "description": "<p>With its mesmerizing flashes of color, Labradorite is often called the stone of magic and transformation. It is believed to inspire self-discovery, intuition, and personal growth.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Protection & Guidance",
+            "link_label": "Shop Labradorite Treasures",
+            "shop_link": ""
+          }
+        },
+        "lapis_lazuli": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Lapis_lazuli_on_white_background_202608082103.jpg",
+            "title": "Lapis Lazuli",
+            "tagline": "Wisdom • Truth • Inner Strength",
+            "description": "<p>Treasured for thousands of years, Lapis Lazuli is associated with wisdom, self-awareness, and authentic expression. Believed to encourage confidence and clarity, it serves as a reminder to trust your voice, speak your truth, and lead with integrity.</p>",
+            "tags": "Wisdom & Intuition • Strength & Courage • Love & Connection",
+            "link_label": "Shop Lapis Lazuli Treasures",
+            "shop_link": ""
+          }
+        },
+        "lemon_quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Lemon Quartz",
+            "tagline": "Clarity • Optimism • Abundance",
+            "description": "<p>Radiating bright, sunny energy, Lemon Quartz is believed to encourage mental clarity, confidence, and positive thinking. It serves as a reminder to embrace new opportunities, trust your inner wisdom, and welcome abundance with an open heart.</p>",
+            "tags": "Luck & Abundance • Joy & Creativity • Wisdom & Intuition • Growth & New Beginnings",
+            "link_label": "Shop Lemon Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "magnetic_hematite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Magnetic Hematite",
+            "tagline": "Grounding • Balance • Energy",
+            "description": "<p>Inspired by the symbolism of natural hematite, Magnetic Hematite is associated with grounding, focus, and emotional balance. Some believe its magnetic properties may help support relaxation and overall energetic well-being, while serving as a reminder to stay centered and connected to your inner strength. Magnetic Hematite is a man-made material with magnetic properties inspired by natural hematite.</p>",
+            "tags": "Protection & Guidance • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Magnetic Hematite Treasures",
+            "shop_link": ""
+          }
+        },
+        "matrix_turquoise": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Matrix Turquoise",
+            "tagline": "Protection • Wisdom • Connection",
+            "description": "<p>Matrix Turquoise features the natural host-rock veining, or \"matrix,\" that runs through the stone, creating distinctive patterns that make every bead unique. Like Turquoise, it is associated with protection, wisdom, and good fortune, while its earthy matrix symbolizes grounding and our connection to the natural world.</p>",
+            "tags": "Protection & Guidance • Wisdom & Intuition • Luck & Abundance • Nature & Ocean",
+            "link_label": "Shop Matrix Turquoise Treasures",
+            "shop_link": ""
+          }
+        },
+        "moonstone": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Moonstone_ON_PURE_WHITE_BACKGROUND_202608082105.jpg",
+            "title": "Moonstone",
+            "tagline": "Intuition • New Beginnings • Feminine Energy",
+            "description": "<p>Long associated with the moon and its ever-changing cycles, Moonstone is believed to inspire intuition, emotional balance, and new beginnings. It serves as a reminder to trust your inner wisdom, embrace change with grace, and honor every stage of your journey.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Celestial Symbols • Love & Connection",
+            "link_label": "Shop Moonstone Treasures",
+            "shop_link": ""
+          }
+        },
+        "mookaite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Mookaite",
+            "tagline": "Adventure • Confidence • Vitality",
+            "description": "<p>Found primarily in Western Australia, Mookaite is known for its beautiful mix of earthy reds, golden yellows, creams, and burgundy tones. It is associated with confidence, adventure, and personal growth, encouraging you to embrace new experiences, trust your instincts, and move forward while staying grounded in who you are.</p>",
+            "tags": "Strength & Courage • Growth & New Beginnings • Wisdom & Intuition • Nature & Ocean",
+            "link_label": "Shop Mookaite Treasures",
+            "shop_link": ""
+          }
+        },
+        "morganite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Morganite",
+            "tagline": "Compassion • Joy • Divine Love",
+            "description": "<p>With its soft blush tones, Morganite is believed to inspire compassion, emotional healing, and unconditional love. It serves as a reminder to open your heart, nurture meaningful connections, and find beauty in kindness and forgiveness.</p>",
+            "tags": "Love & Connection • Joy & Creativity",
+            "link_label": "Shop Morganite Treasures",
+            "shop_link": ""
+          }
+        },
+        "moss_agate": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Moss Agate",
+            "tagline": "Growth • Abundance • Connection to Nature",
+            "description": "<p>With patterns reminiscent of lush forests and winding moss, Moss Agate is believed to inspire growth, abundance, and harmony with the natural world. It serves as a reminder to stay rooted, embrace new beginnings, and flourish through every season of life.</p>",
+            "tags": "Love & Connection • Growth & New Beginnings • Luck & Abundance • Nature & Ocean",
+            "link_label": "Shop Moss Agate Treasures",
+            "shop_link": ""
+          }
+        },
+        "obsidian": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Obsidian",
+            "tagline": "Protection • Grounding • Strength",
+            "description": "<p>Formed from rapidly cooled volcanic lava, Obsidian is a natural volcanic glass treasured for its deep, reflective beauty. Long associated with protection and grounding, it is believed to help release negative energy, encourage self-awareness, and inspire the strength to move forward with clarity and confidence.</p>",
+            "tags": "Protection & Guidance • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Obsidian Treasures",
+            "shop_link": ""
+          }
+        },
+        "opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Opal_ON_PURE_WHITE_BACKGROUND_202608082106.jpg",
+            "title": "Opal",
+            "tagline": "Inspiration • Hope • Creativity",
+            "description": "<p>Known for its captivating play of color, Opal symbolizes imagination, hope, and embracing your unique spirit. Believed to inspire creativity, joy, and emotional expression, it serves as a reminder to shine brightly and celebrate the beauty of being yourself.</p>",
+            "tags": "Joy & Creativity • Growth & New Beginnings • Wisdom & Intuition",
+            "link_label": "Shop Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "orange_aventurine": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Orange Aventurine",
+            "tagline": "Creativity • Joy • Vitality",
+            "description": "<p>Radiating warmth and positive energy, Orange Aventurine is believed to spark creativity, inspire optimism, and encourage confidence. It serves as a reminder to embrace new experiences, celebrate life's adventures, and let your imagination shine.</p>",
+            "tags": "Joy & Creativity • Growth & New Beginnings • Strength & Courage",
+            "link_label": "Shop Orange Aventurine Treasures",
+            "shop_link": ""
+          }
+        },
+        "pakistan_k2_stone": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Pakistan K2 Stone",
+            "tagline": "Balance • Adventure • Inner Wisdom",
+            "description": "<p>K2 Stone is known for its striking blue or green mineral spots scattered across a pale granite background and is named for the K2 mountain region with which the material is associated. Its contrasting colors symbolize the balance between staying grounded and reaching higher, making it a meaningful reminder to trust your inner wisdom while embracing life's adventures.</p>",
+            "tags": "Wisdom & Intuition • Strength & Courage • Growth & New Beginnings • Nature & Ocean",
+            "link_label": "Shop Pakistan K2 Stone Treasures",
+            "shop_link": ""
+          }
+        },
+        "peridot": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Peridot",
+            "tagline": "Prosperity • Joy • Renewal",
+            "description": "<p>Known for its vibrant green color, Peridot is believed to attract abundance, inspire optimism, and encourage personal growth. It serves as a reminder to welcome new beginnings, appreciate life's blessings, and move forward with confidence.</p>",
+            "tags": "Luck & Abundance • Joy & Creativity • Growth & New Beginnings",
+            "link_label": "Shop Peridot Treasures",
+            "shop_link": ""
+          }
+        },
+        "phantom_quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Phantom Quartz",
+            "tagline": "Growth • Transformation • Inner Wisdom",
+            "description": "<p>Phantom Quartz contains ghost-like outlines of earlier stages of crystal growth preserved within the finished crystal. Each visible layer records a pause and new beginning in the crystal's formation, making it a beautiful symbol of growth, transformation, and the many chapters that shape who we become.</p>",
+            "tags": "Growth & New Beginnings • Wisdom & Intuition • Strength & Courage",
+            "link_label": "Shop Phantom Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "pink_opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Pink Opal",
+            "tagline": "Love • Healing • Peace",
+            "description": "<p>With its soft, calming hues, Pink Opal is believed to encourage compassion, emotional healing, and inner peace. It serves as a reminder to lead with love, embrace kindness, and open your heart to new beginnings.</p>",
+            "tags": "Love & Connection • Growth & New Beginnings",
+            "link_label": "Shop Pink Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "pink_rhodonite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Pink Rhodonite",
+            "tagline": "Compassion • Forgiveness • Emotional Healing",
+            "description": "<p>Known for its beautiful shades of pink, Pink Rhodonite is believed to nurture the heart with compassion, forgiveness, and unconditional love. It serves as a reminder to practice kindness, embrace self-love, and open your heart to meaningful connections.</p>",
+            "tags": "Love & Connection • Growth & New Beginnings",
+            "link_label": "Shop Pink Rhodonite Treasures",
+            "shop_link": ""
+          }
+        },
+        "pink_tourmaline": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Pink Tourmaline",
+            "tagline": "Love • Compassion • Emotional Strength",
+            "description": "<p>With its beautiful shades of pink, Pink Tourmaline is believed to inspire love, compassion, and emotional healing. It serves as a reminder to open your heart, embrace self-love, and find strength through kindness, forgiveness, and meaningful connections.</p>",
+            "tags": "Love & Connection • Strength & Courage",
+            "link_label": "Shop Pink Tourmaline Treasures",
+            "shop_link": ""
+          }
+        },
+        "prehnite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Prehnite",
+            "tagline": "Peace • Intuition • Healing",
+            "description": "<p>With its soft, calming green hues, Prehnite is believed to encourage inner peace, intuition, and emotional healing. It serves as a reminder to trust your heart, let go of what no longer serves you, and embrace life's journey with clarity and compassion.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Love & Connection",
+            "link_label": "Shop Prehnite Treasures",
+            "shop_link": ""
+          }
+        },
+        "purple_lepidolite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Purple Lepidolite",
+            "tagline": "Peace • Transition • Inner Wisdom",
+            "description": "<p>Known for its beautiful lavender-to-purple hues, Lepidolite is associated with calm, emotional balance, and navigating times of change. It serves as a reminder to release what you cannot control, trust your inner wisdom, and move into your next chapter with grace.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Protection & Guidance",
+            "link_label": "Shop Purple Lepidolite Treasures",
+            "shop_link": ""
+          }
+        },
+        "pyrite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Pyrite",
+            "tagline": "Abundance • Confidence • Protection",
+            "description": "<p>Often called \"Fool's Gold\" for its brilliant metallic luster, Pyrite is believed to attract abundance, inspire confidence, and offer protection from negative energy. It serves as a reminder to recognize your own worth, pursue your goals with determination, and welcome opportunities with confidence.</p>",
+            "tags": "Luck & Abundance • Protection & Guidance • Strength & Courage",
+            "link_label": "Shop Pyrite Treasures",
+            "shop_link": ""
+          }
+        },
+        "quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Quartz",
+            "tagline": "Clarity • Energy • Intention",
+            "description": "<p>Quartz is one of the most abundant and versatile minerals in nature, forming in an incredible variety of colors and patterns. Often associated with clarity and positive energy, Quartz is believed to amplify intentions and the qualities of other stones, making it a meaningful symbol of focus, balance, and personal growth.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Protection & Guidance",
+            "link_label": "Shop Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "red_jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Red Jasper",
+            "tagline": "Strength • Courage • Stability",
+            "description": "<p>Known as a grounding stone, Red Jasper is believed to inspire determination, resilience, and inner strength. It serves as a reminder to stand firm in your convictions, face challenges with confidence, and move forward with courage.</p>",
+            "tags": "Strength & Courage • Protection & Guidance • Love & Connection • Growth & New Beginnings",
+            "link_label": "Shop Red Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "rose_quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Rose_Quartz_202608082108.jpg",
+            "title": "Rose Quartz",
+            "tagline": "Love • Compassion • Connection",
+            "description": "<p>Known as the Stone of Unconditional Love, Rose Quartz is believed to inspire compassion, self-love, and meaningful relationships. It serves as a reminder to open your heart, nurture kindness, and welcome love in all its forms.</p>",
+            "tags": "Love & Connection • Growth & New Beginnings",
+            "link_label": "Shop Rose Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "sandstone_goldstone": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Sandstone (Goldstone)",
+            "tagline": "Ambition • Confidence • Success",
+            "description": "<p>With its warm golden sparkle, Goldstone—often called Sandstone—is a man-made stone associated with ambition, confidence, and positive energy. It serves as a reminder that perseverance, determination, and believing in yourself can turn dreams into reality.</p>",
+            "tags": "Strength & Courage • Luck & Abundance • Joy & Creativity",
+            "link_label": "Shop Sandstone Treasures",
+            "shop_link": ""
+          }
+        },
+        "sapphire": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Sapphire",
+            "tagline": "Wisdom • Loyalty • Truth",
+            "description": "<p>Treasured for centuries as a symbol of wisdom and integrity, Sapphire is believed to inspire honesty, clarity, and inner strength. It serves as a reminder to trust your intuition, remain true to yourself, and lead with authenticity.</p>",
+            "tags": "Wisdom & Intuition • Love & Connection • Strength & Courage • Birthstone",
+            "link_label": "Shop Sapphire Treasures",
+            "shop_link": ""
+          }
+        },
+        "sea_sediment_imperial_jasper": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Sea Sediment/Imperial Jasper",
+            "tagline": "Strength • Balance • Wholeness",
+            "description": "<p>Imperial Jasper is prized for its beautiful natural patterns and wide range of earthy and vibrant colors. Associated with stability, resilience, and emotional balance, it serves as a reminder to embrace every part of your journey and find strength in becoming fully yourself.</p>",
+            "tags": "Strength & Courage • Protection & Guidance • Growth & New Beginnings",
+            "link_label": "Shop Sea Sediment/Imperial Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "sodalite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Sodalite",
+            "tagline": "Wisdom • Clarity • Communication",
+            "description": "<p>Known for its rich blue coloring, often streaked with natural white veining, Sodalite is associated with wisdom, intuition, and clear communication. It is believed to encourage thoughtful expression and self-awareness, serving as a reminder to trust your inner wisdom, speak your truth, and communicate with confidence.</p>",
+            "tags": "Wisdom & Intuition • Love & Connection • Strength & Courage",
+            "link_label": "Shop Sodalite Treasures",
+            "shop_link": ""
+          }
+        },
+        "stegodon_fossil": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Stegodon Fossil",
+            "tagline": "Ancient Wisdom • Strength • Endurance",
+            "description": "<p>Stegodon Fossil comes from an extinct relative of modern elephants that roamed the Earth millions of years ago. Naturally preserved through time, each piece carries its own shades of beige, tan, brown, gray, and black, along with natural pits and imperfections that tell the story of its ancient origin. It symbolizes endurance, strength, and our connection to the past, serving as a reminder that life's experiences become part of the story we carry forward.</p>",
+            "tags": "Strength & Courage • Wisdom & Intuition • Nature & Ocean",
+            "link_label": "Shop Stegodon Fossil Treasures",
+            "shop_link": ""
+          }
+        },
+        "strawberry_quartz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Strawberry Quartz",
+            "tagline": "Love • Joy • Gratitude",
+            "description": "<p>With its soft pink hues and sparkling inclusions, Strawberry Quartz is believed to inspire love, optimism, and emotional balance. It serves as a reminder to appreciate life's simple joys, lead with an open heart, and embrace each day with gratitude.</p>",
+            "tags": "Love & Connection • Joy & Creativity",
+            "link_label": "Shop Strawberry Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "tigers_eye": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Tiger's Eye",
+            "tagline": "Confidence • Courage • Success",
+            "description": "<p>Known for its golden bands that seem to shimmer in the light, Tiger's Eye is believed to inspire confidence, courage, and personal strength. It serves as a reminder to trust yourself, embrace new opportunities, and move forward with purpose.</p>",
+            "tags": "Strength & Courage • Luck & Abundance • Protection & Guidance",
+            "link_label": "Shop Tiger's Eye Treasures",
+            "shop_link": ""
+          }
+        },
+        "topaz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Topaz",
+            "tagline": "Confidence • Clarity • Good Fortune",
+            "description": "<p>Topaz is believed to inspire confidence, mental clarity, and a positive outlook. It serves as a reminder to trust your abilities, embrace new possibilities, and welcome abundance with an open heart.</p>",
+            "tags": "Luck & Abundance • Wisdom & Intuition • Strength & Courage • Birthstone",
+            "link_label": "Shop Topaz Treasures",
+            "shop_link": ""
+          }
+        },
+        "turquoise": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Turquoise_ON_PURE_WHITE_BACKGROUND_202608082109.jpg",
+            "title": "Turquoise",
+            "tagline": "Protection • Wisdom • Good Fortune",
+            "description": "<p>Treasured by cultures around the world for centuries, Turquoise is believed to symbolize protection, wisdom, and good fortune. It serves as a reminder to trust your journey, embrace your authentic self, and welcome life's adventures with confidence.</p>",
+            "tags": "Protection & Guidance • Wisdom & Intuition • Luck & Abundance • Nature & Ocean • Birthstone",
+            "link_label": "Shop Turquoise Treasures",
+            "shop_link": ""
+          }
+        },
+        "unakite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Unakite",
+            "tagline": "Balance • Healing • Growth",
+            "description": "<p>Known for its distinctive blend of soft green and pink, Unakite is associated with emotional balance, personal growth, and renewal. Its naturally contrasting colors symbolize harmony between the heart and mind, serving as a reminder to release the past, nurture yourself with compassion, and move forward with an open heart.</p>",
+            "tags": "Love & Connection • Growth & New Beginnings • Wisdom & Intuition • Nature & Ocean",
+            "link_label": "Shop Unakite Treasures",
+            "shop_link": ""
+          }
+        },
+        "watermelon_tourmaline": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Watermelon Tourmaline",
+            "tagline": "Love • Balance • Joy",
+            "description": "<p>Named for its beautiful natural coloring—typically a pink center surrounded by green—Watermelon Tourmaline is one of Tourmaline's most distinctive varieties. It is associated with love, emotional balance, and joy, serving as a reminder to open your heart, embrace every part of yourself, and nurture the connections that bring happiness to your life.</p>",
+            "tags": "Love & Connection • Joy & Creativity • Growth & New Beginnings",
+            "link_label": "Shop Watermelon Tourmaline Treasures",
+            "shop_link": ""
+          }
+        },
+        "white_topaz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "White Topaz",
+            "tagline": "Clarity • Intention • New Beginnings",
+            "description": "<p>Known for its clear, brilliant sparkle, White Topaz is associated with clarity, awareness, and focused intention. It is believed to encourage clear thinking and help bring purpose to your goals, serving as a reminder to trust your path, embrace new possibilities, and move forward with intention.</p>",
+            "tags": "Wisdom & Intuition • Growth & New Beginnings • Protection & Guidance • Birthstone",
+            "link_label": "Shop White Topaz Treasures",
+            "shop_link": ""
+          }
+        },
+        "yellow_opal": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Yellow Opal",
+            "tagline": "Joy • Confidence • Optimism",
+            "description": "<p>Yellow Opal is associated with happiness, creativity, and positive energy. Believed to inspire confidence and encourage new ideas, it serves as a reminder to embrace life's possibilities with optimism and an open heart.</p>",
+            "tags": "Love & Connection • Joy & Creativity • Growth & New Beginnings",
+            "link_label": "Shop Yellow Opal Treasures",
+            "shop_link": ""
+          }
+        },
+        "yellow_topaz": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Yellow Topaz",
+            "tagline": "Joy • Abundance • Confidence",
+            "description": "<p>With its warm golden-yellow hues, Yellow Topaz is associated with joy, optimism, and prosperity. It is believed to inspire confidence and positive energy while encouraging you to recognize new opportunities, celebrate your accomplishments, and welcome abundance into your life.</p>",
+            "tags": "Luck & Abundance • Joy & Creativity • Strength & Courage • Birthstone",
+            "link_label": "Shop Yellow Topaz Treasures",
+            "shop_link": ""
+          }
+        },
+        "yellow_tourmaline": {
+          "type": "gemstone",
+          "settings": {
+            "image": "",
+            "title": "Yellow Tourmaline",
+            "tagline": "Joy • Confidence • Personal Power",
+            "description": "<p>Yellow Tourmaline is a less common variety of Tourmaline, admired for its warm golden-yellow hues. It is associated with optimism, confidence, and personal power, serving as a reminder to trust your abilities, embrace life's opportunities, and let your positive energy shine.</p>",
+            "tags": "Joy & Creativity • Strength & Courage • Luck & Abundance",
+            "link_label": "Shop Yellow Tourmaline Treasures",
+            "shop_link": ""
+          }
+        },
+        "yooperlite": {
+          "type": "gemstone",
+          "settings": {
+            "image": "shopify://shop_images/Yooperlite_ON_PURE_WHITE_BACKGROUND_202608082110.jpg",
+            "title": "Yooperlite",
+            "tagline": "Inner Light • Discovery • Transformation",
+            "description": "<p>Celebrated for the hidden beauty it reveals, Yooperlite appears like an ordinary stone until exposed to ultraviolet (UV) light, where it glows with brilliant fiery orange patterns. It symbolizes self-discovery, confidence, and embracing the extraordinary within.</p>",
+            "tags": "Growth & New Beginnings • Strength & Courage • Wisdom & Intuition",
+            "link_label": "Shop Yooperlite Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "afghanite",
+        "african_turquoise",
+        "agate",
+        "amazonite",
+        "amber",
+        "amethyst",
+        "ametrine",
+        "andamooka_black_matrix_opal",
+        "andesine",
+        "angelite",
+        "aquamarine",
+        "bamboo_agate",
+        "bamboo_coral",
+        "baroque_pearl",
+        "black_old_ore_african_turquoise",
+        "black_rutilated_quartz",
+        "black_tourmaline",
+        "blue_aventurine",
+        "blue_goldstone",
+        "blue_opal",
+        "blue_sponge_coral",
+        "blue_topaz",
+        "cacoxenite",
+        "carnelian",
+        "citrine",
+        "clear_quartz",
+        "dalmatian_jasper",
+        "diopside",
+        "disco_opal",
+        "dragon_blood_jasper",
+        "dumortierite",
+        "emerald",
+        "ethiopian_black_opal",
+        "fire_agate",
+        "firework_jasper",
+        "flame_yooperlite",
+        "fossil_agate",
+        "garnet",
+        "hematite",
+        "herkimer_diamond",
+        "hessonite_garnet",
+        "hubei_turquoise",
+        "imperial_jasper",
+        "indian_agate",
+        "jade",
+        "jasper",
+        "kyanite",
+        "labradorite",
+        "lapis_lazuli",
+        "lemon_quartz",
+        "magnetic_hematite",
+        "matrix_turquoise",
+        "moonstone",
+        "mookaite",
+        "morganite",
+        "moss_agate",
+        "obsidian",
+        "opal",
+        "orange_aventurine",
+        "pakistan_k2_stone",
+        "peridot",
+        "phantom_quartz",
+        "pink_opal",
+        "pink_rhodonite",
+        "pink_tourmaline",
+        "prehnite",
+        "purple_lepidolite",
+        "pyrite",
+        "quartz",
+        "red_jasper",
+        "rose_quartz",
+        "sandstone_goldstone",
+        "sapphire",
+        "sea_sediment_imperial_jasper",
+        "sodalite",
+        "stegodon_fossil",
+        "strawberry_quartz",
+        "tigers_eye",
+        "topaz",
+        "turquoise",
+        "unakite",
+        "watermelon_tourmaline",
+        "white_topaz",
+        "yellow_opal",
+        "yellow_topaz",
+        "yellow_tourmaline",
+        "yooperlite"
+      ],
+      "settings": {
+        "title": "Gem Stones A–Z Library",
+        "title_size": "small",
+        "subtitle": "Browse our complete library of natural gemstones, raw crystals, and meaningful elements alphabetically.",
+        "description": "<p>The meanings shared throughout this guide are drawn from folklore, cultural traditions, and spiritual beliefs from around the world. They are offered as inspiration allowing you to choose the stones that resonate with your journey.</p>",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

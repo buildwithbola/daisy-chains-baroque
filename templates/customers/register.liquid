@@ -1,0 +1,115 @@
+{%- style -%}
+  .customer-register-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .register-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  }
+
+  .register-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .register-subtitle {
+    font-family: var(--font-heading-family);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color-muted);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .register-input {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+
+  .register-input:focus {
+    outline: none;
+    border-color: var(--color-text);
+  }
+
+  .register-btn {
+    width: 100%;
+    padding: 1.15rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+    margin-top: 0.5rem;
+  }
+
+  .register-btn:hover { opacity: 0.9; }
+{%- endstyle -%}
+
+<div class="customer-register-section">
+  <div class="register-card">
+    <h1 class="register-title">Create Account</h1>
+    <div class="register-subtitle">"Join our community of intention treasure lovers."</div>
+
+    {% form 'create_customer', class: 'register-form' %}
+      {% if form.errors %}
+        <div style="background:#fff0f0; border:1px solid #e0b0b0; padding:0.85rem; font-size:0.84rem; color:#b00000;">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <div>
+        <label style="display:block; font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-bottom:0.4rem;">First Name</label>
+        <input type="text" name="customer[first_name]" class="register-input" placeholder="e.g. Sarah" required>
+      </div>
+
+      <div>
+        <label style="display:block; font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-bottom:0.4rem;">Last Name</label>
+        <input type="text" name="customer[last_name]" class="register-input" placeholder="e.g. Higgins" required>
+      </div>
+
+      <div>
+        <label style="display:block; font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-bottom:0.4rem;">Email Address</label>
+        <input type="email" name="customer[email]" class="register-input" placeholder="e.g. sarah@example.com" required>
+      </div>
+
+      <div>
+        <label style="display:block; font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-bottom:0.4rem;">Password</label>
+        <input type="password" name="customer[password]" class="register-input" placeholder="••••••••" required>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:0.6rem; margin-top:0.25rem;">
+        <input type="checkbox" id="SubscribeVIP" name="customer[accepts_marketing]" checked>
+        <label for="SubscribeVIP" style="font-size:0.82rem; color:#555;">Sign up for VIP 10% OFF early release announcements &amp; pop-ups.</label>
+      </div>
+
+      <button type="submit" class="register-btn">Create Account &rarr;</button>
+
+      <div style="text-align:center; margin-top:1rem; font-size:0.84rem; color:var(--color-muted);">
+        Already have an account? <a href="{{ routes.account_login_url }}" style="color:var(--color-text); font-weight:600;">Sign In Here</a>
+      </div>
+    {% endform %}
+  </div>
+</div>

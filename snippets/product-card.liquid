@@ -1,0 +1,60 @@
+{% comment %}
+  Standardized Chan Luu Luxury Product Card Snippet
+  Usage: {% render 'product-card', product: product, show_secondary_image: section.settings.show_secondary_image %}
+{% endcomment %}
+
+<div class="product-card">
+  {% if product and product.url %}
+    <div class="product-card__image-wrapper">
+      {% unless product.available %}
+        <span class="product-badge-sold-out">Sold Out</span>
+      {% endunless %}
+
+      <button type="button" class="product-card__wishlist" data-handle="{{ product.handle | default: 'demo' }}" aria-label="Add to wishlist" onclick="event.preventDefault(); toggleWishlistItem('{{ product.handle | default: 'demo' }}', this);">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </button>
+
+      <a href="{{ product.url }}" tabindex="-1" class="product-card__image-link">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | image_url: width: 600 }}" 
+               srcset="{{ product.featured_image | image_url: width: 350 }} 350w, {{ product.featured_image | image_url: width: 600 }} 600w"
+               sizes="(max-width: 767px) 50vw, (max-width: 1200px) 25vw, 300px"
+               alt="{{ product.featured_image.alt | escape }}" 
+               class="product-card__image product-card__image--primary"
+               loading="lazy"
+               decoding="async">
+          
+          {% if product.images[1] and show_secondary_image != false %}
+            <img src="{{ product.images[1] | image_url: width: 600 }}" 
+                 srcset="{{ product.images[1] | image_url: width: 350 }} 350w, {{ product.images[1] | image_url: width: 600 }} 600w"
+                 sizes="(max-width: 767px) 50vw, (max-width: 1200px) 25vw, 300px"
+                 alt="{{ product.images[1].alt | escape }}" 
+                 class="product-card__image product-card__image--hover"
+                 loading="lazy"
+                 decoding="async">
+          {% endif %}
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+        {% endif %}
+      </a>
+    </div>
+
+    <a href="{{ product.url }}">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <div class="product-card__price">{{ product.price | money }}</div>
+    </a>
+  {% else %}
+    <div class="product-card__image-wrapper">
+      <button type="button" class="product-card__wishlist" aria-label="Add to wishlist" onclick="event.preventDefault(); this.classList.toggle('is-active');">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </button>
+      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+    </div>
+    <h3 class="product-card__title">Abalone Shell Charm Necklace</h3>
+    <div class="product-card__price">$198.00</div>
+  {% endif %}
+</div>

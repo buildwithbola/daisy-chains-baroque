@@ -1,0 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "crescent_moon": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/a2ac336cd5b278e87299d313ecfe0e53.jpg",
+            "title": "Crescent Moon",
+            "tagline": "Growth • Change • New Chapters",
+            "description": "<p>The Crescent Moon symbolizes growth, transformation, and fresh beginnings. It reminds us that every phase brings new light and even the smallest beginnings can lead to something extraordinary.</p>",
+            "link_label": "Shop Moon Treasures",
+            "shop_link": ""
+          }
+        },
+        "butterfly": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/254845e8652486a90c1d125e5076564c.jpg",
+            "title": "The Butterfly",
+            "tagline": "Transformation • Hope • Growth",
+            "description": "<p>The Butterfly is a timeless symbol of personal transformation and hope. It serves as a reminder that beautiful new beginnings often emerge from life's greatest changes.</p>",
+            "link_label": "Shop Butterfly Treasures",
+            "shop_link": ""
+          }
+        },
+        "leaf": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/9b0f03f1b9f9046e5a7bebbf96c27129.jpg",
+            "title": "The Leaf",
+            "tagline": "Renewal • Growth • Possibility",
+            "description": "<p>A symbol of life's ever-changing seasons, the Leaf represents renewal and endless possibility. It reminds us that every ending creates space for a beautiful new beginning.</p>",
+            "link_label": "Shop Leaf Treasures",
+            "shop_link": ""
+          }
+        },
+        "daffodil": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Gold_Daffodil_Pendant_Necklace_By_Shell_Seekers_Jewellery.jpg",
+            "title": "The Daffodil",
+            "tagline": "New Beginnings • Hope • Joy",
+            "description": "<p>One of the first blooms to appear as winter fades, the Daffodil symbolizes renewal and the promise of brighter days ahead, encouraging us to welcome new chapters with optimism.</p>",
+            "link_label": "Shop Floral Treasures",
+            "shop_link": ""
+          }
+        },
+        "african_turquoise": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/914f6fa33d9ecd38fd62b8cac0f012b5.jpg",
+            "title": "African Turquoise",
+            "tagline": "Growth • Evolution • Opportunity",
+            "description": "<p>Known as the 'Stone of Evolution,' African Turquoise inspires personal growth, positive change, and the confidence to embrace new opportunities with an open heart.</p>",
+            "link_label": "Shop Turquoise Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "crescent_moon",
+        "butterfly",
+        "leaf",
+        "daffodil",
+        "african_turquoise"
+      ],
+      "settings": {
+        "title": "Growth & New Beginnings",
+        "title_size": "small",
+        "subtitle": "Treasures that honor personal transformation, fresh chapters, and quiet evolution.",
+        "subtitle_size": "medium",
+        "description": "<p>Embrace change with grace and welcome new possibilities. Explore symbols of renewal, hope, and personal evolution designed for life's next chapter.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

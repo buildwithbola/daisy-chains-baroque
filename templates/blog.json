@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "title": "Stories & Journal",
+        "title_size": "medium",
+        "subtitle": "Behind the design, coastal folklore, gemstone meanings, and California lifestyle.",
+        "show_featured_post": true,
+        "show_author": true,
+        "show_date": true,
+        "show_tags": true,
+        "articles_per_page": 6,
+        "columns_desktop": 3,
+        "aspect_ratio": "3 / 4",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": ["main"]
+}

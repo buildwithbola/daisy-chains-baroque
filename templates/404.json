@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "title": "Lost at Sea — This Treasure Cannot Be Found.",
+        "title_size": "medium",
+        "subtitle": "The page you are looking for may have drifted with the tide, changed locations, or moved to a new shore.",
+        "show_search": true,
+        "show_portal_links": true,
+        "text_alignment": "center"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Discover Handcrafted Best Sellers",
+        "subtitle": "Explore our most loved baroque pearls, Abalone shells, and intention chokers.",
+        "recommendation_type": "auto",
+        "products_to_show": 4
+      }
+    }
+  },
+  "order": ["main", "recommendations"]
+}

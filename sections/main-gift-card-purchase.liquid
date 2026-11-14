@@ -1,0 +1,211 @@
+{%- style -%}
+  .gift-card-purchase-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gift-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 900px) {
+    .gift-card-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Digital Card Preview */
+  .gift-card-preview-card {
+    background: linear-gradient(135deg, #1c1c1c 0%, #2d2a26 100%);
+    color: #ffffff;
+    padding: clamp(2.5rem, 5vw, 4rem) 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border: 1px solid var(--color-accent, #c9a050);
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.58 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .gift-card-preview-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(201,160,80,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .card-preview-logo {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent, #c9a050);
+  }
+
+  .card-preview-tagline {
+    font-family: var(--font-heading-family);
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .card-preview-val {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+  }
+
+  /* Form Section */
+  .gift-card-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .gift-card-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .gift-card-subtitle {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    font-style: italic;
+    color: var(--color-muted);
+  }
+
+  .denom-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.65rem;
+    margin-top: 0.5rem;
+  }
+
+  .denom-btn {
+    padding: 0.85rem 0.5rem;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    font-weight: 600;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s ease;
+  }
+
+  .denom-btn.active, .denom-btn:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border-color: #1c1c1c;
+  }
+
+  .gift-card-buy-btn {
+    width: 100%;
+    padding: 1.2rem;
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: var(--color-button-bg, #1c1c1c);
+    color: var(--color-button-text, #ffffff);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+    margin-top: 1rem;
+  }
+
+  .gift-card-buy-btn:hover {
+    opacity: 0.9;
+  }
+{%- endstyle -%}
+
+<div class="gift-card-purchase-section">
+  <div class="gift-card-grid">
+    <!-- Left Column: Visual Digital Voucher Preview -->
+    <div>
+      <div class="gift-card-preview-card">
+        <div>
+          <div class="card-preview-logo">Daisy Chains</div>
+          <div class="card-preview-tagline">Digital Treasure Voucher</div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+          <div>
+            <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; opacity:0.8;">Never Expires</div>
+            <div style="font-size:0.72rem; opacity:0.8;">Valid Online &amp; At Live Pop-Ups</div>
+          </div>
+          <div class="card-preview-val" id="PreviewVal">$100</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Denomination Selector & Checkout Form -->
+    <div class="gift-card-form-wrapper">
+      <div>
+        <h1 class="gift-card-title">{{ section.settings.title | escape }}</h1>
+        <div class="gift-card-subtitle">"Give the gift of choice and handcrafted intention."</div>
+      </div>
+
+      <p style="font-family:var(--font-body-family); font-size:0.88rem; color:#555; line-height:1.6;">
+        Daisy Chains Digital Treasure Vouchers are delivered instantly by email with simple instructions to redeem online at <strong>Daisy-Chains.com</strong> or live in person at any California artisan pop-up market.
+      </p>
+
+      <div>
+        <label style="display:block; font-family:var(--font-body-family); font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem;">
+          Select Gift Card Amount
+        </label>
+        <div class="denom-grid">
+          <button type="button" class="denom-btn" onclick="selectAmount(50)">$50</button>
+          <button type="button" class="denom-btn active" onclick="selectAmount(100)">$100</button>
+          <button type="button" class="denom-btn" onclick="selectAmount(150)">$150</button>
+          <button type="button" class="denom-btn" onclick="selectAmount(250)">$250</button>
+        </div>
+      </div>
+
+      <div>
+        <label style="display:block; font-family:var(--font-body-family); font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.12em; margin-bottom:0.5rem;">
+          Recipient Gift Message (Optional)
+        </label>
+        <textarea rows="3" style="width:100%; padding:0.85rem; font-family:var(--font-body-family); font-size:0.88rem; border:1px solid var(--color-border);" placeholder="Add a handwritten note for the gift recipient..."></textarea>
+      </div>
+
+      <button type="button" class="gift-card-buy-btn" onclick="openTreasureChest();">Add Digital Gift Voucher to Treasure Chest &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function selectAmount(val) {
+    document.querySelectorAll('.denom-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('PreviewVal').innerText = '$' + val;
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Digital Gift Card Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Digital Treasure Voucher" }
+  ],
+  "presets": [
+    { "name": "Digital Gift Card Page" }
+  ]
+}
+{% endschema %}

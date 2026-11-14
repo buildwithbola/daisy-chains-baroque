@@ -1,0 +1,383 @@
+{%- style -%}
+  .search-page-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .search-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .search-breadcrumb--align-left { justify-content: flex-start; }
+  .search-breadcrumb--align-center { justify-content: center; }
+  .search-breadcrumb--align-right { justify-content: flex-end; }
+
+  .search-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .search-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Header */
+  .search-hero {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .search-hero--position-left { margin-left: 0; margin-right: auto; }
+  .search-hero--position-center { margin-left: auto; margin-right: auto; }
+  .search-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .search-hero--align-left { text-align: left; }
+  .search-hero--align-center { text-align: center; }
+  .search-hero--align-right { text-align: right; }
+
+  .search-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .search-hero__title--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .search-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .search-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .search-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .search-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Search Input Form */
+  .search-hero-form {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .search-hero-input {
+    width: 100%;
+    padding: 1rem 3.5rem 1rem 1.75rem;
+    font-family: var(--font-body-family);
+    font-size: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 30px;
+    background-color: #ffffff;
+    color: var(--color-text);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .search-hero-input:focus {
+    outline: none;
+    border-color: var(--color-text);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  }
+
+  .search-hero-submit {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-hero-svg {
+    width: 22px;
+    height: 22px;
+    stroke: #1c1c1c;
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  /* Quick Search Tags */
+  .quick-search-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .quick-tag-link {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .quick-tag-link:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border-color: #1c1c1c;
+  }
+
+  /* Results Header Bar */
+  .search-results-meta {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+  }
+
+  /* Product Results Grid */
+  .search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.6rem;
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .search-results-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop | default: 4 }}, 1fr);
+      gap: 1.5rem 1rem;
+    }
+  }
+
+  /* Empty Search Container */
+  .search-empty-box {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    max-width: 750px;
+    margin: 0 auto clamp(3.5rem, 6vw, 5rem) auto;
+  }
+
+  .search-empty-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-empty-subtext {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    margin-bottom: 1.75rem;
+  }
+{%- endstyle -%}
+
+<div class="search-page-section">
+  <!-- Breadcrumb -->
+  <div class="search-breadcrumb search-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>Search Treasures</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="search-hero search-hero--position-{{ section.settings.content_position }} search-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="search-hero__title search-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="search-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+
+    <!-- Prominent Search Input Field -->
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-hero-form">
+      <input type="search" name="q" value="{{ search.terms | escape }}" class="search-hero-input" placeholder="Search Abalone, Pearl, Evil Eye, Choker, Gold..." aria-label="Search treasures">
+      <button type="submit" class="search-hero-submit" aria-label="Submit Search">
+        <svg class="search-hero-svg" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Quick Search Suggestions -->
+    {% if section.settings.show_quick_search_tags %}
+      <div class="quick-search-tags">
+        <span style="font-family:var(--font-body-family); font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-muted); margin-right:0.25rem;">Popular:</span>
+        <a href="/search?q=Abalone" class="quick-tag-link">Abalone Shell</a>
+        <a href="/search?q=Pearl" class="quick-tag-link">Baroque Pearl</a>
+        <a href="/search?q=Evil+Eye" class="quick-tag-link">Evil Eye</a>
+        <a href="/search?q=Bikini" class="quick-tag-link">18K Gold Bikini Charms</a>
+        <a href="/search?q=Coral" class="quick-tag-link">Red Coral</a>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Search Results Content -->
+  {% if search.performed %}
+    {% paginate search.results by section.settings.products_per_page %}
+      {% if search.results_count > 0 %}
+        <div class="search-results-meta">
+          <span>Showing <strong>{{ search.results_count }}</strong> {{ search.results_count | pluralize: 'treasure', 'treasures' }} matching "<strong>{{ search.terms | escape }}</strong>"</span>
+          <span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+        </div>
+
+        <div class="search-results-grid">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              {% render 'product-card', product: item, show_secondary_image: true %}
+            {% elsif item.object_type == 'article' %}
+              <a href="{{ item.url }}" style="text-decoration:none; color:inherit; background:var(--color-surface-warm); border:1px solid var(--color-border); padding:1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
+                <span style="font-size:0.72rem; font-weight:700; text-transform:uppercase; color:var(--color-accent);">Journal Story</span>
+                <h3 style="font-family:var(--font-heading-family); font-size:1.4rem; font-weight:300; margin:0;">{{ item.title | escape }}</h3>
+                <p style="font-family:var(--font-body-family); font-size:0.84rem; color:#555;">{{ item.content | strip_html | truncate: 120 }}</p>
+                <span style="font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-top:auto;">Read Article &rarr;</span>
+              </a>
+            {% else %}
+              <a href="{{ item.url }}" style="text-decoration:none; color:inherit; background:var(--color-surface-warm); border:1px solid var(--color-border); padding:1.5rem; display:flex; flex-direction:column; gap:0.5rem;">
+                <span style="font-size:0.72rem; font-weight:700; text-transform:uppercase; color:var(--color-accent);">Guide Page</span>
+                <h3 style="font-family:var(--font-heading-family); font-size:1.4rem; font-weight:300; margin:0;">{{ item.title | escape }}</h3>
+                <p style="font-family:var(--font-body-family); font-size:0.84rem; color:#555;">{{ item.content | strip_html | truncate: 120 }}</p>
+                <span style="font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-top:auto;">View Guide &rarr;</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <div style="text-align:center; margin-top:3rem;">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+      {% else %}
+        <!-- Empty Results Box -->
+        <div class="search-empty-box">
+          <h2 class="search-empty-title">No Treasures Found</h2>
+          <div class="search-empty-subtext">
+            We couldn't find any items matching "<strong>{{ search.terms | escape }}</strong>". Try searching for <em>Abalone, Pearl, Evil Eye, Gold, or Choker</em>.
+          </div>
+          <a href="/collections/all" class="btn-solid" style="display:inline-block; padding:0.9rem 1.8rem; background:#1c1c1c; color:#fff; text-decoration:none; font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.14em;">Browse All Treasures &rarr;</a>
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  {% else %}
+    <!-- Search Not Performed Yet: Show Real Shopify Trending Treasures -->
+    <div style="margin-top:3rem;">
+      <div style="text-align:center; margin-bottom:2rem;">
+        <h2 style="font-family:var(--font-heading-family); font-size:2rem; font-weight:300; margin-bottom:0.4rem;">Trending Treasures</h2>
+        <div style="font-family:var(--font-body-family); font-size:0.85rem; color:var(--color-muted);">Explore our most loved handcrafted baroque pieces.</div>
+      </div>
+
+      <div class="search-results-grid">
+        {% assign trending_coll = section.settings.trending_collection | default: collections['all'] %}
+        {% if section.settings.trending_products != blank %}
+          {% for product_item in section.settings.trending_products limit: 4 %}
+            {% render 'product-card', product: product_item, show_secondary_image: true %}
+          {% endfor %}
+        {% elsif trending_coll.products.size > 0 %}
+          {% for product_item in trending_coll.products limit: 4 %}
+            {% render 'product-card', product: product_item, show_secondary_image: true %}
+          {% endfor %}
+        {% else %}
+          {% for i in (1..4) %}
+            {% render 'product-card', product: nil %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Search Results Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Search Treasures" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Discover handcrafted baroque jewelry, intention charms, and gemstone folklore stories." },
+    { "type": "checkbox", "id": "show_quick_search_tags", "label": "Show Quick Search Tag Pills", "default": true },
+    { "type": "collection", "id": "trending_collection", "label": "Trending Treasures Collection Source" },
+    { "type": "product_list", "id": "trending_products", "label": "Manual Trending Products Override", "limit": 4 },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "label": "Results per Page",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    { "name": "Search Results Page" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,100 @@
+{%- style -%}
+  .order-detail-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .order-header {
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.5rem;
+  }
+
+  .order-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .order-table th {
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+    padding: 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .order-table td {
+    padding: 1rem 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+{%- endstyle -%}
+
+<div class="order-detail-section">
+  <div class="order-header">
+    <div>
+      <h1 class="order-title">Order {{ order.name }}</h1>
+      <div style="font-family:var(--font-body-family); font-size:0.85rem; color:var(--color-muted);">Placed on {{ order.created_at | date: "%B %d, %Y at %I:%M %p" }}</div>
+    </div>
+    <a href="{{ routes.account_url }}" style="font-family:var(--font-body-family); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--color-text); text-decoration:none;">&larr; Back to Account</a>
+  </div>
+
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>SKU</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th style="text-align:right;">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for line_item in order.line_items %}
+        <tr>
+          <td>
+            <div style="font-weight:600;">{{ line_item.title }}</div>
+            {% if line_item.fulfillment %}
+              <div style="font-size:0.78rem; color:var(--color-accent); margin-top:0.25rem;">
+                Fulfilled on {{ line_item.fulfillment.created_at | date: "%b %d" }} &bull; Track: <a href="{{ line_item.fulfillment.tracking_url }}" target="_blank" rel="noopener">{{ line_item.fulfillment.tracking_number }}</a>
+              </div>
+            {% endif %}
+          </td>
+          <td>{{ line_item.sku }}</td>
+          <td>{{ line_item.original_price | money }}</td>
+          <td>{{ line_item.quantity }}</td>
+          <td style="text-align:right; font-weight:600;">{{ line_item.final_line_price | money }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" style="text-align:right; color:var(--color-muted);">Subtotal:</td>
+        <td style="text-align:right; font-weight:600;">{{ order.line_items_subtotal_price | money }}</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:right; color:var(--color-muted);">Shipping:</td>
+        <td style="text-align:right; font-weight:600;">{{ order.shipping_price | money }}</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:right; font-size:1.1rem; font-family:var(--font-heading-family); font-weight:300;">Grand Total:</td>
+        <td style="text-align:right; font-size:1.2rem; font-weight:700; color:var(--color-text);">{{ order.total_price | money }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

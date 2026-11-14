@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-gift-card-purchase",
+      "settings": {
+        "title": "Digital Treasure Voucher"
+      }
+    }
+  },
+  "order": ["main"]
+}

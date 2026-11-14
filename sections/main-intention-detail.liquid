@@ -1,0 +1,355 @@
+{%- style -%}
+  .intention-detail-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumbs */
+  .intention-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .intention-breadcrumb--align-left { justify-content: flex-start; }
+  .intention-breadcrumb--align-center { justify-content: center; }
+  .intention-breadcrumb--align-right { justify-content: flex-end; }
+
+  .intention-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .intention-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  .intention-breadcrumb__sep {
+    font-size: 0.5rem;
+    opacity: 0.4;
+  }
+
+  /* Hero Banner */
+  .intention-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .intention-hero--position-left { margin-left: 0; margin-right: auto; }
+  .intention-hero--position-center { margin-left: auto; margin-right: auto; }
+  .intention-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .intention-hero--align-left { text-align: left; }
+  .intention-hero--align-center { text-align: center; }
+  .intention-hero--align-right { text-align: right; }
+
+  .intention-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .intention-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .intention-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .intention-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .intention-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  .intention-hero__subtitle--small { font-size: clamp(1rem, 1.6vw, 1.2rem); }
+  .intention-hero__subtitle--medium { font-size: clamp(1.15rem, 2vw, 1.4rem); }
+  .intention-hero__subtitle--large { font-size: clamp(1.3rem, 2.5vw, 1.7rem); }
+
+  .intention-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .intention-hero__description {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.65;
+  }
+
+  /* Symbol Detail Cards Grid */
+  .intention-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem 1.5rem;
+    margin-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    .intention-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .intention-cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 2rem;
+    }
+  }
+
+  .symbol-detail-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  }
+
+  .symbol-detail-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  .symbol-detail-card__image-wrapper {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .symbol-detail-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .symbol-detail-card:hover .symbol-detail-card__image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .symbol-detail-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .symbol-detail-card__tag {
+    font-family: var(--font-body-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-accent);
+    margin-bottom: 0.35rem;
+  }
+
+  .symbol-detail-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0 0 0.65rem 0;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  .symbol-detail-card__body {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+
+  .symbol-detail-card__link {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    align-self: flex-start;
+  }
+
+  /* Shoppable Section Header */
+  .intention-shoppable-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    border-top: 1px solid var(--color-border);
+    padding-top: clamp(3rem, 6vw, 5rem);
+  }
+
+  .intention-shoppable-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+{%- endstyle -%}
+
+<div class="intention-detail-section">
+  <!-- Breadcrumbs -->
+  <div class="intention-breadcrumb intention-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/pages/symbols-and-stories">Meanings &amp; Symbolism</a>
+    <span class="intention-breadcrumb__sep">&#9679;</span>
+    <span>{{ section.settings.title }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="intention-hero intention-hero--position-{{ section.settings.content_position }} intention-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="intention-hero__title intention-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="intention-hero__subtitle intention-hero__subtitle--{{ section.settings.subtitle_size }}">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="intention-hero__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Symbol Detail Cards Grid -->
+  <div class="intention-cards-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'symbol_detail' %}
+        <div class="symbol-detail-card" {{ block.shopify_attributes }}>
+          <div class="symbol-detail-card__image-wrapper">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 900 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+          <div class="symbol-detail-card__content">
+            {% if block.settings.tagline != blank %}
+              <div class="symbol-detail-card__tag">{{ block.settings.tagline | escape }}</div>
+            {% endif %}
+
+            <h3 class="symbol-detail-card__title">{{ block.settings.title | escape }}</h3>
+            
+            <div class="symbol-detail-card__body">
+              {{ block.settings.description }}
+            </div>
+
+            {% if block.settings.shop_link != blank %}
+              <a href="{{ block.settings.shop_link }}" class="symbol-detail-card__link link-underlined">
+                {{ block.settings.link_label | default: "Discover Treasures" | escape }} &rarr;
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Shoppable Treasures Section -->
+  {% if section.settings.collection != blank %}
+    <div class="intention-shoppable-header">
+      <h2 class="intention-shoppable-title">Shop {{ section.settings.title | escape }} Treasures</h2>
+      <p style="font-family: var(--font-body-family); font-size: 0.88rem; color: var(--color-muted);">
+        Handcrafted jewelry imbued with the spirit of {{ section.settings.title | escape | downcase }}.
+      </p>
+    </div>
+
+    <div class="chan-luu-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem 0.75rem;">
+      {% for product in section.settings.collection.products limit: 4 %}
+        {% render 'product-card', product: product %}
+      {% else %}
+        {% for i in (1..4) %}
+          {% render 'product-card', product: nil %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Intention Sub-Page Detail",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Intention Title", "default": "Love & Connection" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Treasures that celebrate deep bonds, devotion, and meaningful relationships." },
+    {
+      "type": "select",
+      "id": "subtitle_size",
+      "label": "Subtitle Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "richtext", "id": "description", "label": "Intro Narrative", "default": "<p>Love is at the heart of every story we tell. Explore symbols that honor romantic devotion, family connection, friendship, and self-love.</p>" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    { "type": "collection", "id": "collection", "label": "Featured Shoppable Collection" }
+  ],
+  "blocks": [
+    {
+      "type": "symbol_detail",
+      "name": "Symbol Detail Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Symbol Image" },
+        { "type": "text", "id": "title", "label": "Symbol Title", "default": "The Heart" },
+        { "type": "text", "id": "tagline", "label": "Intention Keywords", "default": "Love • Compassion • Connection" },
+        { "type": "richtext", "id": "description", "label": "Meaning Narrative", "default": "<p>The Heart is the universal symbol of love, compassion, and meaningful connection. It serves as a reminder to lead with kindness, open your heart to others, and cherish the relationships that make life beautiful.</p>" },
+        { "type": "text", "id": "link_label", "label": "Link Text", "default": "Shop Heart Treasures" },
+        { "type": "url", "id": "shop_link", "label": "Shop Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Intention Sub-Page Detail"
+    }
+  ]
+}
+{% endschema %}

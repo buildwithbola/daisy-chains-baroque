@@ -1,0 +1,151 @@
+{%- style -%}
+  .product-carousel-section {
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .product-carousel-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .product-carousel-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .product-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-carousel__item {
+    scroll-snap-align: start;
+    flex: 0 0 calc(75vw - 1rem);
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-carousel__item {
+      flex: 0 0 calc(25% - 1.15rem);
+    }
+  }
+{%- endstyle -%}
+
+{% assign selected_collection = section.settings.collection %}
+{% if selected_collection != blank and selected_collection.products.size > 0 %}
+  {% assign carousel_products = selected_collection.products %}
+{% elsif collections.all.products.size > 0 %}
+  {% assign carousel_products = collections.all.products %}
+{% else %}
+  {% assign carousel_products = nil %}
+{% endif %}
+
+<div class="product-carousel-section">
+  {% if section.settings.title != blank %}
+    <div class="product-carousel-header">
+      <h2 class="product-carousel-title">{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="product-carousel">
+    {% if carousel_products != nil and carousel_products.size > 0 %}
+      {% for product in carousel_products limit: section.settings.product_limit %}
+        <div class="product-carousel__item">
+          {% render 'product-card', product: product, show_secondary_image: section.settings.show_secondary_image %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="product-carousel__item">
+        <div class="product-card">
+          <div class="product-card__image-wrapper">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+          </div>
+          <h3 class="product-card__title">Baroque Pearl Intention Necklace</h3>
+          <div class="product-card__price">$245.00</div>
+        </div>
+      </div>
+
+      <div class="product-carousel__item">
+        <div class="product-card">
+          <div class="product-card__image-wrapper">
+            {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+          </div>
+          <h3 class="product-card__title">Abalone Shell &amp; Gold Charm</h3>
+          <div class="product-card__price">$198.00</div>
+        </div>
+      </div>
+
+      <div class="product-carousel__item">
+        <div class="product-card">
+          <div class="product-card__image-wrapper">
+            {{ 'product-3' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+          </div>
+          <h3 class="product-card__title">Golden Sunburst Pendant</h3>
+          <div class="product-card__price">$175.00</div>
+        </div>
+      </div>
+
+      <div class="product-carousel__item">
+        <div class="product-card">
+          <div class="product-card__image-wrapper">
+            {{ 'product-4' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+          </div>
+          <h3 class="product-card__title">Tahitian Pearl Mala Bracelet</h3>
+          <div class="product-card__price">$130.00</div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "New Discoveries"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "label": "Maximum products to show",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show secondary image on hover"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Carousel"
+    }
+  ]
+}
+{% endschema %}

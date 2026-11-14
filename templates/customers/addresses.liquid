@@ -1,0 +1,120 @@
+{%- style -%}
+  .addresses-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .addresses-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .addresses-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .addresses-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .addresses-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .address-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+  }
+
+  .default-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0.65rem;
+    border-radius: 12px;
+  }
+
+  .address-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .btn-sm {
+    padding: 0.5rem 0.85rem;
+    font-family: var(--font-body-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: transparent;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-sm:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+{%- endstyle -%}
+
+<div class="addresses-section">
+  <div class="addresses-header">
+    <h1 class="addresses-title">Saved Shipping Addresses</h1>
+    <div style="font-family:var(--font-body-family); font-size:0.85rem; color:var(--color-muted);">
+      <a href="{{ routes.account_url }}" style="color:var(--color-text);">&larr; Return to Account Dashboard</a>
+    </div>
+  </div>
+
+  <div class="addresses-grid">
+    {% for address in customer.addresses %}
+      <div class="address-card">
+        {% if address == customer.default_address %}
+          <span class="default-badge">Primary Address</span>
+        {% endif %}
+
+        <div style="font-family:var(--font-heading-family); font-size:1.4rem; font-weight:300;">
+          {{ address.first_name }} {{ address.last_name }}
+        </div>
+
+        <div style="font-family:var(--font-body-family); font-size:0.88rem; color:#444; line-height:1.6;">
+          {{ address.address1 }}<br>
+          {% if address.address2 != blank %}{{ address.address2 }}<br>{% endif %}
+          {{ address.city }}, {{ address.province_code }} {{ address.zip }}<br>
+          {{ address.country }}
+        </div>
+
+        <div class="address-actions">
+          <button type="button" class="btn-sm" onclick="alert('Address editing enabled');">Edit Address</button>
+          <form method="post" action="/account/addresses/{{ address.id }}" onsubmit="return confirm('Delete address?');">
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit" class="btn-sm" style="color:#b00000; border-color:#e0b0b0;">Delete</button>
+          </form>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

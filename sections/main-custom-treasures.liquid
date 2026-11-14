@@ -1,0 +1,534 @@
+{%- style -%}
+  .custom-treasures-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .custom-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .custom-breadcrumb--align-left { justify-content: flex-start; }
+  .custom-breadcrumb--align-center { justify-content: center; }
+  .custom-breadcrumb--align-right { justify-content: flex-end; }
+
+  .custom-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .custom-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Banner */
+  .custom-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .custom-hero--position-left { margin-left: 0; margin-right: auto; }
+  .custom-hero--position-center { margin-left: auto; margin-right: auto; }
+  .custom-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .custom-hero--align-left { text-align: left; }
+  .custom-hero--align-center { text-align: center; }
+  .custom-hero--align-right { text-align: right; }
+
+  .custom-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .custom-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .custom-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .custom-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .custom-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .custom-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .custom-hero__description {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.65;
+  }
+
+  /* 2-Column Info Grid */
+  .custom-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  @media screen and (min-width: 900px) {
+    .custom-info-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.5rem;
+    }
+  }
+
+  .custom-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-card__tag {
+    font-family: var(--font-body-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-card__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .custom-card__body {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .party-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .party-checklist li {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: default;
+  }
+
+  .party-checklist__icon {
+    width: 14px;
+    height: 14px;
+    stroke: #1c1c1c;
+    stroke-width: 1.8;
+    fill: none;
+    flex-shrink: 0;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+  }
+
+  .party-checklist li:hover .party-checklist__icon {
+    fill: var(--color-accent, #c9a050);
+    stroke: #1c1c1c;
+  }
+
+  /* Form Wrapper */
+  .custom-form-wrapper {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 5vw, 4rem);
+    max-width: 850px;
+    margin: 0 auto;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.03);
+  }
+
+  .custom-form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .custom-form-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-form-subtitle {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+  }
+
+  .custom-form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .custom-form-label {
+    display: block;
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .custom-form-input,
+  .custom-form-select,
+  .custom-form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border);
+    background-color: #ffffff;
+    color: var(--color-text);
+    transition: border-color 0.25s ease;
+  }
+
+  .custom-form-input:focus,
+  .custom-form-select:focus,
+  .custom-form-textarea:focus {
+    outline: none;
+    border-color: var(--color-text);
+  }
+
+  /* Hand-Drawn Black File Upload Dropzone with Hover Accent Color Fill */
+  .upload-dropzone {
+    position: relative;
+    border: 1.5px dashed #1c1c1c;
+    background-color: var(--color-surface-warm);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .upload-dropzone:hover {
+    border-color: #000000;
+    background-color: #ffffff;
+  }
+
+  .upload-dropzone input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .upload-icon-wrapper {
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hand-drawn-camera-svg {
+    width: 44px;
+    height: 44px;
+    stroke: #1c1c1c;
+    stroke-width: 1.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: fill 0.35s ease, stroke 0.35s ease, transform 0.35s ease;
+  }
+
+  .upload-dropzone:hover .hand-drawn-camera-svg {
+    fill: var(--color-accent, #c9a050);
+    stroke: #1c1c1c;
+    transform: scale(1.08);
+  }
+
+  .upload-text {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .upload-hint {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    color: var(--color-muted);
+  }
+
+  .upload-preview {
+    display: none;
+    margin-top: 1rem;
+    max-height: 180px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .custom-submit-btn {
+    width: 100%;
+    padding: 1.15rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+  }
+
+  .custom-submit-btn:hover {
+    opacity: 0.9;
+  }
+{%- endstyle -%}
+
+<div class="custom-treasures-section">
+  <!-- Breadcrumb -->
+  <div class="custom-breadcrumb custom-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ section.settings.title }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="custom-hero custom-hero--position-{{ section.settings.content_position }} custom-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="custom-hero__title custom-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="custom-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="custom-hero__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 2-Column Story Grid -->
+  <div class="custom-info-grid">
+    <!-- Column 1: Custom Jewelry Design -->
+    <div class="custom-card">
+      <span class="custom-card__tag">One-of-a-Kind Collaboration</span>
+      <h2 class="custom-card__title">Custom Jewelry Designs</h2>
+      <div class="custom-card__body">
+        <p>Looking for something truly personal? Whether you're searching for the perfect gift, creating jewelry for a bridal party, commemorating a special milestone, or reimagining a vacation shell, Jenny collaborates directly with you to bring your vision to life.</p>
+        <p>Some of our favorite pieces begin with a story—incorporating a meaningful stone, charm, or heirloom element that carries deep significance.</p>
+      </div>
+    </div>
+
+    <!-- Column 2: Private Jewelry Parties -->
+    <div class="custom-card">
+      <span class="custom-card__tag">SF Bay Area Experiences</span>
+      <h2 class="custom-card__title">Treasure Making Parties</h2>
+      <div class="custom-card__body">
+        <p>Looking for a fun and creative way to celebrate with friends? Jenny offers private jewelry-making parties throughout the San Francisco Bay Area. We bring the tools, materials, gemstones, pearls, and guidance—you bring the friends, wine, and fun!</p>
+        
+        <ul class="party-checklist">
+          <li>
+            <svg class="party-checklist__icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Bridal Parties
+          </li>
+          <li>
+            <svg class="party-checklist__icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Birthday Celebrations
+          </li>
+          <li>
+            <svg class="party-checklist__icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Girls' Nights
+          </li>
+          <li>
+            <svg class="party-checklist__icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Team-Building Events
+          </li>
+          <li>
+            <svg class="party-checklist__icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Mother's Day
+          </li>
+          <li>
+            <svg class="party-checklist__icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Just Because
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inquiry & Design Upload Form -->
+  <div class="custom-form-wrapper">
+    <div class="custom-form-header">
+      <h2 class="custom-form-title">Start Your Custom Inquiry</h2>
+      <div class="custom-form-subtitle">Fill out the details below to request a custom design or book a private workshop.</div>
+    </div>
+
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <div style="padding:1.25rem; background-color:#eef8f2; color:#1b6338; text-align:center; font-family:var(--font-body-family); margin-bottom:1.5rem;">
+          Thank you! Your custom inquiry and design inspiration have been received. Jenny will be in touch shortly.
+        </div>
+      {% endif %}
+
+      {% if form.errors %}
+        <div style="padding:1.25rem; background-color:#fdf2f2; color:#b91c1c; text-align:center; font-family:var(--font-body-family); margin-bottom:1.5rem;">
+          {{ form.errors | default_errors }}
+        </div>
+      {% endif %}
+
+      <div class="custom-form-group">
+        <label class="custom-form-label" for="InquiryType">Inquiry Type</label>
+        <select id="InquiryType" name="contact[Inquiry Type]" class="custom-form-select" required>
+          <option value="Custom Jewelry Design">Custom Jewelry Design Collaboration</option>
+          <option value="Treasure Making Party / Workshop">Private Treasure Making Party / Workshop (SF Bay Area)</option>
+        </select>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+        <div class="custom-form-group">
+          <label class="custom-form-label" for="ContactFormName">Full Name</label>
+          <input type="text" id="ContactFormName" name="contact[name]" class="custom-form-input" placeholder="Your name" required>
+        </div>
+
+        <div class="custom-form-group">
+          <label class="custom-form-label" for="ContactFormEmail">Email Address</label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" class="custom-form-input" placeholder="your.email@example.com" required>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+        <div class="custom-form-group">
+          <label class="custom-form-label" for="ContactFormPhone">Phone Number (Optional)</label>
+          <input type="tel" id="ContactFormPhone" name="contact[phone]" class="custom-form-input" placeholder="(555) 000-0000">
+        </div>
+
+        <div class="custom-form-group">
+          <label class="custom-form-label" for="ContactFormDate">Target Event / Delivery Date</label>
+          <input type="date" id="ContactFormDate" name="contact[Target Date]" class="custom-form-input">
+        </div>
+      </div>
+
+      <div class="custom-form-group">
+        <label class="custom-form-label" for="ContactFormMessage">Tell Us Your Vision &amp; Story</label>
+        <textarea id="ContactFormMessage" name="contact[body]" rows="5" class="custom-form-textarea" placeholder="Tell Jenny about your story, specific stones, vacation shells, or workshop party details..." required></textarea>
+      </div>
+
+      <!-- Upload Design Inspo Image Zone with Hand-Drawn Black Camera SVG -->
+      <div class="custom-form-group">
+        <label class="custom-form-label">Upload Design Inspiration Image</label>
+        <div class="upload-dropzone" id="upload-zone">
+          <input type="file" id="InspoImage" name="contact[Inspo Image]" accept="image/*" onchange="previewInspo(event)">
+          
+          <div class="upload-icon-wrapper">
+            <svg class="hand-drawn-camera-svg" viewBox="0 0 24 24">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+
+          <div class="upload-text">Click or drag &amp; drop your inspiration image here</div>
+          <div class="upload-hint">Upload sketch, vacation shell photo, or jewelry photo (JPG, PNG, WEBP)</div>
+          <img id="inspo-preview-img" class="upload-preview" alt="Inspo Preview">
+        </div>
+      </div>
+
+      <button type="submit" class="custom-submit-btn">Send Custom Inquiry &rarr;</button>
+    {% endform %}
+  </div>
+</div>
+
+<script>
+  function previewInspo(event) {
+    const input = event.target;
+    const preview = document.getElementById('inspo-preview-img');
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        preview.style.display = 'block';
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Custom Treasures Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Custom Treasures & Private Workshops" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Looking for something truly one of a kind?" },
+    { "type": "richtext", "id": "description", "label": "Hero Description", "default": "<p>Whether you're creating jewelry for a bridal party, commemorating a special milestone, or reimagining a vacation shell, Jenny is excited to collaborate with you.</p>" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Treasures Page"
+    }
+  ]
+}
+{% endschema %}

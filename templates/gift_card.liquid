@@ -1,0 +1,318 @@
+{% layout none %}
+
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Your Daisy Chains Digital Treasure Voucher</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- QR Code Script -->
+    <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer="defer"></script>
+
+    {%- style -%}
+      :root {
+        --color-background: #faf7f2;
+        --color-text: #1c1c1c;
+        --color-accent: #c9a050;
+        --color-surface-warm: #f4f0ea;
+        --color-border: #e5e0d8;
+        --color-muted: #767676;
+        --font-heading-family: 'Cormorant Garamond', Georgia, serif;
+        --font-body-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--color-background);
+        color: var(--color-text);
+        font-family: var(--font-body-family);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+      }
+
+      .gift-card-container {
+        width: 100%;
+        max-width: 580px;
+        background-color: #ffffff;
+        border: 1px solid var(--color-border);
+        box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+        padding: clamp(2rem, 5vw, 3.5rem);
+        text-align: center;
+        position: relative;
+      }
+
+      .gift-card-header {
+        margin-bottom: 2rem;
+      }
+
+      .gift-card-logo {
+        font-family: var(--font-heading-family);
+        font-size: 2.4rem;
+        font-weight: 300;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--color-text);
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .gift-card-subheading {
+        font-family: var(--font-heading-family);
+        font-size: 1.15rem;
+        font-style: italic;
+        color: var(--color-muted);
+      }
+
+      /* 3D Voucher Card Mockup */
+      .gift-card-voucher {
+        background: linear-gradient(135deg, #1c1c1c 0%, #2d2a26 100%);
+        color: #ffffff;
+        padding: 2.5rem 2rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        border: 1px solid var(--color-accent);
+        overflow: hidden;
+      }
+
+      .gift-card-voucher::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(201,160,80,0.15) 0%, transparent 60%);
+        pointer-events: none;
+      }
+
+      .voucher-brand {
+        font-family: var(--font-heading-family);
+        font-size: 1.6rem;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+        margin-bottom: 1.5rem;
+      }
+
+      .voucher-balance {
+        font-family: var(--font-heading-family);
+        font-size: 3.2rem;
+        font-weight: 300;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .voucher-status {
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        opacity: 0.75;
+      }
+
+      /* Code Box & Copy */
+      .gift-card-code-box {
+        background-color: var(--color-surface-warm);
+        border: 1px dashed var(--color-accent);
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .gift-card-code-text {
+        font-family: monospace;
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: var(--color-text);
+      }
+
+      .copy-code-btn {
+        font-family: var(--font-body-family);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        background-color: var(--color-text);
+        color: #ffffff;
+        border: none;
+        padding: 0.55rem 1rem;
+        cursor: pointer;
+        transition: opacity 0.25s ease;
+      }
+
+      .copy-code-btn:hover {
+        opacity: 0.9;
+      }
+
+      /* QR Code */
+      .gift-card-qr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      #qr-code {
+        padding: 0.75rem;
+        background: #fff;
+        border: 1px solid var(--color-border);
+      }
+
+      .qr-note {
+        font-size: 0.78rem;
+        color: var(--color-muted);
+        margin-top: 0.5rem;
+      }
+
+      /* Action Buttons */
+      .gift-card-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .btn-primary {
+        display: block;
+        width: 100%;
+        padding: 1.1rem;
+        font-family: var(--font-body-family);
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        background-color: var(--color-text);
+        color: #ffffff;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.25s ease;
+      }
+
+      .btn-primary:hover { opacity: 0.9; }
+
+      .btn-secondary {
+        display: block;
+        width: 100%;
+        padding: 0.95rem;
+        font-family: var(--font-body-family);
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        background-color: transparent;
+        color: var(--color-text);
+        border: 1px solid var(--color-text);
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: var(--color-text);
+        color: #ffffff;
+      }
+
+      .apple-wallet-badge {
+        margin-top: 0.5rem;
+        display: inline-block;
+      }
+
+      @media print {
+        .gift-card-actions, .copy-code-btn { display: none !important; }
+        body { background: #ffffff; }
+        .gift-card-container { box-shadow: none; border: none; }
+      }
+    {%- endstyle -%}
+  </head>
+  <body>
+
+    <div class="gift-card-container">
+      <!-- Header -->
+      <div class="gift-card-header">
+        <a href="{{ routes.root_url }}" class="gift-card-logo">Daisy Chains</a>
+        <div class="gift-card-subheading">Digital Treasure Voucher</div>
+      </div>
+
+      <!-- 3D Digital Card Voucher Mockup -->
+      <div class="gift-card-voucher">
+        <div class="voucher-brand">Daisy Chains</div>
+        <div class="voucher-balance">{{ gift_card.balance | money }}</div>
+        <div class="voucher-status">
+          {% if gift_card.enabled == false or gift_card.expired %}
+            Voucher Expired / Used
+          {% else %}
+            Active Digital Voucher
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Gift Card Code Box -->
+      <div class="gift-card-code-box">
+        <span class="gift-card-code-text" id="GiftCardCode">{{ gift_card.code | format_code }}</span>
+        <button class="copy-code-btn" id="CopyBtn" onclick="copyGiftCode()">Copy Code</button>
+      </div>
+
+      <!-- QR Code Container -->
+      <div class="gift-card-qr">
+        <div id="qr-code"></div>
+        <span class="qr-note">Scan live in person at any California pop-up market or boutique showcase.</span>
+      </div>
+
+      <!-- Apple Wallet Pass -->
+      {% if gift_card.pass_url %}
+        <a href="{{ gift_card.pass_url }}" class="apple-wallet-badge">
+          <img src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40" alt="Add to Apple Wallet">
+        </a>
+      {% endif %}
+
+      <!-- Action Buttons -->
+      <div class="gift-card-actions">
+        <a href="{{ shop.url }}" target="_blank" rel="noopener" class="btn-primary">Discover Your Next Treasure &rarr;</a>
+        <button class="btn-secondary" onclick="window.print()">Print Digital Voucher</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        new QRCode(document.getElementById('qr-code'), {
+          text: '{{ gift_card.qr_identifier }}',
+          width: 120,
+          height: 120,
+          colorDark: '#1c1c1c',
+          colorLight: '#ffffff'
+        });
+      });
+
+      function copyGiftCode() {
+        const codeText = document.getElementById('GiftCardCode').innerText.replace(/\s+/g, '');
+        navigator.clipboard.writeText(codeText).then(() => {
+          const btn = document.getElementById('CopyBtn');
+          btn.innerText = 'Copied! ✨';
+          setTimeout(() => { btn.innerText = 'Copy Code'; }, 2500);
+        });
+      }
+    </script>
+
+  </body>
+</html>

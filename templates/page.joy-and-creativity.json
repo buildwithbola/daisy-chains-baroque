@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "dalmatian_jasper": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/558ea6446fa3e4d36a98a361a20eb89e.jpg",
+            "title": "Dalmatian Jasper",
+            "tagline": "Joy • Playfulness • Grounding",
+            "description": "<p>With its spotted pattern, Dalmatian Jasper encourages joy, resilience, and a lighthearted spirit, reminding us to stay grounded while nurturing a sense of curiosity and play.</p>",
+            "link_label": "Shop Jasper Treasures",
+            "shop_link": ""
+          }
+        },
+        "strawberry_quartz": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Strawberry_Quartz_Crystal_Pendant_Sterling_Silver_-_strawberry_quartz_stone_pendant_-_Crystals_-_strawberry_quartz_pendant_130_1.jpg",
+            "title": "Strawberry Quartz",
+            "tagline": "Love • Gratitude • Positive Energy",
+            "description": "<p>With soft pink hues and sparkling inclusions, Strawberry Quartz inspires optimism and emotional balance, helping you appreciate life's simple pleasures with gratitude.</p>",
+            "link_label": "Shop Quartz Treasures",
+            "shop_link": ""
+          }
+        },
+        "sun": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/sun_ways.jpg",
+            "title": "The Sun",
+            "tagline": "Joy • Vitality • Confidence",
+            "description": "<p>The Sun represents warmth, joy, and vitality. It serves as a reminder to let your light shine brightly, embrace each day with confidence, and share your warmth with the world.</p>",
+            "link_label": "Shop Sun Treasures",
+            "shop_link": ""
+          }
+        },
+        "dolphin": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Dainty_Gold_Dolphin_Necklace_Sterling_Silver_CZ_Eye_Pendant_Minimalist_Ocean_Jewelry.jpg",
+            "title": "The Dolphin",
+            "tagline": "Joy • Friendship • Harmony",
+            "description": "<p>Playful and intelligent, the Dolphin symbolizes joy and meaningful connection, reminding us to nurture friendships, embrace adventure, and navigate life with curiosity.</p>",
+            "link_label": "Shop Dolphin Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "dalmatian_jasper",
+        "strawberry_quartz",
+        "sun",
+        "dolphin"
+      ],
+      "settings": {
+        "title": "Joy & Creativity",
+        "title_size": "small",
+        "subtitle": "Treasures that inspire lighthearted playfulness, self-expression, and everyday happiness.",
+        "subtitle_size": "medium",
+        "description": "<p>Celebrate life's vibrant moments and unleash your creative spirit. Explore joyful gemstones and whimsical symbols designed to bring warmth and happiness.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

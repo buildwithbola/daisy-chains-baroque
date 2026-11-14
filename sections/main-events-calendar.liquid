@@ -1,0 +1,413 @@
+{%- style -%}
+  .events-calendar-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .events-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .events-breadcrumb--align-left { justify-content: flex-start; }
+  .events-breadcrumb--align-center { justify-content: center; }
+  .events-breadcrumb--align-right { justify-content: flex-end; }
+
+  .events-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .events-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Banner */
+  .events-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .events-hero--position-left { margin-left: 0; margin-right: auto; }
+  .events-hero--position-center { margin-left: auto; margin-right: auto; }
+  .events-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .events-hero--align-left { text-align: left; }
+  .events-hero--align-center { text-align: center; }
+  .events-hero--align-right { text-align: right; }
+
+  .events-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .events-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .events-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .events-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .events-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .events-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .events-hero__description {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.65;
+  }
+
+  /* Events List */
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  .event-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+  }
+
+  @media screen and (min-width: 768px) {
+    .event-card {
+      grid-template-columns: 140px 1fr auto;
+      align-items: center;
+    }
+  }
+
+  .event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+    border-color: var(--color-text);
+  }
+
+  /* Date Badge */
+  .event-card__date-box {
+    padding: 1.75rem 1.5rem;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    .event-card__date-box {
+      border-bottom: none;
+      border-right: 1px solid var(--color-border);
+      height: 100%;
+    }
+  }
+
+  .event-card__month {
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+  }
+
+  .event-card__day {
+    font-family: var(--font-heading-family);
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-text);
+    margin: 0.2rem 0;
+  }
+
+  .event-card__year {
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    color: var(--color-muted);
+  }
+
+  /* Main Info */
+  .event-card__details {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .event-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .event-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: #555555;
+    margin-top: 0.25rem;
+  }
+
+  .event-card__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .hand-drawn-icon-svg {
+    width: 15px;
+    height: 15px;
+    stroke: #1c1c1c;
+    stroke-width: 1.4;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+    transition: fill 0.35s ease, stroke 0.35s ease, transform 0.35s ease;
+  }
+
+  .event-card:hover .hand-drawn-icon-svg {
+    fill: var(--color-accent, #c9a050);
+    stroke: #1c1c1c;
+    transform: scale(1.1);
+  }
+
+  .event-card__description {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #666666;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+
+  /* Action CTA */
+  .event-card__action {
+    padding: 1.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .event-card__btn {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid #1c1c1c;
+    background-color: transparent;
+    color: #1c1c1c;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+  }
+
+  .event-card__btn:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+
+  /* Host Event Banner */
+  .host-event-banner {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .host-event-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .host-event-subtext {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+  }
+{%- endstyle -%}
+
+<div class="events-calendar-section">
+  <!-- Breadcrumb -->
+  <div class="events-breadcrumb events-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ section.settings.title }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="events-hero events-hero--position-{{ section.settings.content_position }} events-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="events-hero__title events-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="events-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="events-hero__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Events List -->
+  <div class="events-list">
+    {% for block in section.blocks %}
+      {% if block.type == 'event_item' %}
+        <div class="event-card" {{ block.shopify_attributes }}>
+          <div class="event-card__date-box">
+            <span class="event-card__month">{{ block.settings.month | escape }}</span>
+            <span class="event-card__day">{{ block.settings.day | escape }}</span>
+            <span class="event-card__year">{{ block.settings.year | escape }}</span>
+          </div>
+
+          <div class="event-card__details">
+            <h3 class="event-card__title">{{ block.settings.title | escape }}</h3>
+            
+            <div class="event-card__meta">
+              <div class="event-card__meta-item">
+                <svg class="hand-drawn-icon-svg" viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>{{ block.settings.location | escape }}</span>
+              </div>
+
+              <div class="event-card__meta-item">
+                <svg class="hand-drawn-icon-svg" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>{{ block.settings.hours | escape }}</span>
+              </div>
+            </div>
+
+            {% if block.settings.description != blank %}
+              <div class="event-card__description">
+                {{ block.settings.description }}
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="event-card__action">
+            {% if block.settings.map_link != blank %}
+              <a href="{{ block.settings.map_link }}" target="_blank" rel="noopener" class="event-card__btn">Get Directions &rarr;</a>
+            {% else %}
+              <a href="/pages/custom-treasures" class="event-card__btn">RSVP / Contact &rarr;</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <!-- Host Event Banner -->
+  <div class="host-event-banner">
+    <h2 class="host-event-title">Want Daisy Chains at Your Market or Boutique?</h2>
+    <div class="host-event-subtext">
+      Jenny loves participating in curated California pop-ups, artisan markets, and private boutique showcases.
+    </div>
+    <a href="/pages/custom-treasures" class="event-card__btn" style="display:inline-block;">Inquire About Event Pop-Ups &rarr;</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Events & Pop-Ups Calendar",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Events & Pop-Up Markets" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Calendar of where Jenny will be selling live in person." },
+    { "type": "richtext", "id": "description", "label": "Hero Description", "default": "<p>Discover upcoming artisan markets, beachside pop-ups, and California showcases featuring handcrafted Daisy Chains treasures.</p>" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "event_item",
+      "name": "Event / Pop-Up",
+      "settings": [
+        { "type": "text", "id": "month", "label": "Month (3-letter)", "default": "OCT" },
+        { "type": "text", "id": "day", "label": "Day", "default": "14" },
+        { "type": "text", "id": "year", "label": "Year", "default": "2026" },
+        { "type": "text", "id": "title", "label": "Event Name", "default": "Mill Valley Artisan Market" },
+        { "type": "text", "id": "location", "label": "Location & City", "default": "Mill Valley Depot Plaza, CA" },
+        { "type": "text", "id": "hours", "label": "Event Hours", "default": "10:00 AM – 4:00 PM" },
+        { "type": "textarea", "id": "description", "label": "Event Description", "default": "Join Jenny in downtown Mill Valley to shop one-of-a-kind baroque pearl necklaces, custom charms, and new autumn treasures." },
+        { "type": "url", "id": "map_link", "label": "Google Maps Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Events & Pop-Ups Calendar"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,783 @@
+{%- style -%}
+  .product-page-section {
+    padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 3vw, 3rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .product-page-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .product-page-grid {
+      flex-direction: {% if section.settings.desktop_media_position == 'right' %}row-reverse{% else %}row{% endif %};
+      align-items: flex-start;
+      gap: clamp(2.5rem, 5vw, 5rem);
+    }
+
+    .product-media-column {
+      flex: {% if section.settings.desktop_media_layout == 'stacked_1col' %}1.1{% else %}1.4{% endif %};
+      {% if section.settings.enable_sticky_media %}
+        position: sticky;
+        top: 2rem;
+      {% endif %}
+    }
+
+    .product-info-column {
+      flex: 1;
+      {% if section.settings.enable_sticky_info %}
+        position: sticky;
+        top: 2rem;
+      {% endif %}
+    }
+  }
+
+  /* Media Gallery Stack */
+  .product-media-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: {{ section.settings.media_gap }};
+  }
+
+  @media screen and (min-width: 768px) {
+    .product-media-grid--2col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .product-media-item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+    {% if section.settings.image_aspect_ratio == '3_4' %}
+      aspect-ratio: 3 / 4;
+    {% elsif section.settings.image_aspect_ratio == '1_1' %}
+      aspect-ratio: 1 / 1;
+    {% else %}
+      height: auto;
+    {% endif %}
+  }
+
+  .product-media-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .product-media-item:hover img {
+    transform: scale(1.03);
+  }
+
+  /* Product Information Column */
+  .product-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+  }
+
+  .product-title--small { font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
+  .product-title--medium { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+  .product-title--large { font-size: clamp(2.2rem, 3.8vw, 3.2rem); }
+
+  .product-title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  .product-price-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .product-price {
+    font-family: var(--font-body-family);
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .product-tax-notice {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .product-installments {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* Quantity Selector */
+  .quantity-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+
+  .quantity-btn {
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quantity-input {
+    width: 45px;
+    height: 36px;
+    border: none;
+    text-align: center;
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    background: transparent;
+    color: var(--color-text);
+  }
+
+  /* Variant Picker */
+  .variant-picker {
+    margin-bottom: 1.75rem;
+  }
+
+  .variant-option-label {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .variant-select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .variant-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .variant-pill-btn {
+    padding: 0.6rem 1.25rem;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .variant-pill-btn.is-selected {
+    border-color: var(--color-text);
+    background-color: var(--color-text);
+    color: var(--color-background);
+  }
+
+  /* Buy Buttons */
+  .buy-buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .free-shipping-notice {
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .pdp-icon-svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-text);
+    fill: none;
+    stroke-width: 1.6;
+    flex-shrink: 0;
+  }
+
+  .pdp-custom-icon-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Trust Badges Grid */
+  .trust-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.25rem 0;
+    margin: 1.5rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .trust-badge-item {
+    font-family: var(--font-body-family);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .trust-badge-item .pdp-icon-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .trust-badge-item .pdp-custom-icon-img {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Divider Block */
+  .pdp-divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 1.5rem 0;
+  }
+
+  /* Custom Text Block */
+  .pdp-custom-text {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Modular Accordion Blocks */
+  .pdp-accordion {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .pdp-accordion:first-of-type {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .pdp-accordion__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text);
+    list-style: none;
+  }
+
+  .pdp-accordion__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .pdp-accordion__icon {
+    font-size: 1.1rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+  }
+
+  .pdp-accordion[open] .pdp-accordion__icon {
+    transform: rotate(45deg);
+  }
+
+  .pdp-accordion__content {
+    padding-bottom: 1.25rem;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #555555;
+  }
+{%- endstyle -%}
+
+<div class="product-page-section">
+  <div class="product-page-grid">
+    <!-- LEFT: Media Gallery Column -->
+    <div class="product-media-column">
+      <div class="product-media-grid {% if section.settings.desktop_media_layout == 'stacked_2col' and product.images.size > 1 %}product-media-grid--2col{% endif %}">
+        {% if product.images.size > 0 %}
+          {% for image in product.images %}
+            <div class="product-media-item">
+              <img src="{{ image | image_url: width: 1400 }}" alt="{{ image.alt | default: product.title | escape }}" loading="lazy">
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="product-media-item">
+            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="product-media-item">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- RIGHT: Product Info & Customizable Blocks Column -->
+    <div class="product-info-column">
+      {% if section.settings.show_breadcrumbs %}
+        <div class="product-breadcrumb">
+          Jewelry / {{ product.type | default: "Treasures" }} / {{ product.title }}
+        </div>
+      {% endif %}
+
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              <h1 class="product-title product-title--{{ block.settings.title_size }}" {{ block.shopify_attributes }}>{{ product.title }}</h1>
+
+            {% when 'price' %}
+              <div class="product-price-wrapper" {{ block.shopify_attributes }}>
+                <span class="product-price">{{ product.price | money }}</span>
+              </div>
+              {% if block.settings.show_tax_notice %}
+                <div class="product-tax-notice">Tax included. Shipping calculated at checkout.</div>
+              {% endif %}
+              {% if section.settings.show_installments %}
+                <div class="product-installments">
+                  Or 4 interest-free payments of <strong>{{ product.price | divided_by: 4 | money }}</strong> with Shop Pay.
+                </div>
+              {% endif %}
+
+            {% when 'variant_picker' %}
+              {% unless product.has_only_default_variant %}
+                <div class="variant-picker" {{ block.shopify_attributes }}>
+                  <label class="variant-option-label">Select Option</label>
+                  {% if block.settings.picker_type == 'pills' %}
+                    <div class="variant-pills">
+                      {% for variant in product.variants %}
+                        <button type="button" class="variant-pill-btn {% if variant == product.selected_or_first_available_variant %}is-selected{% endif %}">
+                          {{ variant.title }}
+                        </button>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <select name="id" class="variant-select">
+                      {% for variant in product.variants %}
+                        <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}>
+                          {{ variant.title }} &mdash; {{ variant.price | money }}
+                        </option>
+                      {% endfor %}
+                    </select>
+                  {% endif %}
+                </div>
+              {% endunless %}
+
+            {% when 'quantity_selector' %}
+              <div class="quantity-wrapper" {{ block.shopify_attributes }}>
+                <label class="variant-option-label" style="margin-bottom:0;">Quantity</label>
+                <div class="quantity-selector">
+                  <button type="button" class="quantity-btn" onclick="let input=this.nextElementSibling; if(parseInt(input.value)>1) input.value=parseInt(input.value)-1;">-</button>
+                  <input type="number" name="quantity" value="1" min="1" class="quantity-input">
+                  <button type="button" class="quantity-btn" onclick="let input=this.previousElementSibling; input.value=parseInt(input.value)+1;">+</button>
+                </div>
+              </div>
+
+            {% when 'buy_buttons' %}
+              <div class="buy-buttons-wrapper" {{ block.shopify_attributes }}>
+                <button type="submit" class="btn-solid btn-add-to-cart" {% unless product.available %}disabled{% endunless %}>
+                  {% if product.available %}
+                    Add to Bag &mdash; {{ product.price | money }}
+                  {% else %}
+                    Sold Out
+                  {% endif %}
+                </button>
+
+                {% if block.settings.show_free_shipping_notice %}
+                  <div class="free-shipping-notice">
+                    {% if block.settings.shipping_custom_icon != blank %}
+                      <img src="{{ block.settings.shipping_custom_icon | image_url: width: 60 }}" alt="Shipping" class="pdp-custom-icon-img">
+                    {% else %}
+                      {% case block.settings.shipping_icon %}
+                        {% when 'truck' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'package' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12.89 1.45l8 4A2 2 0 0122 7.24v9.53a2 2 0 01-1.11 1.79l-8 4a2 2 0 01-1.78 0l-8-4A2 2 0 012 16.77V7.24a2 2 0 011.11-1.79l8-4a2 2 0 011.78 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.32 6.16L12 11l9.68-4.84M12 22.76V11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'leaf' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M11 20A9 9 0 002 11 9 9 0 0111 2a9 9 0 019 9 9 9 0 01-9 9zM2 21c3-3 6-5 9-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% else %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      {% endcase %}
+                    {% endif %}
+                    <span>{{ block.settings.shipping_text | escape }}</span>
+                  </div>
+                {% endif %}
+              </div>
+
+            {% when 'trust_badges' %}
+              <div class="trust-badges-grid" {{ block.shopify_attributes }}>
+                <!-- Badge 1 -->
+                {% if block.settings.badge_1_text != blank %}
+                  <div class="trust-badge-item">
+                    {% if block.settings.badge_1_custom_icon != blank %}
+                      <img src="{{ block.settings.badge_1_custom_icon | image_url: width: 80 }}" alt="{{ block.settings.badge_1_text | escape }}" class="pdp-custom-icon-img">
+                    {% else %}
+                      {% case block.settings.badge_1_icon %}
+                        {% when 'leaf' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M11 20A9 9 0 002 11 9 9 0 0111 2a9 9 0 019 9 9 9 0 01-9 9zM2 21c3-3 6-5 9-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'sparkle' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'package' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12.89 1.45l8 4A2 2 0 0122 7.24v9.53a2 2 0 01-1.11 1.79l-8 4a2 2 0 01-1.78 0l-8-4A2 2 0 012 16.77V7.24a2 2 0 011.11-1.79l8-4a2 2 0 011.78 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.32 6.16L12 11l9.68-4.84M12 22.76V11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'truck' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'shield' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'heart' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'gem' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 12L2 9zM2 9h20M12 21L8 9M12 21l4-12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% else %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M11 20A9 9 0 002 11 9 9 0 0111 2a9 9 0 019 9 9 9 0 01-9 9zM2 21c3-3 6-5 9-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      {% endcase %}
+                    {% endif %}
+                    <span>{{ block.settings.badge_1_text | escape }}</span>
+                  </div>
+                {% endif %}
+
+                <!-- Badge 2 -->
+                {% if block.settings.badge_2_text != blank %}
+                  <div class="trust-badge-item">
+                    {% if block.settings.badge_2_custom_icon != blank %}
+                      <img src="{{ block.settings.badge_2_custom_icon | image_url: width: 80 }}" alt="{{ block.settings.badge_2_text | escape }}" class="pdp-custom-icon-img">
+                    {% else %}
+                      {% case block.settings.badge_2_icon %}
+                        {% when 'sparkle' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'leaf' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M11 20A9 9 0 002 11 9 9 0 0111 2a9 9 0 019 9 9 9 0 01-9 9zM2 21c3-3 6-5 9-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'package' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12.89 1.45l8 4A2 2 0 0122 7.24v9.53a2 2 0 01-1.11 1.79l-8 4a2 2 0 01-1.78 0l-8-4A2 2 0 012 16.77V7.24a2 2 0 011.11-1.79l8-4a2 2 0 011.78 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.32 6.16L12 11l9.68-4.84M12 22.76V11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'heart' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 000-7.78z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% else %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      {% endcase %}
+                    {% endif %}
+                    <span>{{ block.settings.badge_2_text | escape }}</span>
+                  </div>
+                {% endif %}
+
+                <!-- Badge 3 -->
+                {% if block.settings.badge_3_text != blank %}
+                  <div class="trust-badge-item">
+                    {% if block.settings.badge_3_custom_icon != blank %}
+                      <img src="{{ block.settings.badge_3_custom_icon | image_url: width: 80 }}" alt="{{ block.settings.badge_3_text | escape }}" class="pdp-custom-icon-img">
+                    {% else %}
+                      {% case block.settings.badge_3_icon %}
+                        {% when 'package' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12.89 1.45l8 4A2 2 0 0122 7.24v9.53a2 2 0 01-1.11 1.79l-8 4a2 2 0 01-1.78 0l-8-4A2 2 0 012 16.77V7.24a2 2 0 011.11-1.79l8-4a2 2 0 011.78 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.32 6.16L12 11l9.68-4.84M12 22.76V11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'shield' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% when 'truck' %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM18.5 18a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        {% else %}
+                          <svg class="pdp-icon-svg" viewBox="0 0 24 24"><path d="M12.89 1.45l8 4A2 2 0 0122 7.24v9.53a2 2 0 01-1.11 1.79l-8 4a2 2 0 01-1.78 0l-8-4A2 2 0 012 16.77V7.24a2 2 0 011.11-1.79l8-4a2 2 0 011.78 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.32 6.16L12 11l9.68-4.84M12 22.76V11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      {% endcase %}
+                    {% endif %}
+                    <span>{{ block.settings.badge_3_text | escape }}</span>
+                  </div>
+                {% endif %}
+              </div>
+
+            {% when 'custom_text' %}
+              <div class="pdp-custom-text" {{ block.shopify_attributes }}>
+                {{ block.settings.text }}
+              </div>
+
+            {% when 'divider' %}
+              <div class="pdp-divider" {{ block.shopify_attributes }}></div>
+
+            {% when 'accordion' %}
+              <details class="pdp-accordion" {% if block.settings.open_by_default %}open{% endif %} {{ block.shopify_attributes }}>
+                <summary class="pdp-accordion__summary">
+                  <span>{{ block.settings.heading | escape }}</span>
+                  <span class="pdp-accordion__icon">+</span>
+                </summary>
+                <div class="pdp-accordion__content">
+                  {% assign heading_lower = block.settings.heading | downcase %}
+                  {% if heading_lower contains "story" or heading_lower contains "symbolism" %}
+                    {% if product.description != blank %}
+                      {{ product.description }}
+                    {% else %}
+                      {{ block.settings.content }}
+                    {% endif %}
+                  {% else %}
+                    {{ block.settings.content }}
+                  {% endif %}
+                </div>
+              </details>
+
+          {% endcase %}
+        {% endfor %}
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Information",
+  "settings": [
+    {
+      "type": "select",
+      "id": "desktop_media_layout",
+      "label": "Desktop Media Layout",
+      "options": [
+        { "value": "stacked_2col", "label": "Stacked 2-Column Grid" },
+        { "value": "stacked_1col", "label": "Stacked 1-Column" }
+      ],
+      "default": "stacked_2col"
+    },
+    {
+      "type": "select",
+      "id": "desktop_media_position",
+      "label": "Desktop Media Position",
+      "options": [
+        { "value": "left", "label": "Media Left, Info Right" },
+        { "value": "right", "label": "Media Right, Info Left" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image Aspect Ratio",
+      "options": [
+        { "value": "3_4", "label": "3:4 Portrait" },
+        { "value": "1_1", "label": "1:1 Square" },
+        { "value": "adapt", "label": "Adapt to image ratio" }
+      ],
+      "default": "3_4"
+    },
+    {
+      "type": "select",
+      "id": "media_gap",
+      "label": "Media Spacing",
+      "options": [
+        { "value": "0.5rem", "label": "Tight (8px)" },
+        { "value": "0.75rem", "label": "Compact (12px)" },
+        { "value": "1.5rem", "label": "Wide (24px)" }
+      ],
+      "default": "0.75rem"
+    },
+    { "type": "checkbox", "id": "enable_sticky_info", "label": "Enable sticky product info column", "default": true },
+    { "type": "checkbox", "id": "show_breadcrumbs", "label": "Show category breadcrumbs", "default": true },
+    { "type": "checkbox", "id": "show_installments", "label": "Show Shop Pay installment note", "default": true }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Title Size",
+          "options": [
+            { "value": "small", "label": "Small" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "large", "label": "Large" }
+          ],
+          "default": "medium"
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "show_tax_notice", "label": "Show tax notice", "default": false }
+      ]
+    },
+    {
+      "type": "variant_picker",
+      "name": "Variant Picker",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "picker_type",
+          "label": "Picker Type",
+          "options": [
+            { "value": "dropdown", "label": "Dropdown Menu" },
+            { "value": "pills", "label": "Pill Buttons" }
+          ],
+          "default": "dropdown"
+        }
+      ]
+    },
+    { "type": "quantity_selector", "name": "Quantity Selector", "limit": 1 },
+    {
+      "type": "buy_buttons",
+      "name": "Buy Buttons",
+      "limit": 1,
+      "settings": [
+        { "type": "checkbox", "id": "show_free_shipping_notice", "label": "Show shipping notice", "default": true },
+        {
+          "type": "select",
+          "id": "shipping_icon",
+          "label": "Shipping Preset Icon",
+          "options": [
+            { "value": "truck", "label": "Delivery Truck" },
+            { "value": "package", "label": "Eco Package" },
+            { "value": "leaf", "label": "Organic Leaf" }
+          ],
+          "default": "truck"
+        },
+        { "type": "image_picker", "id": "shipping_custom_icon", "label": "Custom Shipping Icon Image (Optional)" },
+        { "type": "text", "id": "shipping_text", "label": "Shipping Text", "default": "Complimentary carbon-neutral shipping on orders over $150." }
+      ]
+    },
+    {
+      "type": "trust_badges",
+      "name": "Trust Badges / Highlights",
+      "limit": 1,
+      "settings": [
+        { "type": "header", "content": "Badge 1" },
+        {
+          "type": "select",
+          "id": "badge_1_icon",
+          "label": "Preset Icon 1",
+          "options": [
+            { "value": "leaf", "label": "Organic Leaf" },
+            { "value": "sparkle", "label": "Handmade Sparkles" },
+            { "value": "package", "label": "Eco Package" },
+            { "value": "truck", "label": "Delivery Truck" },
+            { "value": "shield", "label": "Security Shield" },
+            { "value": "heart", "label": "Made with Love (Heart)" },
+            { "value": "gem", "label": "Natural Gem / Pearl" }
+          ],
+          "default": "leaf"
+        },
+        { "type": "image_picker", "id": "badge_1_custom_icon", "label": "Upload Custom Icon 1 (Optional)" },
+        { "type": "text", "id": "badge_1_text", "label": "Text 1", "default": "Ethically Sourced" },
+
+        { "type": "header", "content": "Badge 2" },
+        {
+          "type": "select",
+          "id": "badge_2_icon",
+          "label": "Preset Icon 2",
+          "options": [
+            { "value": "sparkle", "label": "Handmade Sparkles" },
+            { "value": "leaf", "label": "Organic Leaf" },
+            { "value": "package", "label": "Eco Package" },
+            { "value": "heart", "label": "Made with Love (Heart)" },
+            { "value": "gem", "label": "Natural Gem / Pearl" }
+          ],
+          "default": "sparkle"
+        },
+        { "type": "image_picker", "id": "badge_2_custom_icon", "label": "Upload Custom Icon 2 (Optional)" },
+        { "type": "text", "id": "badge_2_text", "label": "Text 2", "default": "Handmade in CA" },
+
+        { "type": "header", "content": "Badge 3" },
+        {
+          "type": "select",
+          "id": "badge_3_icon",
+          "label": "Preset Icon 3",
+          "options": [
+            { "value": "package", "label": "Eco Package" },
+            { "value": "truck", "label": "Delivery Truck" },
+            { "value": "shield", "label": "Security Shield" },
+            { "value": "leaf", "label": "Organic Leaf" }
+          ],
+          "default": "package"
+        },
+        { "type": "image_picker", "id": "badge_3_custom_icon", "label": "Upload Custom Icon 3 (Optional)" },
+        { "type": "text", "id": "badge_3_text", "label": "Text 3", "default": "Carbon Neutral" }
+      ]
+    },
+    {
+      "type": "custom_text",
+      "name": "Custom Text Block",
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Content", "default": "<p>Handmade with intention in California.</p>" }
+      ]
+    },
+    { "type": "divider", "name": "Divider Line" },
+    {
+      "type": "accordion",
+      "name": "Accordion Collapsible",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Treasure Details" },
+        { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Share details about your piece here.</p>" },
+        { "type": "checkbox", "id": "open_by_default", "label": "Open by default", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Information",
+      "blocks": [
+        { "type": "title" },
+        { "type": "price" },
+        { "type": "variant_picker" },
+        { "type": "quantity_selector" },
+        { "type": "buy_buttons" },
+        { "type": "trust_badges" },
+        { "type": "accordion", "settings": { "heading": "The Story & Symbolism", "open_by_default": true } },
+        { "type": "accordion", "settings": { "heading": "Treasure Details" } },
+        { "type": "accordion", "settings": { "heading": "Shipping & Care" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

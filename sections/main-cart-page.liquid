@@ -1,0 +1,522 @@
+{%- style -%}
+  .cart-page-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .cart-page-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .cart-page-breadcrumb--align-left { justify-content: flex-start; }
+  .cart-page-breadcrumb--align-center { justify-content: center; }
+  .cart-page-breadcrumb--align-right { justify-content: flex-end; }
+
+  .cart-page-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  /* Hero Header Position & Alignment */
+  .cart-page-hero {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .cart-page-hero--position-left { margin-left: 0; margin-right: auto; }
+  .cart-page-hero--position-center { margin-left: auto; margin-right: auto; }
+  .cart-page-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .cart-page-hero--align-left { text-align: left; }
+  .cart-page-hero--align-center { text-align: center; }
+  .cart-page-hero--align-right { text-align: right; }
+
+  .cart-page-title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .cart-page-title--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .cart-page-title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .cart-page-title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .cart-page-title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .cart-page-subtitle--small { font-size: clamp(1rem, 1.6vw, 1.25rem); }
+  .cart-page-subtitle--medium { font-size: clamp(1.15rem, 2vw, 1.45rem); }
+  .cart-page-subtitle--large { font-size: clamp(1.35rem, 2.5vw, 1.8rem); }
+
+  .cart-page-subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  /* Free Shipping Progress Banner */
+  .cart-shipping-banner {
+    max-width: 750px;
+    margin: 0 auto clamp(3.5rem, 6vw, 5rem) auto;
+    padding: 1.25rem 2rem;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .cart-shipping-text {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .cart-shipping-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #eee9e0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .cart-shipping-fill {
+    height: 100%;
+    background-color: var(--color-accent, #c9a050);
+    width: 60%;
+    transition: width 0.4s ease;
+  }
+
+  /* Cart Layout Grid */
+  .cart-page-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 900px) {
+    .cart-page-grid {
+      grid-template-columns: 7fr 4.5fr;
+    }
+  }
+
+  /* Items Table */
+  .cart-table-item {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cart-table-image {
+    width: 90px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface-warm);
+  }
+
+  .cart-table-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--color-text);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .cart-table-variant {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+
+  .cart-table-price {
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 0.35rem;
+  }
+
+  /* Summary Card */
+  .cart-summary-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3rem);
+    position: sticky;
+    top: 6rem;
+  }
+
+  .cart-summary-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+  }
+
+  .cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-heading-family);
+    font-size: 1.35rem;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+  }
+
+  .cart-summary-note {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .cart-checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 1.15rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: var(--color-button-bg, #1c1c1c);
+    color: var(--color-button-text, #ffffff);
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: opacity 0.25s ease;
+  }
+
+  .cart-checkout-btn:hover {
+    opacity: 0.9;
+  }
+
+  .cart-continue-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background-color: transparent;
+    color: #1c1c1c;
+    border: 1px solid #1c1c1c;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .cart-continue-btn:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+
+  /* Hand-Drawn Black Trust Badges */
+  .cart-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .cart-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    color: var(--color-muted);
+  }
+
+  .cart-trust-icon-svg {
+    width: 22px;
+    height: 22px;
+    stroke: #1c1c1c;
+    stroke-width: 1.3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: fill 0.35s ease, stroke 0.35s ease;
+  }
+
+  .cart-trust-item:hover .cart-trust-icon-svg {
+    fill: var(--color-accent, #c9a050);
+    stroke: #1c1c1c;
+  }
+
+  .cart-trust-custom-img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+{%- endstyle -%}
+
+<div class="cart-page-section">
+  <!-- Breadcrumb -->
+  <div class="cart-page-breadcrumb cart-page-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ section.settings.title | escape }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="cart-page-hero cart-page-hero--position-{{ section.settings.content_position }} cart-page-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="cart-page-title cart-page-title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="cart-page-subtitle cart-page-subtitle--{{ section.settings.subtitle_size }}">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Free Shipping Progress Banner -->
+  {% if section.settings.enable_free_shipping %}
+    <div class="cart-shipping-banner">
+      <div class="cart-shipping-text">
+        Spend <strong>${{ section.settings.free_shipping_threshold }}</strong> for Free US Shipping &amp; Complimentary Packaging!
+      </div>
+      <div class="cart-shipping-bar">
+        <div class="cart-shipping-fill"></div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Cart Content Grid -->
+  <div class="cart-page-grid">
+    <!-- Left Column: Cart Items List -->
+    <div class="cart-items-container">
+      {% if cart.item_count > 0 %}
+        {% for item in cart.items %}
+          <div class="cart-table-item">
+            {% if item.image %}
+              <img src="{{ item.image | image_url: width: 250 }}" alt="{{ item.title | escape }}" class="cart-table-image">
+            {% else %}
+              <div class="cart-table-image" style="display:flex; align-items:center; justify-content:center;">🐚</div>
+            {% endif %}
+
+            <div>
+              <a href="{{ item.url }}" class="cart-table-title">{{ item.product.title | escape }}</a>
+              {% unless item.product.has_only_default_variant %}
+                <div class="cart-table-variant">{{ item.variant.title | escape }}</div>
+              {% endunless %}
+              <div class="cart-table-price">{{ item.final_line_price | money }}</div>
+            </div>
+
+            <div>
+              <button onclick="updateQty('{{ item.key }}', 0)" style="background:transparent; border:none; cursor:pointer;" aria-label="Remove item">
+                <svg style="width:18px; height:18px; stroke:#1c1c1c; stroke-width:1.4; fill:none;" viewBox="0 0 24 24">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Sample Items if Cart Is Empty -->
+        <div class="cart-table-item">
+          {{ 'product-1' | placeholder_svg_tag: 'cart-table-image' }}
+          <div>
+            <a href="#" class="cart-table-title">Trust the Tide Necklace</a>
+            <div class="cart-table-variant">16" + 2" Extender &bull; Genuine Abalone Shell &amp; Baroque Pearl</div>
+            <div class="cart-table-price">$128.00</div>
+          </div>
+          <div>
+            <button style="background:transparent; border:none; cursor:pointer;" aria-label="Remove item">
+              <svg style="width:18px; height:18px; stroke:#1c1c1c; stroke-width:1.4; fill:none;" viewBox="0 0 24 24">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="cart-table-item">
+          {{ 'product-2' | placeholder_svg_tag: 'cart-table-image' }}
+          <div>
+            <a href="#" class="cart-table-title">Golden Serpent Leather Choker</a>
+            <div class="cart-table-variant">Chocolate Leather &bull; Graduated Tiger's Eye Drop</div>
+            <div class="cart-table-price">$142.00</div>
+          </div>
+          <div>
+            <button style="background:transparent; border:none; cursor:pointer;" aria-label="Remove item">
+              <svg style="width:18px; height:18px; stroke:#1c1c1c; stroke-width:1.4; fill:none;" viewBox="0 0 24 24">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Gift Note / Intention Note Textarea -->
+      {% if section.settings.enable_gift_note %}
+        <div style="margin-top: 2rem;">
+          <label style="display:block; font-family:var(--font-body-family); font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">
+            {{ section.settings.gift_note_label | escape }}
+          </label>
+          <textarea rows="3" style="width:100%; padding:0.85rem; font-family:var(--font-body-family); font-size:0.88rem; border:1px solid var(--color-border);" placeholder="Include a handwritten message for your gift recipient..."></textarea>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Column: Summary Card -->
+    <div class="cart-summary-card">
+      <h2 class="cart-summary-title">Treasure Summary</h2>
+      
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <span>{{ cart.total_price | default: 27000 | money }}</span>
+      </div>
+
+      <div class="cart-summary-note">
+        Taxes and shipping calculated at checkout. Every order includes complimentary natural gift packaging.
+      </div>
+
+      <a href="/checkout" class="cart-checkout-btn">Proceed to Checkout &rarr;</a>
+      <a href="{{ section.settings.continue_shopping_url | default: '/collections/all' }}" class="cart-continue-btn">
+        {{ section.settings.continue_shopping_label | default: "Discover Your Next Treasure" | escape }} &rarr;
+      </a>
+
+      <!-- Customizable Trust Badges -->
+      <div class="cart-trust-grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'trust_badge' %}
+            <div class="cart-trust-item" {{ block.shopify_attributes }}>
+              {% if block.settings.custom_icon != blank %}
+                <img src="{{ block.settings.custom_icon | image_url: width: 60 }}" alt="{{ block.settings.title | escape }}" class="cart-trust-custom-img">
+              {% else %}
+                {% case block.settings.icon %}
+                  {% when 'waterproof' %}
+                    <svg class="cart-trust-icon-svg" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                  {% when 'ethically_sourced' %}
+                    <svg class="cart-trust-icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                  {% when 'california_made' %}
+                    <svg class="cart-trust-icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  {% when 'gift_box' %}
+                    <svg class="cart-trust-icon-svg" viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                {% endcase %}
+              {% endif %}
+              <span>{{ block.settings.title | escape }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Treasure Chest Cart Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Your Treasure Chest" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Your treasures are waiting..." },
+    {
+      "type": "select",
+      "id": "subtitle_size",
+      "label": "Subtitle Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "checkbox", "id": "enable_free_shipping", "label": "Enable Free Shipping Meter", "default": true },
+    { "type": "number", "id": "free_shipping_threshold", "label": "Free Shipping Threshold ($)", "default": 100 },
+    { "type": "checkbox", "id": "enable_gift_note", "label": "Enable Gift Note Textarea", "default": true },
+    { "type": "text", "id": "gift_note_label", "label": "Gift Note Label", "default": "Add a Gift Message or Intention Note" },
+    { "type": "text", "id": "continue_shopping_label", "label": "Continue Shopping Button Text", "default": "Discover Your Next Treasure" },
+    { "type": "url", "id": "continue_shopping_url", "label": "Continue Shopping Link" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust_badge",
+      "name": "Trust Badge",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "waterproof", "label": "Waterproof PVD" },
+            { "value": "ethically_sourced", "label": "Ethically Sourced" },
+            { "value": "california_made", "label": "California Made" },
+            { "value": "gift_box", "label": "Gift Packaging" }
+          ],
+          "default": "waterproof"
+        },
+        { "type": "image_picker", "id": "custom_icon", "label": "Custom Icon (Optional)" },
+        { "type": "text", "id": "title", "label": "Badge Text", "default": "Waterproof PVD" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Treasure Chest Cart Page"
+    }
+  ]
+}
+{% endschema %}

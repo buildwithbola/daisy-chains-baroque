@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-events-calendar",
+      "blocks": {
+        "event_1": {
+          "type": "event_item",
+          "settings": {
+            "month": "OCT",
+            "day": "14",
+            "year": "2026",
+            "title": "Mill Valley Autumn Artisan Market",
+            "location": "Mill Valley Plaza, Mill Valley, CA",
+            "hours": "10:00 AM – 4:00 PM",
+            "description": "Join Jenny in downtown Mill Valley for a crisp autumn day of shopping one-of-a-kind baroque pearl necklaces, intention charms, and newly handcrafted treasures.",
+            "map_link": ""
+          }
+        },
+        "event_2": {
+          "type": "event_item",
+          "settings": {
+            "month": "NOV",
+            "day": "02",
+            "year": "2026",
+            "title": "Marin Country Mart Holiday Showcase",
+            "location": "Larkspur Landing, Larkspur, CA",
+            "hours": "10:00 AM – 5:00 PM",
+            "description": "Explore custom gifts, gift-boxed intention jewelry, and limited-edition ocean shell necklaces along the bay.",
+            "map_link": ""
+          }
+        },
+        "event_3": {
+          "type": "event_item",
+          "settings": {
+            "month": "DEC",
+            "day": "10",
+            "year": "2026",
+            "title": "San Francisco Bay Area Coastal Fair",
+            "location": "Sausalito Waterfront, Sausalito, CA",
+            "hours": "11:00 AM – 5:00 PM",
+            "description": "Special holiday beach market featuring private custom charm building and unique heirloom shell pieces.",
+            "map_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "event_1",
+        "event_2",
+        "event_3"
+      ],
+      "settings": {
+        "title": "Events & Pop-Up Markets",
+        "title_size": "small",
+        "subtitle": "Calendar of where Jenny will be selling live in person.",
+        "description": "<p>Discover upcoming artisan markets, beachside pop-ups, and California showcases featuring handcrafted Daisy Chains treasures.</p>",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,488 @@
+{%- style -%}
+  .materials-care-section {
+    padding: clamp(2.5rem, 5vw, 5.5rem) clamp(1rem, 3.5vw, 3.5rem);
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .care-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .care-breadcrumb--align-left { justify-content: flex-start; }
+  .care-breadcrumb--align-center { justify-content: center; }
+  .care-breadcrumb--align-right { justify-content: flex-end; }
+
+  .care-breadcrumb a { color: var(--color-muted); text-decoration: none; }
+  .care-breadcrumb a:hover { color: var(--color-text); }
+
+  /* Hero Header */
+  .care-hero {
+    max-width: 820px;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  }
+
+  .care-hero--position-left { margin-left: 0; margin-right: auto; }
+  .care-hero--position-center { margin-left: auto; margin-right: auto; }
+  .care-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .care-hero--align-left { text-align: left; }
+  .care-hero--align-center { text-align: center; }
+  .care-hero--align-right { text-align: right; }
+
+  .care-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .care-hero__title--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .care-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .care-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .care-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .care-hero__subtitle {
+    font-family: var(--font-body-family);
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    color: var(--color-muted);
+    line-height: 1.6;
+  }
+
+  /* 4 Golden Rules Bar */
+  .care-rules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 2rem 1.25rem;
+    background-color: var(--color-surface-warm, #FAF7F2);
+    border: 1px solid var(--color-border, #E8E4DD);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  @media screen and (min-width: 900px) {
+    .care-rules-grid {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 2.75rem 2rem;
+      gap: 2rem;
+    }
+  }
+
+  .care-rule-card {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  /* Black Handwritten Line Icon Styling */
+  .care-rule-svg {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 0.85rem auto;
+    display: block;
+  }
+
+  .care-rule-svg path,
+  .care-rule-svg circle,
+  .care-rule-svg rect {
+    stroke: #1c1c1c;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .care-rule-title {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+  }
+
+  .care-rule-text {
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  /* Detailed Material Cards Grid */
+  .material-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .material-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--color-border, #E8E4DD);
+  }
+
+  @media screen and (min-width: 900px) {
+    .material-card {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1.65fr;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+  }
+
+  /* Material Image Wrapper */
+  .material-card__image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: var(--color-surface-warm, #f7f4ee);
+    border: 1px solid var(--color-border, #E8E4DD);
+  }
+
+  @media screen and (min-width: 900px) {
+    .material-card__image-wrapper {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  .material-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .material-card:hover .material-card__image-wrapper img {
+    transform: scale(1.04);
+  }
+
+  .material-card__meta {
+    width: 100%;
+  }
+
+  .material-card__number {
+    font-family: var(--font-body-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--color-accent, #C9A050);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .material-card__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 0.4rem;
+  }
+
+  .material-card__subtext {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .material-card__body {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #444444;
+    line-height: 1.7;
+  }
+
+  .material-card__body h4 {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .material-card__body ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .material-card__body li {
+    margin-bottom: 0.45rem;
+  }
+
+  /* Support Banner Box */
+  .care-support-box {
+    margin-top: clamp(3.5rem, 6vw, 5rem);
+    padding: clamp(2.5rem, 5vw, 3.5rem) 1.5rem;
+    background-color: var(--color-surface-warm, #FAF7F2);
+    border: 1px solid var(--color-border, #E8E4DD);
+    text-align: center;
+  }
+
+  .care-support-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .care-support-text {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    max-width: 580px;
+    margin: 0 auto 1.6rem auto;
+    line-height: 1.6;
+  }
+{%- endstyle -%}
+
+<div class="materials-care-section">
+  <!-- Breadcrumb -->
+  <div class="care-breadcrumb care-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>Materials &amp; Care</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="care-hero care-hero--position-{{ section.settings.content_position }} care-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="care-hero__title care-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    {% if section.settings.subtitle != blank %}
+      <div class="care-hero__subtitle">
+        {{ section.settings.subtitle | escape }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 4 Golden Rules Bar with Black Handwritten Minimalist Line Icons -->
+  <div class="care-rules-grid">
+    <div class="care-rule-card">
+      <svg class="care-rule-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="care-rule-title">Last On, First Off</div>
+      <div class="care-rule-text">Put jewelry on after applying perfumes, lotions, and cosmetics.</div>
+    </div>
+
+    <div class="care-rule-card">
+      <svg class="care-rule-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.5C12 2.5 5 10 5 15.5C5 19.1 7.9 22 11.5 22C15.1 22 18 19.1 18 15.5C18 10 12 2.5 12 2.5Z" stroke="#1c1c1c" stroke-width="1.5"/>
+        <path d="M3 3l18 18" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="care-rule-title">Keep Away From Water</div>
+      <div class="care-rule-text">Remove pieces before swimming, showering, or exercising.</div>
+    </div>
+
+    <div class="care-rule-card">
+      <svg class="care-rule-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 16c4 0 4-8 8-8s4 8 8 8" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M4 20c4 0 4-4 8-4s4 4 8 4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="care-rule-title">Clean Softly</div>
+      <div class="care-rule-text">Wipe gently with a soft microfiber jewelry polishing cloth.</div>
+    </div>
+
+    <div class="care-rule-card">
+      <svg class="care-rule-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 8h14v12a1 1 0 01-1 1H6a1 1 0 01-1-1V8z" stroke="#1c1c1c" stroke-width="1.5"/>
+        <path d="M12 3v5M9 5l3-2 3 2" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="care-rule-title">Store Separately</div>
+      <div class="care-rule-text">Keep in your Daisy Chains linen pouch to prevent scratches.</div>
+    </div>
+  </div>
+
+  <!-- Material Detail Cards (With Imagery) -->
+  <div class="material-cards-container">
+    <!-- Card 1: Pearls -->
+    <div class="material-card">
+      <div class="material-card__image-wrapper">
+        {% if section.settings.image_1 != blank %}
+          <img src="{{ section.settings.image_1 | image_url: width: 800 }}" alt="Baroque &amp; Freshwater Pearls Care" loading="lazy">
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1611591475824-28770172cd1b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Baroque &amp; Freshwater Pearls" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="material-card__meta">
+        <div class="material-card__number">Material 01</div>
+        <h2 class="material-card__heading">Baroque &amp; Freshwater Pearls</h2>
+        <div class="material-card__subtext">Organic gems born of the ocean</div>
+      </div>
+
+      <div class="material-card__body">
+        <p>
+          Pearls are living, organic treasures formed over time inside oysters and mollusks. Because no two baroque pearls are ever identical in shape, each piece carries its own authentic personality and iridescent lustre.
+        </p>
+        <h4>Care Guidelines:</h4>
+        <ul>
+          <li><strong>Avoid Chemicals:</strong> Perfumes, hairsprays, sunscreen, and household cleaners contain acids that can dull pearl lustre. Always apply beauty products first before putting on your pearls.</li>
+          <li><strong>Gentle Cleaning:</strong> After wearing, wipe your pearls with a soft, damp microfiber cloth to remove skin oils.</li>
+          <li><strong>Never Submerge:</strong> Never clean pearls in steam, ultrasonic cleaners, or harsh liquid jewelry dips.</li>
+          <li><strong>Breathable Storage:</strong> Store pearls in a breathable cotton or linen pouch—never sealed in plastic airtight bags for extended periods, as pearls require ambient humidity to prevent drying out.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 2: Gemstones -->
+    <div class="material-card">
+      <div class="material-card__image-wrapper">
+        {% if section.settings.image_2 != blank %}
+          <img src="{{ section.settings.image_2 | image_url: width: 800 }}" alt="Natural Gemstones &amp; Shells Care" loading="lazy">
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Natural Gemstones &amp; Shells" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="material-card__meta">
+        <div class="material-card__number">Material 02</div>
+        <h2 class="material-card__heading">Natural Gemstones &amp; Shells</h2>
+        <div class="material-card__subtext">Abalone, Aquamarine, Rose Quartz, Coral &amp; Tiger's Eye</div>
+      </div>
+
+      <div class="material-card__body">
+        <p>
+          We source authentic natural gemstones, Abalone shells, and Red Coral heishi beads from around the world. Every stone carries its own unique crystal structure and symbolic intention.
+        </p>
+        <h4>Care Guidelines:</h4>
+        <ul>
+          <li><strong>Sunlight Exposure:</strong> Avoid leaving light-colored gemstones (such as Rose Quartz, Aquamarine, or Amethyst) in direct sunlight for long periods to preserve their natural color intensity.</li>
+          <li><strong>Impact Protection:</strong> Natural stones can chip or crack if dropped onto hard marble or ceramic surfaces. Handle your pieces over a soft towel when putting them on.</li>
+          <li><strong>Washing:</strong> Clean faceted gemstones with lukewarm water, mild dish soap, and a soft-bristled brush. Dry thoroughly with a lint-free cloth.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 3: Metals -->
+    <div class="material-card">
+      <div class="material-card__image-wrapper">
+        {% if section.settings.image_3 != blank %}
+          <img src="{{ section.settings.image_3 | image_url: width: 800 }}" alt="Precious Metals Care" loading="lazy">
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="14K / 18K Gold &amp; Sterling Silver" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="material-card__meta">
+        <div class="material-card__number">Material 03</div>
+        <h2 class="material-card__heading">14K / 18K Gold &amp; Sterling Silver</h2>
+        <div class="material-card__subtext">Precious metals, clasps, extenders &amp; findings</div>
+      </div>
+
+      <div class="material-card__body">
+        <p>
+          Our intention charms, clasps, wire wrapping, and extenders are crafted using heavy 18K gold plating over sterling silver or solid sterling silver for durable shine and skin comfort.
+        </p>
+        <h4>Care Guidelines:</h4>
+        <ul>
+          <li><strong>Tarnish Prevention:</strong> Silver naturally oxidizes over time when exposed to air and humidity. Gently polish with a jewelry polishing cloth to restore high shine.</li>
+          <li><strong>Chlorine Warning:</strong> Never wear gold-plated or silver pieces in hot tubs or chlorinated swimming pools, as chlorine will permanently etch and discolor metals.</li>
+          <li><strong>Individual Storage:</strong> Store metal chains zipped or clasped individually to avoid knots and scratching.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 4: Leather & Cord -->
+    <div class="material-card">
+      <div class="material-card__image-wrapper">
+        {% if section.settings.image_4 != blank %}
+          <img src="{{ section.settings.image_4 | image_url: width: 800 }}" alt="Leather &amp; Cords Care" loading="lazy">
+        {% else %}
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Double-Stitched Leather &amp; Cords" loading="lazy">
+        {% endif %}
+      </div>
+
+      <div class="material-card__meta">
+        <div class="material-card__number">Material 04</div>
+        <h2 class="material-card__heading">Double-Stitched Leather &amp; Cords</h2>
+        <div class="material-card__subtext">Hand-knotted chokers &amp; natural silk threads</div>
+      </div>
+
+      <div class="material-card__body">
+        <p>
+          Our Golden Serpent chokers feature supple double-stitched leather cord designed to soften naturally over time and conform to your collarbone shape.
+        </p>
+        <h4>Care Guidelines:</h4>
+        <ul>
+          <li><strong>Keep Dry:</strong> Leather and hand-knotted silk threads should not be submerged in water. Moisture can weaken natural leather fibers over time.</li>
+          <li><strong>Conditioning:</strong> If leather becomes dry, apply a tiny drop of natural leather conditioner or jojoba oil with a cotton swab to maintain suppleness.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support Box -->
+  <div class="care-support-box">
+    <h2 class="care-support-title">Have Questions About Your Piece?</h2>
+    <div class="care-support-text">
+      Our California studio team is here to assist with care tips, custom adjustments, or re-stringing services.
+    </div>
+    <a href="/pages/contact" class="btn-solid" style="display:inline-block; padding:1.1rem 2.2rem; background:#1c1c1c; color:#ffffff; text-decoration:none; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.14em;">Contact Studio Support &rarr;</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Materials & Care Section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Materials & Care Guide" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Handcrafted with intention in California. Learn how to care for your organic baroque pearls, natural gemstones, and precious metals." },
+    { "type": "image_picker", "id": "image_1", "label": "Material 1 Image (Pearls)" },
+    { "type": "image_picker", "id": "image_2", "label": "Material 2 Image (Gemstones)" },
+    { "type": "image_picker", "id": "image_3", "label": "Material 3 Image (Metals)" },
+    { "type": "image_picker", "id": "image_4", "label": "Material 4 Image (Leather)" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    { "name": "Materials & Care Section" }
+  ]
+}
+{% endschema %}

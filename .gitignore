@@ -1,0 +1,12 @@
+﻿.env
+.env.*
+.vercel/
+node_modules/
+*.zip
+*.rar
+*.7z
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

@@ -1,0 +1,197 @@
+{%- style -%}
+  .customer-account-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .account-header {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    text-align: center;
+  }
+
+  .account-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .account-subtitle {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+    font-style: italic;
+    color: var(--color-muted);
+  }
+
+  .account-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .account-grid {
+      grid-template-columns: 2.8fr 1fr;
+    }
+  }
+
+  /* Orders Card */
+  .orders-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .orders-card-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+  }
+
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+  }
+
+  .orders-table th {
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+    padding: 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+  }
+
+  .orders-table td {
+    padding: 1rem 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 12px;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+  }
+
+  .status-badge--paid { background-color: #eaf6ec; color: #1e6b2c; border-color: #bce5c4; }
+  .status-badge--fulfilled { background-color: #eaf2fb; color: #1a4f8a; border-color: #bcd4f2; }
+
+  /* Address Card Sidebar */
+  .address-sidebar-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .address-sidebar-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.4rem;
+    font-weight: 300;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text);
+    border: 1px solid #1c1c1c;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.25s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+{%- endstyle -%}
+
+<div class="customer-account-section">
+  <div class="account-header">
+    <h1 class="account-title">Welcome Back, {{ customer.first_name | escape }}</h1>
+    <div class="account-subtitle">"Manage your handcrafted treasure orders &amp; saved shipping addresses."</div>
+    <div style="margin-top:1rem;">
+      <a href="{{ routes.account_logout_url }}" style="font-family:var(--font-body-family); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--color-muted);">Sign Out</a>
+    </div>
+  </div>
+
+  <div class="account-grid">
+    <!-- Left Column: Order History Table -->
+    <div class="orders-card">
+      <h2 class="orders-card-title">Your Order History</h2>
+
+      {% if customer.orders.size > 0 %}
+        <table class="orders-table">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Date</th>
+              <th>Payment</th>
+              <th>Fulfillment</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in customer.orders %}
+              <tr>
+                <td><a href="{{ order.customer_url }}" style="font-weight:600; color:var(--color-text);">{{ order.name }}</a></td>
+                <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+                <td><span class="status-badge status-badge--paid">{{ order.financial_status_label }}</span></td>
+                <td><span class="status-badge status-badge--fulfilled">{{ order.fulfillment_status_label }}</span></td>
+                <td style="font-weight:600;">{{ order.total_price | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <div style="text-align:center; padding:3rem 1.5rem; color:var(--color-muted);">
+          <p style="font-family:var(--font-body-family); font-size:0.92rem; margin-bottom:1.5rem;">You haven't placed any treasure orders yet.</p>
+          <a href="/collections/all" class="btn-outline">Discover Your Next Treasure &rarr;</a>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Column: Shipping Address Sidebar -->
+    <div class="address-sidebar-card">
+      <h3 class="address-sidebar-title">Primary Shipping Address</h3>
+
+      {% if customer.default_address %}
+        <div style="font-family:var(--font-body-family); font-size:0.88rem; color:#444; line-height:1.6;">
+          <strong>{{ customer.default_address.first_name }} {{ customer.default_address.last_name }}</strong><br>
+          {{ customer.default_address.address1 }}<br>
+          {% if customer.default_address.address2 != blank %}{{ customer.default_address.address2 }}<br>{% endif %}
+          {{ customer.default_address.city }}, {{ customer.default_address.province_code }} {{ customer.default_address.zip }}<br>
+          {{ customer.default_address.country }}
+        </div>
+      {% else %}
+        <p style="font-family:var(--font-body-family); font-size:0.84rem; color:var(--color-muted);">No shipping addresses saved yet.</p>
+      {% endif %}
+
+      <a href="{{ routes.account_addresses_url }}" class="btn-outline" style="margin-top:auto;">View &amp; Edit Saved Addresses ({{ customer.addresses_count }})</a>
+    </div>
+  </div>
+</div>

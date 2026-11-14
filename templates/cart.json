@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart-page",
+      "settings": {
+        "title": "Your Treasure Chest",
+        "title_size": "medium",
+        "subtitle": "Your treasures are waiting...",
+        "subtitle_size": "medium",
+        "enable_free_shipping": true,
+        "free_shipping_threshold": 100,
+        "enable_gift_note": true,
+        "gift_note_label": "Add a Gift Message or Intention Note",
+        "continue_shopping_label": "Discover Your Next Treasure",
+        "content_position": "center",
+        "text_alignment": "center"
+      },
+      "blocks": {
+        "badge_1": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "waterproof",
+            "title": "Waterproof PVD"
+          }
+        },
+        "badge_2": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "ethically_sourced",
+            "title": "Ethically Sourced"
+          }
+        },
+        "badge_3": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "california_made",
+            "title": "California Made"
+          }
+        }
+      },
+      "block_order": [
+        "badge_1",
+        "badge_2",
+        "badge_3"
+      ]
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,225 @@
+{%- style -%}
+  .section-404 {
+    padding: clamp(4rem, 8vw, 7.5rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: {{ section.settings.text_alignment | default: 'center' }};
+  }
+
+  .content-404--align-left { text-align: left; }
+  .content-404--align-center { text-align: center; }
+  .content-404--align-right { text-align: right; }
+
+  /* 404 Large Badge */
+  .badge-404 {
+    font-family: var(--font-heading-family);
+    font-size: clamp(4rem, 10vw, 7.5rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--color-accent, #c9a050);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Title & Subtitle */
+  .title-404--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .title-404--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .title-404--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .title-404--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .title-404 {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .subtitle-404 {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    font-style: italic;
+    color: #555555;
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .content-404--align-left .subtitle-404 { margin-left: 0; }
+  .content-404--align-right .subtitle-404 { margin-right: 0; }
+
+  /* Search Input Bar */
+  .search-404-form {
+    position: relative;
+    max-width: 580px;
+    margin: 0 auto 3rem auto;
+  }
+
+  .content-404--align-left .search-404-form { margin-left: 0; }
+  .content-404--align-right .search-404-form { margin-right: 0; }
+
+  .search-404-input {
+    width: 100%;
+    padding: 1rem 3.5rem 1rem 1.75rem;
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+    border-radius: 30px;
+    background-color: var(--color-surface-warm);
+    color: var(--color-text);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+    transition: border-color 0.25s ease;
+  }
+
+  .search-404-input:focus {
+    outline: none;
+    border-color: var(--color-text);
+    background-color: #ffffff;
+  }
+
+  .search-404-submit {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem;
+  }
+
+  .search-404-svg {
+    width: 20px;
+    height: 20px;
+    stroke: #1c1c1c;
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  /* Quick Portals Grid */
+  .portals-404-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: {{ section.settings.text_alignment | default: 'center' }};
+    gap: 0.85rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .portal-chip {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-text);
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: 0.75rem 1.4rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .portal-chip:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border-color: #1c1c1c;
+  }
+
+  .cta-404-home {
+    display: inline-block;
+    padding: 1.15rem 2.5rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .cta-404-home:hover {
+    opacity: 0.9;
+  }
+{%- endstyle -%}
+
+<div class="section-404 content-404--align-{{ section.settings.text_alignment }}">
+  <div class="badge-404">404</div>
+
+  <h1 class="title-404 title-404--{{ section.settings.title_size | default: 'medium' }}">
+    {{ section.settings.title | default: 'Lost at Sea — This Treasure Cannot Be Found.' | escape }}
+  </h1>
+
+  <div class="subtitle-404">
+    "{{ section.settings.subtitle | default: 'The page you are looking for may have drifted with the tide, changed locations, or moved to a new shore.' | escape }}"
+  </div>
+
+  <!-- Search Input Bar -->
+  {% if section.settings.show_search %}
+    <form action="{{ routes.search_url }}" method="get" role="search" class="search-404-form">
+      <input type="search" name="q" class="search-404-input" placeholder="Search Abalone, Pearl, Evil Eye, Choker, Gold..." aria-label="Search treasures">
+      <button type="submit" class="search-404-submit" aria-label="Submit Search">
+        <svg class="search-404-svg" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </form>
+  {% endif %}
+
+  <!-- Quick Navigation Portals -->
+  {% if section.settings.show_portal_links %}
+    <div style="font-family:var(--font-body-family); font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.14em; color:var(--color-muted); margin-bottom:1rem;">Or Explore Popular Portals:</div>
+    
+    <div class="portals-404-grid">
+      <a href="/collections/all" class="portal-chip">All Handcrafted Treasures</a>
+      <a href="/pages/symbols-and-stories" class="portal-chip">Meanings &amp; Symbolism Hub</a>
+      <a href="/pages/bikini-charms" class="portal-chip">18K Gold Bikini Charms</a>
+      <a href="/blogs/news" class="portal-chip">Stories &amp; Journal</a>
+      <a href="/pages/contact" class="portal-chip">Studio Contact</a>
+    </div>
+  {% endif %}
+
+  <div>
+    <a href="/" class="cta-404-home">Return to Homepage &rarr;</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "404 Page Not Found",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Lost at Sea — This Treasure Cannot Be Found." },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle Prose", "default": "The page you are looking for may have drifted with the tide, changed locations, or moved to a new shore." },
+    { "type": "checkbox", "id": "show_search", "label": "Show Search Bar", "default": true },
+    { "type": "checkbox", "id": "show_portal_links", "label": "Show Quick Navigation Portals", "default": true },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    { "name": "404 Page Not Found" }
+  ]
+}
+{% endschema %}

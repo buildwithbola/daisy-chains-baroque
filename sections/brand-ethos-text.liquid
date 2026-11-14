@@ -1,0 +1,93 @@
+{%- style -%}
+  .brand-ethos {
+    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    background-color: var(--color-background);
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .brand-ethos--position-left { justify-content: flex-start; }
+  .brand-ethos--position-center { justify-content: center; }
+  .brand-ethos--position-right { justify-content: flex-end; }
+
+  .brand-ethos__inner {
+    max-width: 850px;
+    width: 100%;
+  }
+
+  .brand-ethos__text--align-left { text-align: left; }
+  .brand-ethos__text--align-center { text-align: center; }
+  .brand-ethos__text--align-right { text-align: right; }
+
+  .brand-ethos__text--small { font-size: clamp(1rem, 1.6vw, 1.25rem); }
+  .brand-ethos__text--medium { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+  .brand-ethos__text--large { font-size: clamp(1.4rem, 2.8vw, 2rem); }
+  .brand-ethos__text,
+  .brand-ethos__text p,
+  .brand-ethos__text * {
+    font-family: var(--font-heading-family);
+    font-weight: 400;
+    line-height: 1.6;
+    color: {{ section.settings.text_color | default: '#000000' }} !important;
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+{%- endstyle -%}
+
+<div class="brand-ethos brand-ethos--position-{{ section.settings.content_position }}">
+  <div class="brand-ethos__inner">
+    <div class="brand-ethos__text brand-ethos__text--{{ section.settings.text_size }} brand-ethos__text--align-{{ section.settings.text_alignment }}">
+      {{ section.settings.text }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brand Ethos Text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Statement Text",
+      "default": "<p>Handcrafted in California with ethically gathered materials, asymmetrical pearls, and one-of-a-kind treasures from nature.</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    { "type": "color", "id": "text_color", "label": "Text Color", "default": "#000000" }
+  ],
+  "presets": [ { "name": "Brand Ethos Text" } ]
+}
+{% endschema %}

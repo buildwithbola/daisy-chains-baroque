@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "four_leaf_clover": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Small_Luck_and_Love_Clover_Necklace.jpg",
+            "title": "Four-Leaf Clover",
+            "tagline": "Luck • Hope • Faith • Love",
+            "description": "<p>One of the world's most cherished symbols of good fortune, the Four-Leaf Clover attracts luck while reminding us to hold onto hope, have faith in the future, and embrace love wherever life leads.</p>",
+            "link_label": "Shop Clover Treasures",
+            "shop_link": ""
+          }
+        },
+        "ladybug": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/14K_Solid_Gold_Ladybug_Necklace__Lucky_Charm_Pendant_Yellow_Gold___20.jpg",
+            "title": "The Ladybug",
+            "tagline": "Good Fortune • Protection • Wishes",
+            "description": "<p>A timeless symbol of luck and joyful new beginnings, the Ladybug is believed to bring good fortune, protection, and the promise that wishes can come true.</p>",
+            "link_label": "Shop Ladybug Treasures",
+            "shop_link": ""
+          }
+        },
+        "horseshoe": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Diamond_Horseshoe_Necklace_-_Lucky_Charm_Pendant_with_Gift_Box_Elegant_Gift_for_Her_Birthday_Anniversary_Necklace_Gifts_for_Girlfriend.jpg",
+            "title": "The Horseshoe",
+            "tagline": "Luck • Protection • Prosperity",
+            "description": "<p>For centuries, the Horseshoe has been displayed as a symbol of luck and prosperity. It serves as a reminder to welcome abundance, safeguard what matters most, and embrace the opportunities ahead.</p>",
+            "link_label": "Shop Horseshoe Treasures",
+            "shop_link": ""
+          }
+        },
+        "lucky_coin": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/14k_Solid_Gold_Lucky_Coin_Necklace___Four_Leaf_Clover_Horseshoe_Ladybug_Money_Bag_Pendant.jpg",
+            "title": "Lucky Coin",
+            "tagline": "Wealth • Abundance • Success",
+            "description": "<p>Across many cultures, the Lucky Coin symbolizes prosperity and good fortune. It serves as a reminder to welcome new opportunities and attract success in every area of life.</p>",
+            "link_label": "Shop Coin Treasures",
+            "shop_link": ""
+          }
+        },
+        "acorn": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/8726f109bd603147366a4db9cd0f4a87.jpg",
+            "title": "The Acorn",
+            "tagline": "Potential • Growth • Good Fortune",
+            "description": "<p>Though small in size, the Acorn holds the promise of something extraordinary. It symbolizes growth, opportunity, and the potential to become something greater.</p>",
+            "link_label": "Shop Acorn Treasures",
+            "shop_link": ""
+          }
+        },
+        "pixiu": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/SK_Jewellery_Pixiu_Riches_Keeper_999_Pure_Gold_Pendant_1.jpg",
+            "title": "Wealth Pixiu",
+            "tagline": "Abundance • Success • Protection",
+            "description": "<p>Revered in Feng Shui as a guardian of wealth, Pixiu is believed to attract financial abundance while protecting what you have already earned, inviting prosperity with gratitude.</p>",
+            "link_label": "Shop Pixiu Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "four_leaf_clover",
+        "ladybug",
+        "horseshoe",
+        "lucky_coin",
+        "acorn",
+        "pixiu"
+      ],
+      "settings": {
+        "title": "Luck & Abundance",
+        "title_size": "small",
+        "subtitle": "Treasures that attract good fortune, welcome prosperity, and celebrate fresh blessings.",
+        "subtitle_size": "medium",
+        "description": "<p>Attract prosperity and celebrate life's unexpected blessings. Explore symbols of good fortune designed to bring warmth, joy, and abundance to your everyday story.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

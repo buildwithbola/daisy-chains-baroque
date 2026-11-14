@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "pixiu": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/bb2cbe56078e37fcd8186151c6e5deda.jpg",
+            "title": "The Pixiu (Fu Pixiu & Wealth Pixiu)",
+            "tagline": "Blessings • Prosperity • Protection",
+            "description": "<p>One of the most revered mythical guardians in Chinese culture and Feng Shui. Pixiu attracts wealth, protects prosperity, and invites financial well-being when worn with head facing outward on the left wrist.</p>",
+            "link_label": "Shop Pixiu Treasures",
+            "shop_link": ""
+          }
+        },
+        "fu_bead": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/e3e53788b1489d4da4db6676b12a56c2.jpg",
+            "title": "Fu (福) Blessing Bead",
+            "tagline": "Blessings • Happiness • Good Fortune",
+            "description": "<p>The character Fu (福) translates to 'good fortune' or 'blessing'. Displayed during Lunar New Year, it represents a wish for health, harmony, and gratitude for life's greatest treasures.</p>",
+            "link_label": "Shop Fu Treasures",
+            "shop_link": ""
+          }
+        },
+        "koi_fish": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/c5e8f4a07843a3c1a1cb12925a3b9242.jpg",
+            "title": "Koi Fish",
+            "tagline": "Perseverance • Prosperity • Success",
+            "description": "<p>The Koi Fish symbolizes perseverance, prosperity, and achieving great success through determination, proving that courage can overcome life's strongest currents.</p>",
+            "link_label": "Shop Koi Treasures",
+            "shop_link": ""
+          }
+        },
+        "five_elements": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/309d5e351469a3ec59ad27fa58d3e9e8.jpg",
+            "title": "The Five Elements (Wood, Fire, Earth, Metal, Water)",
+            "tagline": "Balance • Harmony • Natural Energy",
+            "description": "<p>At the heart of Chinese philosophy, the Five Elements represent the natural energies shaping our world. They offer a reminder to cultivate balance in every season of life.</p>",
+            "link_label": "Shop Elemental Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "pixiu",
+        "fu_bead",
+        "koi_fish",
+        "five_elements"
+      ],
+      "settings": {
+        "title": "Asian & Chinese Symbols",
+        "title_size": "small",
+        "subtitle": "Treasures inspired by Feng Shui, ancient Chinese folklore, and sacred elemental harmony.",
+        "subtitle_size": "medium",
+        "description": "<p>Discover ancient symbols of wealth, harmony, and cosmic balance—including Pixiu guardians, Fu blessing beads, Koi fish, and the Five Elements.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

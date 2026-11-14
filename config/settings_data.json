@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "colors_background": "#FFFFFF",
+    "colors_text": "#000000",
+    "colors_surface_warm": "#FFFFFF",
+    "colors_border": "#000000",
+    "colors_muted": "#000000",
+    "favicon": "shopify://shop_images/Logo_large_vertical.png",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify://shop_images/Logo_vertical_name.png",
+          "logo_text": "DAISY CHAINS",
+          "logo_width": 220,
+          "logo_font_size": 32,
+          "menu": "main-menu",
+          "show_top_bar": true,
+          "top_bar_text": "SIGN UP FOR 10% OFF YOUR FIRST ORDER",
+          "top_bar_link": "",
+          "top_bar_bg": "#e5c158",
+          "top_bar_color": "#1c1c1c",
+          "show_secondary_bar": true,
+          "secondary_bar_text": "FREE US DELIVERY ON ORDERS OVER $100",
+          "secondary_bar_link": "",
+          "secondary_bar_bg": "#000000",
+          "secondary_bar_color": "#ffffff",
+          "show_search_bar": true,
+          "search_placeholder": "Search gemstones, pearls, intention charms...",
+          "show_currency_selector": true,
+          "show_account_icon": true,
+          "show_wishlist_icon": true,
+          "show_cart_icon": true,
+          "header_icon_size": 20,
+          "header_icon_gap": 18,
+          "icon_position": "flex-end",
+          "header_bg": "#ffffff",
+          "header_text_color": "#000000",
+          "header_border_color": "#000000"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "brand_title": "Daisy Chains",
+          "brand_title_size": "medium",
+          "brand_logo": "shopify://shop_images/Logo_large_vertical.png",
+          "logo_width": 180,
+          "brand_bio": "Handcrafted jewelry designed with intention. Celebrating the unexpected details of the natural world.",
+          "show_location": false,
+          "location_text": "Handcrafted in California, USA",
+          "menu_1_title": "Explore",
+          "menu_1": "footer",
+          "menu_2_title": "Guides",
+          "menu_2": "guides",
+          "newsletter_title": "Stay Connected",
+          "newsletter_subtext": "Subscribe to receive private collection previews and treasure updates.",
+          "newsletter_button_text": "Join",
+          "copyright_text": "All rights reserved.",
+          "footer_bg": "#ffffff",
+          "footer_text_color": "#000000",
+          "footer_border_color": "#000000"
+        }
+      },
+      "cart-drawer": {
+        "type": "cart-drawer",
+        "settings": {
+          "title": "Your Treasure Chest",
+          "subtitle": "Your treasures are waiting..."
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

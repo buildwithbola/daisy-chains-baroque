@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "heart": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/4848c6681f364c0f9933ca241c113931.jpg",
+            "title": "The Heart",
+            "tagline": "Love • Compassion • Connection",
+            "description": "<p>The Heart is the universal symbol of love, compassion, and meaningful connection. It serves as a reminder to lead with kindness, open your heart to others, and cherish the relationships that make life beautiful.</p>",
+            "link_label": "Shop Heart Treasures",
+            "shop_link": ""
+          }
+        },
+        "rose": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Large_Rose_Pendant14k_Yellow_Gold_Pendant_Only.jpg",
+            "title": "The Rose",
+            "tagline": "Love • Beauty • Passion",
+            "description": "<p>For centuries, the Rose has symbolized love, beauty, and passion. It serves as a reminder to appreciate life's beauty, celebrate meaningful relationships, and let love bloom in all its forms.</p>",
+            "link_label": "Shop Rose Treasures",
+            "shop_link": ""
+          }
+        },
+        "infinity": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/shop_now_under_399infinity_pendant_necklace_with_white_stone_amazon_finds.jpg",
+            "title": "Infinity Symbol",
+            "tagline": "Eternal Love • Connection • Endless Possibilities",
+            "description": "<p>The Infinity Symbol represents everlasting love, unbreakable bonds, and infinite possibilities. It serves as a reminder that the deepest connections transcend time and distance.</p>",
+            "link_label": "Shop Infinity Treasures",
+            "shop_link": ""
+          }
+        },
+        "rabbit": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Bunny_Necklace_-_Gold_Plated___14_inches_1.jpg",
+            "title": "The Rabbit",
+            "tagline": "Luck • Fertility • New Beginnings",
+            "description": "<p>Long regarded as a symbol of good fortune, abundance, and fresh starts, the Rabbit represents fertility, growth, and new beginnings. It serves as a reminder to embrace life's opportunities with optimism.</p>",
+            "link_label": "Shop Rabbit Treasures",
+            "shop_link": ""
+          }
+        },
+        "fu_bead": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/14K_Gold_Chinese_FU_Symbol_Necklace__Personalized_Good_Luck_Pendant.jpg",
+            "title": "Fu (福) Bead",
+            "tagline": "Blessings • Happiness • Good Fortune",
+            "description": "<p>Features one of the most beloved symbols in Chinese culture. The character Fu (福) translates to 'good fortune' or 'blessing' and reminds us that life's greatest treasures include loving relationships and inner peace.</p>",
+            "link_label": "Shop Fu Bead Treasures",
+            "shop_link": ""
+          }
+        },
+        "fire_element": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Inner_Flame_Gold_Vermeil_Necklace.jpg",
+            "title": "Fire Element",
+            "tagline": "Passion • Energy • Inspiration",
+            "description": "<p>Fire symbolizes passion, transformation, joy, and personal power. It represents the spark that inspires creativity, leadership, confidence, and meaningful connections.</p>",
+            "link_label": "Shop Element Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heart",
+        "rose",
+        "infinity",
+        "rabbit",
+        "fu_bead",
+        "fire_element"
+      ],
+      "settings": {
+        "title": "Love & Connection",
+        "title_size": "small",
+        "subtitle": "Treasures that celebrate deep bonds, devotion, and meaningful relationships.",
+        "subtitle_size": "medium",
+        "description": "<p>Love is at the heart of every story we tell. Explore symbols that honor romantic devotion, family connection, friendship, and self-love.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

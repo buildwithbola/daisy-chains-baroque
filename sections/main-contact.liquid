@@ -1,0 +1,479 @@
+{%- style -%}
+  .contact-page-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .contact-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .contact-breadcrumb--align-left { justify-content: flex-start; }
+  .contact-breadcrumb--align-center { justify-content: center; }
+  .contact-breadcrumb--align-right { justify-content: flex-end; }
+
+  .contact-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .contact-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Header */
+  .contact-hero {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .contact-hero--position-left { margin-left: 0; margin-right: auto; }
+  .contact-hero--position-center { margin-left: auto; margin-right: auto; }
+  .contact-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .contact-hero--align-left { text-align: left; }
+  .contact-hero--align-center { text-align: center; }
+  .contact-hero--align-right { text-align: right; }
+
+  .contact-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .contact-hero__title--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .contact-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .contact-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .contact-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .contact-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+  }
+
+  /* 2-Column Grid Layout */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 4.5fr 7fr;
+    }
+  }
+
+  /* Studio Info Sidebar */
+  .contact-info-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .contact-info-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-info-svg {
+    width: 22px;
+    height: 22px;
+    stroke: #1c1c1c;
+    stroke-width: 1.4;
+    fill: none;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    transition: fill 0.35s ease, stroke 0.35s ease;
+  }
+
+  .contact-info-item:hover .contact-info-svg {
+    fill: var(--color-accent, #c9a050);
+    stroke: #1c1c1c;
+  }
+
+  .contact-info-label {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text);
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-info-val {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.5;
+  }
+
+  .contact-info-val a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .contact-info-val a:hover {
+    color: var(--color-accent);
+  }
+
+  /* Form Container */
+  .contact-form-wrapper {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-group-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .form-group-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-label {
+    display: block;
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: border-color 0.25s ease;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-text);
+    background-color: #ffffff;
+  }
+
+  .contact-submit-btn {
+    padding: 1.15rem 2rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: var(--color-button-bg, #1c1c1c);
+    color: var(--color-button-text, #ffffff);
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+    align-self: flex-start;
+  }
+
+  .contact-submit-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* FAQ Accordion Section */
+  .contact-faq-section {
+    margin-top: clamp(4rem, 7vw, 6rem);
+    border-top: 1px solid var(--color-border);
+    padding-top: clamp(3rem, 5vw, 4.5rem);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.25rem 0;
+  }
+
+  .faq-question {
+    font-family: var(--font-heading-family);
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-answer {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    display: none;
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+{%- endstyle -%}
+
+<div class="contact-page-section">
+  <!-- Breadcrumb -->
+  <div class="contact-breadcrumb contact-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>Contact Us</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="contact-hero contact-hero--position-{{ section.settings.content_position }} contact-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="contact-hero__title contact-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="contact-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 2-Column Grid Layout -->
+  <div class="contact-grid">
+    <!-- Left Column: Studio & Founder Contact Info -->
+    <div class="contact-info-card">
+      <h2 class="contact-info-title">Studio &amp; Inquiries</h2>
+
+      <div class="contact-info-item">
+        <svg class="contact-info-svg" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <div>
+          <div class="contact-info-label">Direct Studio Email</div>
+          <div class="contact-info-val"><a href="mailto:{{ section.settings.contact_email | default: 'hello@daisy-chains.com' }}">{{ section.settings.contact_email | default: 'hello@daisy-chains.com' }}</a></div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <svg class="contact-info-svg" viewBox="0 0 24 24">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <div>
+          <div class="contact-info-label">Handcrafted Location</div>
+          <div class="contact-info-val">{{ section.settings.studio_location | default: 'San Francisco Bay Area, California' }}</div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <svg class="contact-info-svg" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <div>
+          <div class="contact-info-label">Response Time</div>
+          <div class="contact-info-val">{{ section.settings.response_note | default: 'Jenny and our studio team respond within 24–48 hours.' }}</div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <svg class="contact-info-svg" viewBox="0 0 24 24">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <div>
+          <div class="contact-info-label">Bespoke &amp; Private Events</div>
+          <div class="contact-info-val">Inquire about custom wire wrapping, bridal jewelry, or private charm bar workshop parties.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Contact Form -->
+    <div class="contact-form-wrapper">
+      {% form 'contact', class: 'contact-form' %}
+        {% if form.posted_successfully? %}
+          <div style="background-color:var(--color-surface-warm); border:1px solid var(--color-accent); padding:1.25rem; font-family:var(--font-body-family); font-size:0.88rem; color:var(--color-text); text-align:center;">
+            ✨ Thank you! Your message has been received. Jenny will get back to you shortly.
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div style="background-color:#fff0f0; border:1px solid #e0b0b0; padding:1rem; font-family:var(--font-body-family); font-size:0.84rem; color:#b00000;">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="form-group-row">
+          <div>
+            <label class="form-label" for="ContactFormName">Your Name *</label>
+            <input type="text" id="ContactFormName" name="contact[name]" class="form-input" placeholder="e.g. Sarah Higgins" required>
+          </div>
+          <div>
+            <label class="form-label" for="ContactFormEmail">Email Address *</label>
+            <input type="email" id="ContactFormEmail" name="contact[email]" class="form-input" placeholder="e.g. sarah@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-group-row">
+          <div>
+            <label class="form-label" for="ContactFormPhone">Order # / Phone (Optional)</label>
+            <input type="tel" id="ContactFormPhone" name="contact[phone]" class="form-input" placeholder="e.g. #1042 or (415) 555-0192">
+          </div>
+          <div>
+            <label class="form-label" for="ContactFormSubject">Inquiry Type</label>
+            <select id="ContactFormSubject" name="contact[Inquiry Type]" class="form-select">
+              <option value="General Inquiry">General Inquiry / Customer Care</option>
+              <option value="Custom Jewelry Design">Custom Jewelry / Bespoke Design</option>
+              <option value="Private Charm Bar Party">Private Workshop / Charm Bar Event</option>
+              <option value="Pop-Up Market Proposal">Artisan Market / Pop-Up Showcase</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="form-label" for="ContactFormMessage">Your Message *</label>
+          <textarea id="ContactFormMessage" name="contact[body]" rows="5" class="form-textarea" placeholder="Tell us how we can help, or share your custom design vision..." required></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit-btn">Send Message to Studio &rarr;</button>
+      {% endform %}
+    </div>
+  </div>
+
+  <!-- FAQ Accordion Section -->
+  {% if section.settings.show_faqs %}
+    <div class="contact-faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>How long does a custom wire-wrapped piece take to make?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Every custom piece is designed and wire-wrapped by hand by Jenny in California. Custom orders typically ship within 1 to 2 weeks after finalizing your stone selection and design details.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>Are your jewelry pieces waterproof for beach days?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! Our Bikini &amp; Beach Charms collection features 18K Gold PVD coating over 316L stainless steel, offering maximum resistance to salt water, pool chlorine, and sweat.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+          <span>How do I book a private Charm Bar Workshop party?</span>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Jenny offers private charm bar workshops across the SF Bay Area for birthdays, bridal showers, and private gatherings. Select "Private Workshop / Charm Bar Event" in the form above or email us directly at hello@daisy-chains.com!
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Contact Us Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Get in Touch" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "We'd love to hear from you. Whether you have a question about a treasure, need sizing guidance, or wish to inquire about custom designs." },
+    { "type": "text", "id": "contact_email", "label": "Studio Email", "default": "hello@daisy-chains.com" },
+    { "type": "text", "id": "studio_location", "label": "Studio Location", "default": "San Francisco Bay Area, California" },
+    { "type": "text", "id": "response_note", "label": "Response Time Note", "default": "Jenny and our studio team respond within 24–48 hours." },
+    { "type": "checkbox", "id": "show_faqs", "label": "Show Quick FAQ Accordion", "default": true },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    { "name": "Contact Us Page" }
+  ]
+}
+{% endschema %}

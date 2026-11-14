@@ -1,0 +1,120 @@
+{%- style -%}
+  .chan-luu-grid-section {
+    padding-top: clamp(2rem, 4vw, 4rem);
+    padding-bottom: clamp(2rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .chan-luu-grid-section--padding-none { padding-left: 0; padding-right: 0; }
+  .chan-luu-grid-section--padding-compact { padding-left: 1rem; padding-right: 1rem; }
+  .chan-luu-grid-section--padding-medium { padding-left: 2rem; padding-right: 2rem; }
+  .chan-luu-grid-section--padding-large { padding-left: clamp(2rem, 4vw, 4rem); padding-right: clamp(2rem, 4vw, 4rem); }
+
+  .chan-luu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem 0.75rem !important;
+  }
+  @media screen and (min-width: 900px) {
+    .chan-luu-grid {
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 2rem 1.25rem !important;
+    }
+  }
+{%- endstyle -%}
+
+{% assign selected_collection = section.settings.collection %}
+{% if selected_collection != blank and selected_collection.products.size > 0 %}
+  {% assign product_list = selected_collection.products %}
+{% elsif collections.all.products.size > 0 %}
+  {% assign product_list = collections.all.products %}
+{% else %}
+  {% assign product_list = nil %}
+{% endif %}
+
+<div class="chan-luu-grid-section chan-luu-grid-section--padding-{{ section.settings.side_padding }}">
+  {% if section.settings.title != blank %}
+    <h2 style="font-family:var(--font-heading-family); font-size:clamp(1.8rem, 3vw, 2.5rem); text-align:center; margin-bottom:2.5rem; color:var(--color-text);">
+      {{ section.settings.title | escape }}
+    </h2>
+  {% endif %}
+
+  <div class="chan-luu-grid">
+    {% if product_list != nil and product_list.size > 0 %}
+      {% for product in product_list limit: section.settings.product_limit %}
+        {% render 'product-card', product: product, show_secondary_image: section.settings.show_secondary_image %}
+      {% endfor %}
+    {% else %}
+      <!-- Fallback Featured Handcrafted Treasures -->
+      <div class="product-card">
+        <div class="product-card__image-wrapper">
+          <button type="button" class="product-card__wishlist" aria-label="Add to wishlist" onclick="event.preventDefault(); toggleWishlistItem('baroque-pearl-choker', this);">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+        </div>
+        <h3 class="product-card__title">Asymmetrical Baroque Pearl Choker</h3>
+        <div class="product-card__price">$245.00</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image-wrapper">
+          <button type="button" class="product-card__wishlist" aria-label="Add to wishlist" onclick="event.preventDefault(); toggleWishlistItem('abalone-shell-necklace', this);">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+          {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+        </div>
+        <h3 class="product-card__title">Abalone Shell &amp; 14K Gold Charm Necklace</h3>
+        <div class="product-card__price">$198.00</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image-wrapper">
+          <button type="button" class="product-card__wishlist" aria-label="Add to wishlist" onclick="event.preventDefault(); toggleWishlistItem('golden-sunburst-pendant', this);">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+          {{ 'product-3' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+        </div>
+        <h3 class="product-card__title">Golden Sunburst Intention Pendant</h3>
+        <div class="product-card__price">$175.00</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image-wrapper">
+          <button type="button" class="product-card__wishlist" aria-label="Add to wishlist" onclick="event.preventDefault(); toggleWishlistItem('tahitian-pearl-bracelet', this);">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+          {{ 'product-4' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+        </div>
+        <h3 class="product-card__title">Tahitian Pearl Intention Bracelet</h3>
+        <div class="product-card__price">$130.00</div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Chan Luu Product Grid",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Heading", "default": "Featured Handcrafted Treasures" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "product_limit", "min": 4, "max": 16, "step": 4, "label": "Number of products", "default": 4 },
+    {
+      "type": "select",
+      "id": "side_padding",
+      "label": "Side Padding (Left & Right)",
+      "options": [
+        { "value": "none", "label": "None (Full Width)" },
+        { "value": "compact", "label": "Compact (Small Space)" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "compact"
+    },
+    { "type": "checkbox", "id": "show_secondary_image", "default": true, "label": "Show secondary image on hover" }
+  ],
+  "presets": [ { "name": "Chan Luu Product Grid" } ]
+}
+{% endschema %}

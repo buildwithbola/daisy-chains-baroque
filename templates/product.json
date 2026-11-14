@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "medium"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_notice": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_free_shipping_notice": true
+          }
+        },
+        "trust_badges": {
+          "type": "trust_badges",
+          "settings": {}
+        },
+        "story": {
+          "type": "accordion",
+          "settings": {
+            "heading": "The Story & Symbolism",
+            "content": "<p>Handcrafted in California with asymmetrical freshwater pearls and ethically gathered natural shells. Each piece carries its own unique history and gentle energy from the sea, designed to be worn as a personal treasure.</p>",
+            "open_by_default": true
+          }
+        },
+        "details": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Treasure Details",
+            "content": "<p>&bull; Materials: Ethically sourced baroque pearls, organic shells &amp; 14k gold-filled hardware.<br>&bull; Craftsmanship: Individually hand-assembled in Los Angeles, CA.<br>&bull; Fit &amp; Closure: Adjustable lobster clasp with extension chain.</p>",
+            "open_by_default": false
+          }
+        },
+        "care": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping & Care",
+            "content": "<p>Store in your Daisy Chains linen pouch when not in use. Avoid direct exposure to perfumes, ocean saltwater, and harsh hairsprays to preserve natural pearl luster. Complimentary carbon-neutral shipping on all U.S. orders.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "trust_badges",
+        "story",
+        "details",
+        "care"
+      ],
+      "settings": {
+        "desktop_media_layout": "stacked_2col",
+        "desktop_media_position": "left",
+        "image_aspect_ratio": "3_4",
+        "media_gap": "0.75rem",
+        "enable_sticky_info": true,
+        "show_breadcrumbs": true,
+        "show_installments": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Complete The Treasure Set",
+        "subtitle": "Complementary handcrafted pieces designed to layer beautifully together."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

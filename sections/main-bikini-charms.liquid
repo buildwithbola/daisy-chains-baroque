@@ -1,0 +1,315 @@
+{%- style -%}
+  .bikini-charms-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .bikini-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .bikini-breadcrumb--align-left { justify-content: flex-start; }
+  .bikini-breadcrumb--align-center { justify-content: center; }
+  .bikini-breadcrumb--align-right { justify-content: flex-end; }
+
+  .bikini-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .bikini-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Banner */
+  .bikini-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  }
+
+  .bikini-hero--position-left { margin-left: 0; margin-right: auto; }
+  .bikini-hero--position-center { margin-left: auto; margin-right: auto; }
+  .bikini-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .bikini-hero--align-left { text-align: left; }
+  .bikini-hero--align-center { text-align: center; }
+  .bikini-hero--align-right { text-align: right; }
+
+  .bikini-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .bikini-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .bikini-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .bikini-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .bikini-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .bikini-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .bikini-hero__description {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.65;
+  }
+
+  /* Feature Badges Bar (Hand-Drawn Black SVGs with Accent Color Fill on Hover) */
+  .bikini-features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: clamp(4rem, 7vw, 6rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    .bikini-features-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .bikini-feature-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .bikini-feature-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-text);
+  }
+
+  .bikini-feature-icon {
+    width: 36px;
+    height: 36px;
+    stroke: #1c1c1c;
+    stroke-width: 1.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-bottom: 1rem;
+    transition: fill 0.35s ease, stroke 0.35s ease, transform 0.35s ease;
+  }
+
+  .bikini-feature-card:hover .bikini-feature-icon {
+    fill: var(--color-accent, #c9a050);
+    stroke: #1c1c1c;
+    transform: scale(1.1);
+  }
+
+  .bikini-feature-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.35rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .bikini-feature-text {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: #555555;
+    line-height: 1.6;
+  }
+
+  /* Shoppable Product Grid */
+  .bikini-grid-header {
+    text-align: center;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--color-border);
+    padding-top: clamp(3rem, 5vw, 4rem);
+  }
+
+  .bikini-grid-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    font-weight: 300;
+  }
+
+  /* Closing Quote Banner */
+  .bikini-closing-banner {
+    text-align: center;
+    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    background-color: var(--color-surface-warm);
+    border-top: 1px solid var(--color-border);
+    margin-top: 4rem;
+  }
+
+  .bikini-closing-quote {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+{%- endstyle -%}
+
+<div class="bikini-charms-section">
+  <!-- Breadcrumb -->
+  <div class="bikini-breadcrumb bikini-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ section.settings.title }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="bikini-hero bikini-hero--position-{{ section.settings.content_position }} bikini-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="bikini-hero__title bikini-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="bikini-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="bikini-hero__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- 3 Feature Cards (Hand-Drawn Black SVGs with Accent Color Fill on Hover) -->
+  <div class="bikini-features-grid">
+    <div class="bikini-feature-card">
+      <svg class="bikini-feature-icon" viewBox="0 0 24 24">
+        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+      </svg>
+      <h3 class="bikini-feature-title">Waterproof 18K Gold PVD</h3>
+      <div class="bikini-feature-text">Crafted with 18K Gold PVD over 316L stainless steel—made for beach days, ocean dips, and poolside adventures without tarnishing.</div>
+    </div>
+
+    <div class="bikini-feature-card">
+      <svg class="bikini-feature-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 3a9 9 0 0 0 0 18"></path>
+      </svg>
+      <h3 class="bikini-feature-title">Baroque Shells &amp; Pearls</h3>
+      <div class="bikini-feature-text">Handmade with the help of Mother Nature. Each shell and pearl is unique in shape, color, and character—no two are ever identical.</div>
+    </div>
+
+    <div class="bikini-feature-card">
+      <svg class="bikini-feature-icon" viewBox="0 0 24 24">
+        <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+      </svg>
+      <h3 class="bikini-feature-title">Versatile Attachment</h3>
+      <div class="bikini-feature-text">Clip onto your bikini top or shoe for summer fun. When summer ends, attach your charm to a necklace, bracelet, or handbag.</div>
+    </div>
+  </div>
+
+  <!-- Shoppable Product Grid -->
+  <div class="bikini-grid-header">
+    <h2 class="bikini-grid-title">Shop Bikini &amp; Beach Charms</h2>
+    <p style="font-family: var(--font-body-family); font-size: 0.88rem; color: var(--color-muted);">
+      Displayed on textured natural cardstock carrying the tagline: <em>Baroque Design Inspired by Mother Nature</em>.
+    </p>
+  </div>
+
+  <div class="chan-luu-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem 0.75rem;">
+    {% if section.settings.collection != blank %}
+      {% for product in section.settings.collection.products limit: 8 %}
+        {% render 'product-card', product: product %}
+      {% else %}
+        {% for i in (1..8) %}
+          {% render 'product-card', product: nil %}
+        {% endfor %}
+      {% endfor %}
+    {% else %}
+      {% for i in (1..8) %}
+        {% render 'product-card', product: nil %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+<!-- Closing Banner -->
+<div class="bikini-closing-banner">
+  <div class="bikini-closing-quote">"Be Inspired. Wear Your Story."</div>
+  <div style="font-family:var(--font-body-family); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--color-muted);">
+    &mdash; Daisy Chains Beach Collection
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bikini Charm Collection",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Bikini & Beach Charm Collection" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Baroque Design Inspired by Mother Nature" },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Hero Description",
+      "default": "<p>Our waterproof bikini charms are displayed on textured natural cardstock that reflects their relaxed, beach-inspired spirit. Handmade with the help of Mother Nature, each shell is unique in shape, color, and character.</p>"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    { "type": "collection", "id": "collection", "label": "Featured Collection" }
+  ],
+  "presets": [
+    {
+      "name": "Bikini Charm Collection"
+    }
+  ]
+}
+{% endschema %}

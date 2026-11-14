@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-wishlist",
+      "settings": {
+        "title": "Your Saved Treasures",
+        "title_size": "small",
+        "subtitle": "Keep track of your favorite baroque pearls, Abalone shells, and California intention chokers.",
+        "show_clear_all": true,
+        "columns_desktop": 4,
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Treasures You Might Love",
+        "heading_size": "medium",
+        "subtitle": "Explore handcrafted pieces loved by our California studio community.",
+        "text_alignment": "center",
+        "recommendation_type": "auto",
+        "product_list": [],
+        "fallback_collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

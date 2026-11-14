@@ -1,0 +1,193 @@
+{%- style -%}
+  .customer-login-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .login-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 900px) {
+    .login-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .login-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  }
+
+  .login-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .login-subtitle {
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1.75rem;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .login-input {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+
+  .login-input:focus {
+    outline: none;
+    border-color: var(--color-text);
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 1.1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+  }
+
+  .login-btn:hover { opacity: 0.9; }
+
+  /* VIP Benefits Card */
+  .vip-benefits-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .vip-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    font-weight: 300;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #444;
+  }
+{%- endstyle -%}
+
+<div class="customer-login-section">
+  <div class="login-grid">
+    <!-- Left Column: Login Form -->
+    <div class="login-card">
+      <!-- Recover Password Box -->
+      <div id="RecoverPasswordForm" style="display:none;">
+        <h1 class="login-title">Reset Your Password</h1>
+        <div class="login-subtitle">We will send you an email to reset your password.</div>
+
+        {% form 'recover_customer_password', class: 'login-form' %}
+          {% if form.posted_successfully? %}
+            <div style="background:#f4f0ea; border:1px solid #c9a050; padding:1rem; font-size:0.84rem;">
+              ✨ Password reset link sent! Check your inbox.
+            </div>
+          {% endif %}
+
+          <div>
+            <label style="display:block; font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-bottom:0.4rem;">Email Address</label>
+            <input type="email" name="email" class="login-input" placeholder="e.g. sarah@example.com" required>
+          </div>
+
+          <button type="submit" class="login-btn">Submit Password Reset &rarr;</button>
+          <div style="text-align:center; margin-top:0.5rem;">
+            <a href="#login" onclick="document.getElementById('RecoverPasswordForm').style.display='none'; document.getElementById('CustomerLoginForm').style.display='block';" style="font-size:0.78rem; text-transform:uppercase; color:var(--color-muted);">Cancel</a>
+          </div>
+        {% endform %}
+      </div>
+
+      <!-- Customer Login Form -->
+      <div id="CustomerLoginForm">
+        <h1 class="login-title">Sign In</h1>
+        <div class="login-subtitle">Access your saved shipping addresses &amp; order history.</div>
+
+        {% form 'customer_login', class: 'login-form' %}
+          {% if form.errors %}
+            <div style="background:#fff0f0; border:1px solid #e0b0b0; padding:0.85rem; font-size:0.84rem; color:#b00000;">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <div>
+            <label style="display:block; font-size:0.76rem; font-weight:600; text-transform:uppercase; margin-bottom:0.4rem;">Email Address</label>
+            <input type="email" name="customer[email]" class="login-input" placeholder="e.g. sarah@example.com" required>
+          </div>
+
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+              <label style="font-size:0.76rem; font-weight:600; text-transform:uppercase;">Password</label>
+              <a href="#recover" onclick="document.getElementById('CustomerLoginForm').style.display='none'; document.getElementById('RecoverPasswordForm').style.display='block';" style="font-size:0.76rem; color:var(--color-muted);">Forgot Password?</a>
+            </div>
+            <input type="password" name="customer[password]" class="login-input" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="login-btn">Sign In to Account &rarr;</button>
+          
+          <div style="text-align:center; margin-top:1rem; font-size:0.84rem; color:var(--color-muted);">
+            Don't have an account yet? <a href="{{ routes.account_register_url }}" style="color:var(--color-text); font-weight:600;">Create One Here</a>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+
+    <!-- Right Column: VIP Account Benefits -->
+    <div class="vip-benefits-card">
+      <h2 class="vip-title">Daisy Chains VIP Benefits</h2>
+
+      <div class="benefit-item">
+        <span style="color:var(--color-accent); font-size:1.2rem;">✨</span>
+        <div><strong>Faster &amp; Seamless Checkout:</strong> Save your default shipping addresses and preferences for instant order placements.</div>
+      </div>
+
+      <div class="benefit-item">
+        <span style="color:var(--color-accent); font-size:1.2rem;">📦</span>
+        <div><strong>Live Order Tracking:</strong> Track the fulfillment status and carrier shipment links of your handcrafted treasures in real-time.</div>
+      </div>
+
+      <div class="benefit-item">
+        <span style="color:var(--color-accent); font-size:1.2rem;">👑</span>
+        <div><strong>VIP Early Access:</strong> Receive early notification drops for limited-edition California baroque pearl releases &amp; pop-ups.</div>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <a href="{{ routes.account_register_url }}" class="login-btn" style="display:block; text-align:center; text-decoration:none; background:transparent; color:var(--color-text); border:1px solid #1c1c1c;">Create an Account &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>

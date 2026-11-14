@@ -1,0 +1,182 @@
+{%- style -%}
+  .product-recommendations-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 3.5rem);
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .recommendations-heading-wrapper {
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .recommendations-heading--align-left { text-align: left; }
+  .recommendations-heading--align-center { text-align: center; }
+  .recommendations-heading--align-right { text-align: right; }
+
+  .recommendations-title--small { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
+  .recommendations-title--medium { font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
+  .recommendations-title--large { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+  .recommendations-title--xlarge { font-size: clamp(2.6rem, 5vw, 4rem); }
+
+  .recommendations-title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+    color: var(--color-text);
+  }
+
+  .recommendations-subtitle {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+  }
+
+  .recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.6rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .recommendations-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop | default: 4 }}, 1fr);
+      gap: 1.25rem 0.85rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="product-recommendations-section" 
+     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show | default: 4 }}">
+  
+  <div class="recommendations-heading-wrapper recommendations-heading--align-{{ section.settings.text_alignment | default: 'center' }}">
+    <h2 class="recommendations-title recommendations-title--{{ section.settings.heading_size | default: 'medium' }}">
+      {{ section.settings.heading | escape }}
+    </h2>
+    {% if section.settings.subtitle != blank %}
+      <div class="recommendations-subtitle">{{ section.settings.subtitle | escape }}</div>
+    {% endif %}
+  </div>
+
+  <div class="recommendations-grid" id="RecommendationsGrid-{{ section.id }}">
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      {% for rec_product in recommendations.products limit: section.settings.products_to_show %}
+        {% render 'product-card', product: rec_product, show_secondary_image: true %}
+      {% endfor %}
+    {% elsif section.settings.product_list != blank %}
+      {% for rec_product in section.settings.product_list limit: section.settings.products_to_show %}
+        {% render 'product-card', product: rec_product, show_secondary_image: true %}
+      {% endfor %}
+    {% elsif collections.all.products.size > 0 %}
+      {% for rec_product in collections.all.products limit: section.settings.products_to_show %}
+        {% render 'product-card', product: rec_product, show_secondary_image: true %}
+      {% endfor %}
+    {% else %}
+      {% for i in (1..section.settings.products_to_show) %}
+        {% render 'product-card', product: nil %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sectionEl = document.querySelector('.product-recommendations-section');
+    if (!sectionEl) return;
+    const url = sectionEl.dataset.url;
+    if (!url) return;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        const recommendations = div.querySelector('.recommendations-grid');
+        if (recommendations && recommendations.innerHTML.trim().length > 0) {
+          const grid = sectionEl.querySelector('.recommendations-grid');
+          if (grid) grid.innerHTML = recommendations.innerHTML;
+        }
+      })
+      .catch(e => console.warn('Product recommendations fetch error:', e));
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Complete The Treasure Set"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Complementary handcrafted pieces designed to layer beautifully together."
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "recommendation_type",
+      "label": "Recommendation Source",
+      "options": [
+        { "value": "auto", "label": "Shopify AI Dynamic Recommendations" },
+        { "value": "collection", "label": "Curated Collection Fallback" },
+        { "value": "manual", "label": "Manual Product Selection" }
+      ],
+      "default": "auto"
+    },
+    { "type": "product_list", "id": "product_list", "label": "Manual Recommended Products", "limit": 8 },
+    { "type": "collection", "id": "fallback_collection", "label": "Curated Collection Fallback" },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "label": "Number of Products to Show",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Recommendations"
+    }
+  ]
+}
+{% endschema %}

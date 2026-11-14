@@ -1,0 +1,99 @@
+{%- style -%}
+  .editorial-quote {
+    padding: clamp(3.5rem, 8vw, 7rem) 2rem;
+    background-color: var(--color-surface-warm);
+    display: flex;
+    width: 100%;
+  }
+
+  .editorial-quote--position-left { justify-content: flex-start; }
+  .editorial-quote--position-center { justify-content: center; }
+  .editorial-quote--position-right { justify-content: flex-end; }
+
+  .editorial-quote__inner {
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .editorial-quote__inner--align-left { text-align: left; }
+  .editorial-quote__inner--align-center { text-align: center; }
+  .editorial-quote__inner--align-right { text-align: right; }
+
+  .editorial-quote__text--small { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+  .editorial-quote__text--medium { font-size: clamp(1.4rem, 2.8vw, 2.2rem); }
+  .editorial-quote__text--large { font-size: clamp(1.8rem, 3.8vw, 3rem); }
+
+  .editorial-quote__text {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    line-height: 1.35;
+    margin: 0 0 1.25rem 0;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+
+  .editorial-quote__author {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-muted);
+  }
+{%- endstyle -%}
+
+<div class="editorial-quote editorial-quote--position-{{ section.settings.content_position }}">
+  <div class="editorial-quote__inner editorial-quote__inner--align-{{ section.settings.text_alignment }}">
+    <blockquote class="editorial-quote__text editorial-quote__text--{{ section.settings.quote_size }}">
+      "{{ section.settings.quote | escape }}"
+    </blockquote>
+    {% if section.settings.author != blank %}
+      <div class="editorial-quote__author">&mdash; {{ section.settings.author | escape }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Editorial Quote",
+  "settings": [
+    { "type": "textarea", "id": "quote", "label": "Quote", "default": "I have always been attracted to a little detail. Something unexpected. That is my design philosophy..." },
+    { "type": "text", "id": "author", "label": "Author", "default": "Jenny" },
+    {
+      "type": "select",
+      "id": "quote_size",
+      "label": "Quote Text Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [ { "name": "Editorial Quote" } ]
+}
+{% endschema %}

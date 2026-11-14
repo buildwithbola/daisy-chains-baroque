@@ -1,0 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "baroque": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Baroque_Pearl_202608082200.jpg",
+            "title": "Baroque Pearl",
+            "tagline": "Organic • One of a Kind • Naturally Beautiful",
+            "description": "<p>Baroque pearls are celebrated for their wonderfully irregular shapes. No two are ever alike, making every piece of jewelry truly one of a kind. Their organic beauty reminds us to celebrate authenticity and embrace the perfectly imperfect.</p>",
+            "link_label": "Shop Baroque Pearls",
+            "shop_link": ""
+          }
+        },
+        "keshi": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Keshi_Pearl._202608082201.jpg",
+            "title": "Keshi Pearl",
+            "tagline": "Rare • Pure Nacre • Exceptional Luster",
+            "description": "<p>Keshi pearls form naturally without a nucleus, resulting in pearls made almost entirely of shimmering nacre. Their freeform shapes and extraordinary luster make them among the most treasured pearls in the world.</p>",
+            "link_label": "Shop Keshi Pearls",
+            "shop_link": ""
+          }
+        },
+        "coin": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Coin_Pearl_202608082203.jpg",
+            "title": "Coin Pearl",
+            "tagline": "Elegant • Contemporary • Timeless",
+            "description": "<p>Coin pearls are flat, rounded pearls admired for their smooth surfaces and modern silhouette. Their graceful shape makes them equally beautiful worn alone or layered with other treasures.</p>",
+            "link_label": "Shop Coin Pearls",
+            "shop_link": ""
+          }
+        },
+        "edison": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Edison_Pearl_202608082204.jpg",
+            "title": "Edison Pearl",
+            "tagline": "Luxurious • Bold • Brilliant",
+            "description": "<p>Known for their impressive size and exceptional luster, Edison pearls offer remarkable beauty with rich natural colors and an elegant, nearly round shape. They bring a sense of effortless luxury to every design.</p>",
+            "link_label": "Shop Edison Pearls",
+            "shop_link": ""
+          }
+        },
+        "stick": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Cultured_Freshwater_Centre_Drilled_Biwa_Stick_Blush_Pink_Pearls_Approx_10mm.jpg",
+            "title": "Stick Pearl",
+            "tagline": "Graceful • Organic • Contemporary",
+            "description": "<p>Long and naturally irregular, stick pearls create elegant movement and sculptural beauty. Their unique shape adds modern sophistication while honoring nature's individuality.</p>",
+            "link_label": "Shop Stick Pearls",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "baroque",
+        "keshi",
+        "coin",
+        "edison",
+        "stick"
+      ],
+      "settings": {
+        "title": "The Pearl Guide",
+        "title_size": "small",
+        "subtitle": "Discover the beauty, symbolism, and remarkable stories behind nature's most treasured gem.",
+        "subtitle_size": "medium",
+        "description": "<p>Unlike gemstones formed deep within the earth, pearls are created beneath the water's surface through patience, resilience, and the quiet artistry of nature. We celebrate their organic shapes and luminous glow.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,420 @@
+{%- style -%}
+  .list-collections-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .collections-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .collections-breadcrumb--align-left { justify-content: flex-start; }
+  .collections-breadcrumb--align-center { justify-content: center; }
+  .collections-breadcrumb--align-right { justify-content: flex-end; }
+
+  .collections-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .collections-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Header */
+  .collections-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .collections-hero--position-left { margin-left: 0; margin-right: auto; }
+  .collections-hero--position-center { margin-left: auto; margin-right: auto; }
+  .collections-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .collections-hero--align-left { text-align: left; }
+  .collections-hero--align-center { text-align: center; }
+  .collections-hero--align-right { text-align: right; }
+
+  .collections-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .collections-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .collections-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .collections-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .collections-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .collections-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+  }
+
+  /* Collections Grid */
+  .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .collections-grid {
+      grid-template-columns: repeat({{ section.settings.collections_per_row | default: 3 }}, 1fr);
+      gap: 2.25rem 1.75rem;
+    }
+  }
+
+  .collection-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    overflow: hidden;
+  }
+
+  .collection-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    border-color: var(--color-text);
+  }
+
+  .collection-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: {{ section.settings.aspect_ratio | default: '3 / 4' }};
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .collection-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .collection-card:hover .collection-card__image-wrapper img {
+    transform: scale(1.06);
+  }
+
+  .collection-card__badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    color: #1c1c1c;
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  .collection-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex-grow: 1;
+  }
+
+  .collection-card__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+    font-weight: 300;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .collection-card__description {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: #666666;
+    line-height: 1.5;
+    margin-top: 0.25rem;
+  }
+
+  .collection-card__cta {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-text);
+    margin-top: auto;
+    padding-top: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.25s ease;
+  }
+
+  .collection-card:hover .collection-card__cta {
+    color: var(--color-accent);
+  }
+{%- endstyle -%}
+
+<div class="list-collections-section">
+  <!-- Breadcrumb -->
+  <div class="collections-breadcrumb collections-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>All Collections</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="collections-hero collections-hero--position-{{ section.settings.content_position }} collections-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="collections-hero__title collections-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="collections-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Collections Grid -->
+  <div class="collections-grid">
+    {% assign has_collections = false %}
+    {% for collection in collections %}
+      {% unless collection.handle == 'frontpage' %}
+        {% assign has_collections = true %}
+        <a href="{{ collection.url }}" class="collection-card">
+          <div class="collection-card__image-wrapper">
+            {% if collection.image %}
+              <img src="{{ collection.image | image_url: width: 900 }}" alt="{{ collection.title | escape }}" loading="lazy">
+            {% elsif collection.products.first.featured_image %}
+              <img src="{{ collection.products.first.featured_image | image_url: width: 900 }}" alt="{{ collection.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+
+            {% if section.settings.show_product_count %}
+              <span class="collection-card__badge">{{ collection.all_products_count }} {{ collection.all_products_count | pluralize: 'Treasure', 'Treasures' }}</span>
+            {% endif %}
+          </div>
+
+          <div class="collection-card__content">
+            <h3 class="collection-card__title">{{ collection.title | escape }}</h3>
+            
+            {% if section.settings.show_description and collection.description != blank %}
+              <div class="collection-card__description">
+                {{ collection.description | strip_html | truncate: 110 }}
+              </div>
+            {% endif %}
+
+            <span class="collection-card__cta">Explore Collection &rarr;</span>
+          </div>
+        </a>
+      {% endunless %}
+    {% endfor %}
+
+    <!-- Render Blocks if added, OR Render Fallback Demo Cards if Store has 0 Collections -->
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% assign b_coll = block.settings.collection %}
+        <a href="{{ b_coll.url | default: block.settings.custom_url | default: '/collections/all' }}" class="collection-card" {{ block.shopify_attributes }}>
+          <div class="collection-card__image-wrapper">
+            {% if block.settings.custom_image != blank %}
+              <img src="{{ block.settings.custom_image | image_url: width: 900 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+            {% elsif b_coll.image != blank %}
+              <img src="{{ b_coll.image | image_url: width: 900 }}" alt="{{ b_coll.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+
+            {% if section.settings.show_product_count %}
+              <span class="collection-card__badge">{{ b_coll.all_products_count | default: 12 }} Treasures</span>
+            {% endif %}
+          </div>
+
+          <div class="collection-card__content">
+            <h3 class="collection-card__title">{{ block.settings.title | default: b_coll.title | escape }}</h3>
+            <p class="collection-card__description">{{ block.settings.description | default: b_coll.description | strip_html | truncate: 110 }}</p>
+            <span class="collection-card__cta">Explore Collection &rarr;</span>
+          </div>
+        </a>
+      {% endfor %}
+    {% elsif has_collections == false %}
+      <!-- Fallback Demo Cards for Preview -->
+      <a href="/pages/symbols-and-stories" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          <span class="collection-card__badge">10 Portals</span>
+        </div>
+        <div class="collection-card__content">
+          <h3 class="collection-card__title">Meanings &amp; Symbolism Hub</h3>
+          <p class="collection-card__description">Explore intentions, folklore meanings, and biological stories behind every gemstone and shell.</p>
+          <span class="collection-card__cta">Explore Collection &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/pages/bikini-charms" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          <span class="collection-card__badge">18K Gold PVD</span>
+        </div>
+        <div class="collection-card__content">
+          <h3 class="collection-card__title">Bikini &amp; Beach Charms</h3>
+          <p class="collection-card__description">Waterproof 18K Gold PVD over 316L stainless steel designed for beach days, salt water, and pool dips.</p>
+          <span class="collection-card__cta">Explore Collection &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/pages/gemstones-a-z" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          {{ 'collection-3' | placeholder_svg_tag: 'placeholder-svg' }}
+          <span class="collection-card__badge">A &ndash; Z Library</span>
+        </div>
+        <div class="collection-card__content">
+          <h3 class="collection-card__title">Gem Stones A&ndash;Z Library</h3>
+          <p class="collection-card__description">Interactive gemstone dictionary with instant letter filtering from Abalone Shell to Yellow Topaz.</p>
+          <span class="collection-card__cta">Explore Collection &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/pages/custom-treasures" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          <span class="collection-card__badge">Bespoke</span>
+        </div>
+        <div class="collection-card__content">
+          <h3 class="collection-card__title">Custom Treasures &amp; Workshops</h3>
+          <p class="collection-card__description">Handcrafted custom jewelry inquiries and SF Bay Area private charm bar workshop parties.</p>
+          <span class="collection-card__cta">Explore Collection &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/pages/events" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          <span class="collection-card__badge">Pop-Up Markets</span>
+        </div>
+        <div class="collection-card__content">
+          <h3 class="collection-card__title">Events &amp; Pop-Ups Calendar</h3>
+          <p class="collection-card__description">Calendar of live artisan markets, California pop-ups, and boutique showcases featuring Jenny Higgins.</p>
+          <span class="collection-card__cta">Explore Collection &rarr;</span>
+        </div>
+      </a>
+
+      <a href="/collections/all" class="collection-card">
+        <div class="collection-card__image-wrapper">
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          <span class="collection-card__badge">All Treasures</span>
+        </div>
+        <div class="collection-card__content">
+          <h3 class="collection-card__title">All Handcrafted Treasures</h3>
+          <p class="collection-card__description">Shop our full line of baroque pearls, Abalone shells, intention chokers, and intention charms.</p>
+          <span class="collection-card__cta">Explore Collection &rarr;</span>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection List Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "All Collections" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Discover handcrafted baroque jewelry & intention treasures organized by collection." },
+    {
+      "type": "range",
+      "id": "collections_per_row",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Collections per Row (Desktop)",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Card Image Aspect Ratio",
+      "options": [
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "1 / 1", "label": "Square (1:1)" },
+        { "value": "4 / 3", "label": "Landscape (4:3)" }
+      ],
+      "default": "3 / 4"
+    },
+    { "type": "checkbox", "id": "show_product_count", "label": "Show Product Count Badge", "default": true },
+    { "type": "checkbox", "id": "show_description", "label": "Show Collection Description", "default": true },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_item",
+      "name": "Featured Collection",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "title", "label": "Custom Title Override" },
+        { "type": "textarea", "id": "description", "label": "Custom Description" },
+        { "type": "image_picker", "id": "custom_image", "label": "Custom Cover Image" },
+        { "type": "url", "id": "custom_url", "label": "Custom Link URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List Page"
+    }
+  ]
+}
+{% endschema %}

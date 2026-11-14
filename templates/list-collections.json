@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "All Collections",
+        "title_size": "medium",
+        "subtitle": "Discover handcrafted baroque jewelry & intention treasures organized by collection.",
+        "collections_per_row": 3,
+        "aspect_ratio": "3 / 4",
+        "show_product_count": true,
+        "show_description": true,
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,459 @@
+{%- style -%}
+  .site-footer {
+    background-color: {{ section.settings.footer_bg | default: 'var(--color-background)' }};
+    color: {{ section.settings.footer_text_color | default: 'var(--color-text)' }};
+    padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 4vw, 4rem) 2.5rem clamp(1.25rem, 4vw, 4rem);
+    border-top: 2px solid {{ section.settings.footer_border_color | default: '#d8d2c7' }};
+    margin-top: 2rem;
+  }
+
+  /* Horizontal Desktop Layout */
+  .site-footer__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .site-footer__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3.5rem;
+    }
+
+    .footer-col-brand { flex: 1.4; }
+    .footer-col-item { flex: 1; }
+    .footer-col-newsletter { flex: 1.2; }
+
+    .site-footer__column-content {
+      display: block !important;
+    }
+
+    .accordion-toggle-icon {
+      display: none !important;
+    }
+  }
+
+  .site-footer__brand-title--small { font-size: 1.6rem; }
+  .site-footer__brand-title--medium { font-size: 2.2rem; }
+  .site-footer__brand-title--large { font-size: 2.8rem; }
+  .site-footer__brand-title--xlarge { font-size: 3.4rem; }
+
+  .site-footer__brand-title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.85rem;
+    color: {{ section.settings.footer_text_color | default: 'var(--color-text)' }};
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .site-footer__brand-logo-img {
+    max-width: {{ section.settings.logo_width | default: 180 }}px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  .site-footer__brand-bio {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #666666;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  /* Mobile Accordion Dropdowns */
+  .site-footer__column-header {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding-bottom: 0.75rem;
+    color: {{ section.settings.footer_text_color | default: 'var(--color-text)' }};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 899px) {
+    .site-footer__column-header {
+      cursor: pointer;
+      border-bottom: 1px solid {{ section.settings.footer_border_color | default: 'var(--color-border)' }};
+      padding-top: 0.85rem;
+      user-select: none;
+    }
+
+    .site-footer__column-content {
+      display: none;
+      padding-top: 0.85rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col-item.is-open .site-footer__column-content {
+      display: block;
+    }
+
+    .accordion-toggle-icon {
+      font-size: 1.2rem;
+      font-weight: 300;
+      transition: transform 0.25s ease;
+    }
+
+    .footer-col-item.is-open .accordion-toggle-icon {
+      transform: rotate(45deg);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .site-footer__column-header {
+      margin-bottom: 1.25rem;
+      border-bottom: none;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .accordion-toggle-icon { display: none; }
+    .site-footer__column-content { display: block !important; }
+  }
+
+  .site-footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .site-footer__list-item {
+    margin-bottom: 0.65rem;
+  }
+
+  .site-footer__list-item a {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .site-footer__list-item a:hover {
+    color: var(--color-accent, #c9a050);
+  }
+
+  /* Newsletter Form */
+  .site-footer__newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+  }
+
+  .site-footer__newsletter-input {
+    padding: 0.75rem 1rem;
+    border: 1px solid {{ section.settings.footer_border_color | default: 'var(--color-border)' }};
+    flex: 1;
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    background: var(--color-surface-warm, #ffffff);
+    color: var(--color-text);
+  }
+
+  .site-footer__newsletter-input:focus {
+    outline: none;
+    border-color: var(--color-text);
+  }
+
+  .site-footer__newsletter-btn {
+    padding: 0.75rem 1.4rem;
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease;
+  }
+
+  .site-footer__newsletter-btn:hover {
+    opacity: 0.9;
+  }
+
+  /* Bottom Copyright Row */
+  .site-footer__bottom {
+    max-width: 1400px;
+    margin: 4rem auto 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid {{ section.settings.footer_border_color | default: 'var(--color-border)' }};
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: #777777;
+  }
+
+  @media screen and (min-width: 768px) {
+    .site-footer__bottom {
+      flex-direction: row;
+    }
+  }
+{%- endstyle -%}
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <!-- Brand Info Column -->
+    <div class="footer-col-brand">
+      {% if section.settings.brand_logo != blank %}
+        <img src="{{ section.settings.brand_logo | image_url: width: 400 }}" alt="{{ shop.name | escape }}" class="site-footer__brand-logo-img">
+      {% else %}
+        <a href="/" class="site-footer__brand-title site-footer__brand-title--{{ section.settings.brand_title_size | default: 'medium' }}">
+          {{ section.settings.brand_title | default: 'Daisy Chains' | escape }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.brand_bio != blank %}
+        <p class="site-footer__brand-bio">
+          {{ section.settings.brand_bio | escape }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.show_location %}
+        <div style="font-family:var(--font-body-family); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-accent); margin-top:1rem;">
+          📍 {{ section.settings.location_text | default: 'Handcrafted in California, USA' | escape }}
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Render Blocks OR Section-Level Settings -->
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <div class="footer-col-item" {{ block.shopify_attributes }}>
+          {% case block.type %}
+            {% when 'link_list' %}
+              {% assign nav_menu = linklists[block.settings.menu] %}
+              {% if nav_menu == blank or nav_menu.links.size == 0 %}
+                {% assign nav_menu = block.settings.menu %}
+              {% endif %}
+              {% if nav_menu != blank or block.settings.title != blank %}
+                <div class="site-footer__column-header" onclick="toggleFooterAccordion(this)">
+                  <span>{{ block.settings.title | default: nav_menu.title | escape }}</span>
+                  <span class="accordion-toggle-icon">+</span>
+                </div>
+                <div class="site-footer__column-content">
+                  {% if nav_menu != blank and nav_menu.links.size > 0 %}
+                    <ul class="site-footer__list">
+                      {% for link in nav_menu.links %}
+                        <li class="site-footer__list-item"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </div>
+              {% endif %}
+
+            {% when 'text' %}
+              <div class="site-footer__column-header" onclick="toggleFooterAccordion(this)">
+                <span>{{ block.settings.title | escape }}</span>
+                <span class="accordion-toggle-icon">+</span>
+              </div>
+              <div class="site-footer__column-content">
+                <div style="font-family:var(--font-body-family); font-size:0.88rem; color:#666; line-height:1.6;">
+                  {{ block.settings.subtext }}
+                </div>
+              </div>
+
+            {% when 'newsletter' %}
+              <div class="site-footer__column-header" onclick="toggleFooterAccordion(this)">
+                <span>{{ block.settings.title | escape }}</span>
+                <span class="accordion-toggle-icon">+</span>
+              </div>
+              <div class="site-footer__column-content">
+                {% if block.settings.subtext != blank %}<p style="font-family:var(--font-body-family); font-size:0.85rem; color:#666; margin-bottom:0.75rem;">{{ block.settings.subtext | escape }}</p>{% endif %}
+                {% form 'customer', class: 'site-footer__newsletter-form' %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <input type="email" name="contact[email]" placeholder="Enter your email..." class="site-footer__newsletter-input" required aria-label="Email address">
+                  <button type="submit" class="site-footer__newsletter-btn">{{ block.settings.button_text | default: 'Join' }}</button>
+                {% endform %}
+              </div>
+          {% endcase %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <!-- Section-level Menu 1 -->
+      {% assign m1_handle = section.settings.menu_1 %}
+      {% assign menu_1_obj = linklists[m1_handle] %}
+      {% if menu_1_obj == blank or menu_1_obj.links.size == 0 %}
+        {% assign menu_1_obj = section.settings.menu_1 %}
+      {% endif %}
+      {% if menu_1_obj != blank and menu_1_obj.links.size > 0 %}
+        <div class="footer-col-item">
+          <div class="site-footer__column-header" onclick="toggleFooterAccordion(this)">
+            <span>{{ section.settings.menu_1_title | default: menu_1_obj.title | default: 'Explore' | escape }}</span>
+            <span class="accordion-toggle-icon">+</span>
+          </div>
+          <div class="site-footer__column-content">
+            <ul class="site-footer__list">
+              {% for link in menu_1_obj.links %}
+                <li class="site-footer__list-item"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Section-level Menu 2 -->
+      {% assign m2_handle = section.settings.menu_2 %}
+      {% assign menu_2_obj = linklists[m2_handle] %}
+      {% if menu_2_obj == blank or menu_2_obj.links.size == 0 %}
+        {% assign menu_2_obj = section.settings.menu_2 %}
+      {% endif %}
+      {% if menu_2_obj != blank and menu_2_obj.links.size > 0 %}
+        <div class="footer-col-item">
+          <div class="site-footer__column-header" onclick="toggleFooterAccordion(this)">
+            <span>{{ section.settings.menu_2_title | default: menu_2_obj.title | default: 'Guides' | escape }}</span>
+            <span class="accordion-toggle-icon">+</span>
+          </div>
+          <div class="site-footer__column-content">
+            <ul class="site-footer__list">
+              {% for link in menu_2_obj.links %}
+                <li class="site-footer__list-item"><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Email Newsletter Signup Column -->
+      <div class="footer-col-item footer-col-newsletter">
+        <div class="site-footer__column-header" onclick="toggleFooterAccordion(this)">
+          <span>{{ section.settings.newsletter_title | default: 'Stay Connected' | escape }}</span>
+          <span class="accordion-toggle-icon">+</span>
+        </div>
+        <div class="site-footer__column-content">
+          <p style="font-family:var(--font-body-family); font-size:0.85rem; color:#666; margin-bottom:0.75rem;">
+            {{ section.settings.newsletter_subtext | default: 'Subscribe to receive private collection previews and treasure updates.' | escape }}
+          </p>
+          {% form 'customer', class: 'site-footer__newsletter-form' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input type="email" name="contact[email]" placeholder="Enter your email..." class="site-footer__newsletter-input" required aria-label="Email address">
+            <button type="submit" class="site-footer__newsletter-btn">{{ section.settings.newsletter_button_text | default: 'Join' | escape }}</button>
+          {% endform %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="site-footer__bottom">
+    <div>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | default: 'Daisy Chains' }}. {{ section.settings.copyright_text | default: 'All rights reserved.' }}</div>
+    <div>{{ section.settings.location_text | default: 'California, USA' }}</div>
+  </div>
+</footer>
+
+<script>
+  function toggleFooterAccordion(header) {
+    if (window.innerWidth < 900) {
+      const col = header.parentElement;
+      col.classList.toggle('is-open');
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Footer Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand Column Settings"
+    },
+    { "type": "text", "id": "brand_title", "label": "Brand Title", "default": "Daisy Chains" },
+    {
+      "type": "select",
+      "id": "brand_title_size",
+      "label": "Brand Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "image_picker", "id": "brand_logo", "label": "Custom Brand Logo" },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 80,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo Width",
+      "default": 180
+    },
+    { "type": "textarea", "id": "brand_bio", "label": "Brand Bio Prose", "default": "Handcrafted jewelry designed with intention. Celebrating the unexpected details of the natural world." },
+    { "type": "checkbox", "id": "show_location", "label": "Show Location Tagline", "default": true },
+    { "type": "text", "id": "location_text", "label": "Location Tagline Text", "default": "Handcrafted in California, USA" },
+    {
+      "type": "header",
+      "content": "Navigation Menus (Fallback)"
+    },
+    { "type": "text", "id": "menu_1_title", "label": "Menu 1 Title", "default": "Explore" },
+    { "type": "link_list", "id": "menu_1", "label": "Menu 1 Link List" },
+    { "type": "text", "id": "menu_2_title", "label": "Menu 2 Title", "default": "Client Care" },
+    { "type": "link_list", "id": "menu_2", "label": "Menu 2 Link List" },
+    {
+      "type": "header",
+      "content": "Newsletter Column Settings"
+    },
+    { "type": "text", "id": "newsletter_title", "label": "Newsletter Title", "default": "Stay Connected" },
+    { "type": "textarea", "id": "newsletter_subtext", "label": "Newsletter Subtext", "default": "Subscribe to receive private collection previews and treasure updates." },
+    { "type": "text", "id": "newsletter_button_text", "label": "Newsletter Button Text", "default": "Join" },
+    { "type": "text", "id": "copyright_text", "label": "Copyright Subtext", "default": "All rights reserved." },
+    {
+      "type": "header",
+      "content": "Footer Colors"
+    },
+    { "type": "color", "id": "footer_bg", "label": "Footer Background Color", "default": "#faf7f2" },
+    { "type": "color", "id": "footer_text_color", "label": "Footer Text Color", "default": "#1c1c1c" },
+    { "type": "color", "id": "footer_border_color", "label": "Footer Border Color", "default": "#e5e0d8" }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Navigation Menu",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Heading", "default": "Quick Links" },
+        { "type": "link_list", "id": "menu", "label": "Menu Select", "default": "main-menu" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text Block",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Heading", "default": "About Us" },
+        { "type": "richtext", "id": "subtext", "label": "Text Prose", "default": "<p>Share studio hours, story highlights, or California location notes.</p>" }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter Form",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Heading", "default": "Stay Connected" },
+        { "type": "text", "id": "subtext", "label": "Subtext", "default": "Subscribe for private collection previews." },
+        { "type": "text", "id": "button_text", "label": "Button Label", "default": "Join" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer Section"
+    }
+  ]
+}
+{% endschema %}

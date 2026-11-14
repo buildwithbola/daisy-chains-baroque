@@ -1,0 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-values",
+      "blocks": {
+        "value_1": {
+          "type": "value_pillar",
+          "settings": {
+            "title": "Nature is our Partner",
+            "description": "<p>We believe nature is the greatest artist. Rather than taking from it, we work with the treasures it freely offers. Many of our shells, stones, and driftwood are ethically gathered after they have been released by the sea or discovered on walks through nature. We never harvest living shells or disturb marine life simply to create jewelry.</p>"
+          }
+        },
+        "value_2": {
+          "type": "value_pillar",
+          "settings": {
+            "title": "Beauty with Intention",
+            "description": "<p>Every Daisy Chains design begins with purpose. Each pearl, shell, gemstone, charm, and talisman is chosen not only for its beauty but for the feeling, memory, or spiritual meaning it carries. We believe jewelry should tell a story and become part of yours.</p>"
+          }
+        },
+        "value_3": {
+          "type": "value_pillar",
+          "settings": {
+            "title": "Celebrate Imperfection",
+            "description": "<p>Nature doesn't create duplicates, and neither do we. The subtle curves of a shell, the organic texture of a baroque pearl, and the unique markings of every stone are celebrated—not corrected. These natural variations make every piece one of a kind.</p>"
+          }
+        },
+        "value_4": {
+          "type": "value_pillar",
+          "settings": {
+            "title": "Thoughtful Craftsmanship",
+            "description": "<p>We believe the smallest details matter. An unexpected charm, an asymmetrical design, or a hidden accent near the clasp can transform a beautiful piece into one that invites discovery every time it is worn.</p>"
+          }
+        },
+        "value_5": {
+          "type": "value_pillar",
+          "settings": {
+            "title": "Lasting Connections",
+            "description": "<p>Jewelry often marks life's most meaningful moments. Whether it reminds you of a loved one, a special place, or a dream for the future, we hope every Daisy Chains piece becomes part of your personal story and is treasured for years to come.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "value_1",
+        "value_2",
+        "value_3",
+        "value_4",
+        "value_5"
+      ],
+      "settings": {
+        "title": "Nature is Our Partner",
+        "title_size": "small",
+        "quote": "We don't take from nature—we treasure what she leaves behind.",
+        "description": "<p>Not manufacturing identical products. We are collaborating with nature. No two shells are alike. No two pearls are alike. No two stones are alike. Every piece is a one-of-a-kind collaboration between human eye for detail and nature's artistry.</p>",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

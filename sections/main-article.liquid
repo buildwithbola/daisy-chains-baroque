@@ -1,0 +1,377 @@
+{%- style -%}
+  .article-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .article-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .article-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .article-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Article Header */
+  .article-header {
+    text-align: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .article-badge {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    display: inline-block;
+  }
+
+  .article-title--small { font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
+  .article-title--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .article-title--large { font-size: clamp(2.8rem, 5.5vw, 4.4rem); }
+  .article-title--xlarge { font-size: clamp(3.2rem, 6.5vw, 5.2rem); }
+
+  .article-title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .article-meta-bar {
+    font-family: var(--font-body-family);
+    font-size: 0.84rem;
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+  }
+
+  /* Share Bar */
+  .article-share-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .share-label {
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+  }
+
+  .share-btn {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 0.35rem 0.75rem;
+    font-family: var(--font-body-family);
+    font-size: 0.72rem;
+    color: var(--color-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .share-btn:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    border-color: #1c1c1c;
+  }
+
+  /* Featured Image Banner */
+  .article-hero-image {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    background-color: var(--color-surface-warm);
+  }
+
+  /* Content Body Typography */
+  .article-content {
+    font-family: var(--font-body-family);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #333333;
+    margin-bottom: 4rem;
+  }
+
+  .article-content p {
+    margin-bottom: 1.6rem;
+  }
+
+  .article-content h2, .article-content h3 {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    color: var(--color-text);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-content h2 { font-size: 2.2rem; }
+  .article-content h3 { font-size: 1.7rem; }
+
+  .article-content blockquote {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--color-text);
+    border-left: 2px solid var(--color-accent);
+    padding-left: 1.75rem;
+    margin: 2.5rem 0;
+    line-height: 1.4;
+  }
+
+  /* Author Bio Footer Box */
+  .author-bio-card {
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .author-avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .author-info-name {
+    font-family: var(--font-heading-family);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 0.2rem;
+  }
+
+  .author-info-role {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .author-info-bio {
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.55;
+  }
+
+  /* Next / Prev Navigation */
+  .article-nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .article-nav-link {
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+
+  .article-nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  /* Back Button */
+  .back-to-journal-btn {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.85rem 1.6rem;
+    border: 1px solid #1c1c1c;
+    transition: all 0.25s ease;
+  }
+
+  .back-to-journal-btn:hover {
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+{%- endstyle -%}
+
+<article class="article-section">
+  <!-- Breadcrumb -->
+  <div class="article-breadcrumb">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <a href="{{ blog.url | default: '/blogs/news' }}">{{ blog.title | default: 'Journal' }}</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ article.title | default: 'Article' | escape }}</span>
+  </div>
+
+  <!-- Header -->
+  <div class="article-header">
+    {% if article.tags.size > 0 %}
+      <span class="article-badge">{{ article.tags.first }}</span>
+    {% endif %}
+
+    <h1 class="article-title article-title--{{ section.settings.title_size | default: 'medium' }}">
+      {{ article.title | default: 'The Healing Meaning Behind Abalone Shells & Baroque Pearls' | escape }}
+    </h1>
+
+    <div class="article-meta-bar">
+      {% if section.settings.show_author %}
+        <span>By {{ article.author | default: section.settings.author_name | default: 'Jenny Higgins' }}</span>
+      {% endif %}
+      {% if section.settings.show_author and section.settings.show_date %}&bull;{% endif %}
+      {% if section.settings.show_date %}
+        <span>{{ article.published_at | default: 'now' | date: "%B %d, %Y" }}</span>
+      {% endif %}
+    </div>
+
+    <!-- Social Share Buttons -->
+    {% if section.settings.show_social_share %}
+      <div class="article-share-bar">
+        <span class="share-label">Share Story:</span>
+        <a href="https://pinterest.com/pin/create/button/?url={{ canonical_url | url_encode }}&media={{ article.image | image_url: width: 1000 | url_encode }}&description={{ article.title | url_encode }}" target="_blank" rel="noopener" class="share-btn">Pinterest</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ canonical_url | url_encode }}" target="_blank" rel="noopener" class="share-btn">Facebook</a>
+        <button class="share-btn" onclick="navigator.clipboard.writeText(window.location.href); alert('Story link copied to clipboard!');">Copy Link</button>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Featured Image -->
+  {% if article.image %}
+    <img src="{{ article.image | image_url: width: 1400 }}" alt="{{ article.title | escape }}" class="article-hero-image">
+  {% else %}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'article-hero-image' }}
+  {% endif %}
+
+  <!-- Article Body Content -->
+  <div class="article-content">
+    {% if article.content != blank %}
+      {{ article.content }}
+    {% else %}
+      <p>The ocean has a way of reminding us that beauty is found in constant change. Across centuries of coastal folklore, genuine Abalone Shells and organic Baroque Freshwater Pearls have been treasured not only for their aesthetic shimmer, but for the profound intentions they carry.</p>
+      
+      <blockquote>
+        "We don't take from nature—we treasure what she leaves behind."
+      </blockquote>
+
+      <h2>Symbolism of the Abalone Shell</h2>
+      <p>Handcrafted with luminous faceted Abalone Shell beads, each shell reflects the ever-changing colors of the sea with flashes of blue, green, and iridescent violet. In coastal traditions, Abalone symbolizes emotional resilience, intuition, and peace during life's transitions.</p>
+
+      <h2>The Beauty of Imperfection in Baroque Pearls</h2>
+      <p>Unlike spherical factory pearls, 25mm Baroque Freshwater Pearls celebrate one-of-a-kind organic shapes. No two baroque pearls are ever identical. Paired with 18K gold wire-wrapping and protective symbols like the Evil Eye or Ladybug, every treasure becomes a touchstone for your personal journey.</p>
+    {% endif %}
+  </div>
+
+  <!-- Author Bio Card -->
+  {% if section.settings.show_author_bio %}
+    <div class="author-bio-card">
+      {% if section.settings.author_image != blank %}
+        <img src="{{ section.settings.author_image | image_url: width: 150 }}" alt="{{ section.settings.author_name | escape }}" class="author-avatar">
+      {% else %}
+        <div class="author-avatar" style="display:flex; align-items:center; justify-content:center; background:#eee9e0; font-size:1.5rem;">🌸</div>
+      {% endif %}
+
+      <div>
+        <div class="author-info-name">{{ section.settings.author_name | default: 'Jenny Higgins' | escape }}</div>
+        <div class="author-info-role">{{ section.settings.author_role | default: 'Founder & Jewelry Designer' | escape }}</div>
+        <div class="author-info-bio">{{ section.settings.author_bio | default: 'Jenny designs and wire-wraps every Daisy Chains treasure in her California studio, crafting one-of-a-kind jewelry inspired by nature and extraordinary women.' | escape }}</div>
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Next / Prev Article Navigation -->
+  {% if section.settings.show_next_prev and blog.articles.size > 1 %}
+    <div class="article-nav-row">
+      {% if blog.previous_article %}
+        <a href="{{ blog.previous_article.url }}" class="article-nav-link">&larr; {{ blog.previous_article.title | truncate: 35 }}</a>
+      {% else %}
+        <div></div>
+      {% endif %}
+
+      {% if blog.next_article %}
+        <a href="{{ blog.next_article.url }}" class="article-nav-link">{{ blog.next_article.title | truncate: 35 }} &rarr;</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <!-- Back Link -->
+  <div style="text-align:center;">
+    <a href="{{ blog.url | default: '/blogs/news' }}" class="back-to-journal-btn">&larr; Back to Stories &amp; Journal</a>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Article Post",
+  "settings": [
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "checkbox", "id": "show_author", "label": "Show Author Byline", "default": true },
+    { "type": "checkbox", "id": "show_date", "label": "Show Publish Date", "default": true },
+    { "type": "checkbox", "id": "show_social_share", "label": "Show Social Share Buttons", "default": true },
+    { "type": "checkbox", "id": "show_author_bio", "label": "Show Author Bio Card", "default": true },
+    { "type": "image_picker", "id": "author_image", "label": "Author Photo Avatar" },
+    { "type": "text", "id": "author_name", "label": "Author Name", "default": "Jenny Higgins" },
+    { "type": "text", "id": "author_role", "label": "Author Role / Title", "default": "Founder & Jewelry Designer" },
+    { "type": "textarea", "id": "author_bio", "label": "Author Bio Prose", "default": "Jenny designs and wire-wraps every Daisy Chains treasure in her California studio, crafting one-of-a-kind jewelry inspired by nature and extraordinary women." },
+    { "type": "checkbox", "id": "show_next_prev", "label": "Show Next / Previous Article Navigation", "default": true }
+  ],
+  "presets": [
+    { "name": "Article Post" }
+  ]
+}
+{% endschema %}

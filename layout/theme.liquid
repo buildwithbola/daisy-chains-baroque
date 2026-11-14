@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.colors_background | default: '#FAF8F5' }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180, height: 180 }}">
+    {%- else -%}
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌼</text></svg>">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    <!-- Lightning-Fast Performance Optimization Hints -->
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="{{ 'base.css' | asset_url }}" as="style">
+
+    <!-- Google Fonts: Martel & Jost with font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+
+    {{ content_for_header }}
+
+    {%- style -%}
+      :root {
+        --color-background: {{ settings.colors_background | default: '#FAF8F5' }};
+        --color-text: {{ settings.colors_text | default: '#181818' }};
+        --color-accent: {{ settings.colors_accent | default: '#E5C158' }};
+        --color-surface-warm: {{ settings.colors_surface_warm | default: '#F4F0EA' }};
+        --color-border: {{ settings.colors_border | default: '#E8E4DD' }};
+        --color-muted: {{ settings.colors_muted | default: '#767676' }};
+        
+        --font-heading-family: 'Martel', Georgia, serif;
+        --font-heading-style: normal;
+        --font-heading-weight: 300;
+
+        --font-body-family: 'Jost', -apple-system, sans-serif;
+        --font-body-style: normal;
+        --font-body-weight: 400;
+        --font-heading-scale: {{ settings.heading_scale | default: 100 | divided_by: 100.0 }};
+      }
+    {%- endstyle -%}
+
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body class="template-{{ request.page_type | handle }}">
+    {% unless request.page_type == 'password' or template.name == 'password' %}
+      {% section 'header' %}
+    {% endunless %}
+
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% unless request.page_type == 'password' or template.name == 'password' %}
+      {% section 'footer' %}
+    {% endunless %}
+    {% section 'cart-drawer' %}
+
+    <script>
+      function updateHeaderWishlistBadge() {
+        try {
+          let wishlist = JSON.parse(localStorage.getItem('daisychains_wishlist') || '[]');
+          const countEls = document.querySelectorAll('.wishlist-badge-count');
+          countEls.forEach(el => {
+            el.innerText = wishlist.length;
+            el.style.display = wishlist.length > 0 ? 'flex' : 'none';
+          });
+          document.querySelectorAll('.product-card__wishlist').forEach(btn => {
+            const cardHandle = btn.getAttribute('data-handle');
+            if (cardHandle && wishlist.includes(cardHandle)) {
+              btn.classList.add('is-active');
+            } else if (cardHandle) {
+              btn.classList.remove('is-active');
+            }
+          });
+        } catch (e) {}
+      }
+
+      function toggleWishlistItem(handle, btn) {
+        let wishlist = JSON.parse(localStorage.getItem('daisychains_wishlist') || '[]');
+        const index = wishlist.indexOf(handle);
+        if (index > -1) {
+          wishlist.splice(index, 1);
+          if (btn) btn.classList.remove('is-active');
+        } else {
+          wishlist.push(handle);
+          if (btn) btn.classList.add('is-active');
+        }
+        localStorage.setItem('daisychains_wishlist', JSON.stringify(wishlist));
+        updateHeaderWishlistBadge();
+        if (typeof renderWishlistItems === 'function') renderWishlistItems();
+      }
+
+      document.addEventListener('DOMContentLoaded', updateHeaderWishlistBadge);
+    </script>
+  </body>
+</html>

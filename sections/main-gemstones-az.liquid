@@ -1,0 +1,414 @@
+{%- style -%}
+  .gemstones-az-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 4vw, 4rem);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .gemstones-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .gemstones-breadcrumb--align-left { justify-content: flex-start; }
+  .gemstones-breadcrumb--align-center { justify-content: center; }
+  .gemstones-breadcrumb--align-right { justify-content: flex-end; }
+
+  .gemstones-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .gemstones-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Banner */
+  .gemstones-hero {
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .gemstones-hero--position-left { margin-left: 0; margin-right: auto; }
+  .gemstones-hero--position-center { margin-left: auto; margin-right: auto; }
+  .gemstones-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .gemstones-hero--align-left { text-align: left; }
+  .gemstones-hero--align-center { text-align: center; }
+  .gemstones-hero--align-right { text-align: right; }
+
+  .gemstones-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .gemstones-hero__title--medium { font-size: clamp(2.5rem, 5vw, 3.8rem); }
+  .gemstones-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .gemstones-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .gemstones-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
+  .gemstones-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    margin-bottom: 1rem;
+  }
+
+  .gemstones-hero__description {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.65;
+  }
+
+  /* A–Z Alphabet Bar */
+  .alphabet-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    padding: 1rem;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+  }
+
+  .alphabet-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.2rem;
+    height: 2.2rem;
+    padding: 0 0.5rem;
+    font-family: var(--font-body-family);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .alphabet-btn:hover {
+    border-color: var(--color-text);
+    background-color: #ffffff;
+  }
+
+  .alphabet-btn.active {
+    background-color: var(--color-text);
+    color: #ffffff;
+    border-color: var(--color-text);
+  }
+
+  /* Gemstones Cards Grid */
+  .gemstones-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem 1.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .gemstones-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .gemstones-cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem 2rem;
+    }
+  }
+
+  .gemstone-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .gemstone-card.hidden {
+    display: none !important;
+  }
+
+  .gemstone-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  .gemstone-card__image-wrapper {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: var(--color-surface-warm);
+  }
+
+  .gemstone-card__image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .gemstone-card:hover .gemstone-card__image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .gemstone-card__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .gemstone-card__letter-badge {
+    font-family: var(--font-heading-family);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+  }
+
+  .gemstone-card__tag {
+    font-family: var(--font-body-family);
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 0.35rem;
+  }
+
+  .gemstone-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0 0 0.65rem 0;
+    color: var(--color-text);
+  }
+
+  .gemstone-card__body {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+
+  .gemstone-card__link {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    align-self: flex-start;
+  }
+
+  /* Empty Filter State */
+  .alphabet-empty-state {
+    display: none;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--color-muted);
+    font-family: var(--font-body-family);
+    font-size: 0.95rem;
+  }
+{%- endstyle -%}
+
+<div class="gemstones-az-section">
+  <!-- Breadcrumbs -->
+  <div class="gemstones-breadcrumb gemstones-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/pages/symbols-and-stories">Meanings &amp; Symbolism</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>{{ section.settings.title }}</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="gemstones-hero gemstones-hero--position-{{ section.settings.content_position }} gemstones-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="gemstones-hero__title gemstones-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="gemstones-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="gemstones-hero__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- A–Z Alphabet Filter Bar -->
+  <div class="alphabet-filter-bar">
+    <button class="alphabet-btn active" data-filter="all">All</button>
+    {% assign letters = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z" | split: "," %}
+    {% for letter in letters %}
+      <button class="alphabet-btn" data-filter="{{ letter }}">{{ letter }}</button>
+    {% endfor %}
+  </div>
+
+  <!-- Gemstones Cards Grid -->
+  <div class="gemstones-cards-grid" id="gemstones-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'gemstone' %}
+        {% assign first_letter = block.settings.title | slice: 0, 1 | upcase %}
+        <div class="gemstone-card" data-letter="{{ first_letter }}" {{ block.shopify_attributes }}>
+          <div class="gemstone-card__image-wrapper">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 900 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+          <div class="gemstone-card__content">
+            <span class="gemstone-card__letter-badge">{{ first_letter }}</span>
+            {% if block.settings.tagline != blank %}
+              <div class="gemstone-card__tag">{{ block.settings.tagline | escape }}</div>
+            {% endif %}
+
+            <h3 class="gemstone-card__title">{{ block.settings.title | escape }}</h3>
+            
+            <div class="gemstone-card__body">
+              {{ block.settings.description }}
+            </div>
+
+            {% if block.settings.tags != blank %}
+              <div class="gemstone-card__tags" style="font-family: var(--font-body-family); font-size: 0.76rem; color: var(--color-muted); margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--color-border); line-height: 1.5;">
+                <strong style="color: var(--color-text); font-weight: 600;">Tags:</strong> {{ block.settings.tags | escape }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.shop_link != blank %}
+              <a href="{{ block.settings.shop_link }}" class="gemstone-card__link link-underlined" style="margin-top: 1rem;">
+                {{ block.settings.link_label | default: "Discover Treasures" | escape }} &rarr;
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="alphabet-empty-state" id="alphabet-empty">
+    No gemstones currently listed under this letter.
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.alphabet-btn');
+    const gemstoneCards = document.querySelectorAll('.gemstone-card');
+    const emptyState = document.getElementById('alphabet-empty');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const selectedFilter = this.getAttribute('data-filter');
+        let visibleCount = 0;
+
+        gemstoneCards.forEach(card => {
+          const cardLetter = card.getAttribute('data-letter');
+          if (selectedFilter === 'all' || cardLetter === selectedFilter) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (emptyState) {
+          emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Gem Stones A–Z Library",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Gem Stones A–Z Library" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Browse our complete library of natural gemstones, raw crystals, and meaningful elements alphabetically." },
+    { "type": "richtext", "id": "description", "label": "Intro Note", "default": "<p>The meanings shared throughout this guide are drawn from folklore, cultural traditions, and spiritual beliefs from around the world. They are offered as inspiration allowing you to choose the stones that resonate with your journey.</p>" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gemstone",
+      "name": "Gemstone Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Gemstone Image" },
+        { "type": "text", "id": "title", "label": "Gemstone Name", "default": "Aquamarine" },
+        { "type": "text", "id": "tagline", "label": "Keywords", "default": "Serenity • Courage • Communication" },
+        { "type": "richtext", "id": "description", "label": "Spiritual Meaning", "default": "<p>Inspired by the sea, Aquamarine symbolizes tranquility, courage, and clear communication.</p>" },
+        { "type": "text", "id": "tags", "label": "Category / Intention Tags" },
+        { "type": "text", "id": "link_label", "label": "Link Text", "default": "Shop Aquamarine Treasures" },
+        { "type": "url", "id": "shop_link", "label": "Shop Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gem Stones A–Z Library"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "baroque_pearl": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/The_5_Major_Jewellery_Trends_The_Experts_Are_Backing_For_2026.jpg",
+            "title": "Baroque Freshwater Pearl",
+            "tagline": "Wisdom • Authenticity • Beauty in Imperfection",
+            "description": "<p>Formed over time beneath ocean waters through patience and resilience, baroque pearls symbolize wisdom, integrity, and self-acceptance. Their unique shapes remind us that beauty is found in authenticity.</p>",
+            "link_label": "Shop Pearl Treasures",
+            "shop_link": ""
+          }
+        },
+        "moonstone": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Natural_Oval_Moonstone_Pendant_925_Sterling_Silver_Cable_Chain_Necklace.jpg",
+            "title": "Moonstone",
+            "tagline": "Intuition • Inner Wisdom • Feminine Energy",
+            "description": "<p>Associated with the moon and its natural cycles, Moonstone inspires emotional balance, spiritual clarity, and trusting your inner voice through every season of life.</p>",
+            "link_label": "Shop Moonstone Treasures",
+            "shop_link": ""
+          }
+        },
+        "owl": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/febd8ce2e4ee12095bce3898e18986f2.jpg",
+            "title": "The Owl",
+            "tagline": "Wisdom • Knowledge • Insight",
+            "description": "<p>The Owl symbolizes wisdom, deep knowledge, and seeing beyond what first appears. It serves as a reminder to trust your intuition and approach life with curiosity.</p>",
+            "link_label": "Shop Owl Treasures",
+            "shop_link": ""
+          }
+        },
+        "sodalite": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Handmade_Jewelry___Blue_And_White_Sodalite_Beaded_Stretch_Bracelet_-_Women_Jewelry___Color__Blue_White___Size__Os_1.jpg",
+            "title": "Sodalite",
+            "tagline": "Clarity • Rational Thinking • Truth",
+            "description": "<p>Sodalite promotes rational thinking, mental clarity, and the confidence to speak from the heart, grounding your thoughts in truth and inner harmony.</p>",
+            "link_label": "Shop Sodalite Treasures",
+            "shop_link": ""
+          }
+        },
+        "lapis_lazuli": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Lapis_Lazuli_Pendant_Necklace.jpg",
+            "title": "Lapis Lazuli",
+            "tagline": "Wisdom • Truth • Inner Strength",
+            "description": "<p>Treasured for thousands of years as a royal stone of wisdom and integrity, Lapis Lazuli encourages self-awareness, authentic expression, and leading with truth.</p>",
+            "link_label": "Shop Lapis Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "baroque_pearl",
+        "moonstone",
+        "owl",
+        "sodalite",
+        "lapis_lazuli"
+      ],
+      "settings": {
+        "title": "Wisdom & Intuition",
+        "title_size": "small",
+        "subtitle": "Treasures that encourage inner clarity, authentic self-expression, and trusting your inner voice.",
+        "subtitle_size": "medium",
+        "description": "<p>Trust your inner guidance and celebrate the quiet wisdom within. Explore treasures crafted with organic pearls and grounding gemstones that honor authenticity.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

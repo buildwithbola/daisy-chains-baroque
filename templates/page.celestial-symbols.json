@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "north_star": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/c03052641ba2acc164dc8f6db0ccdc8b.jpg",
+            "title": "North Star",
+            "tagline": "Direction • Purpose • Guidance",
+            "description": "<p>For centuries, travelers have looked to the North Star as a constant guide. It symbolizes direction and purpose, reminding us that even the smallest light can lead you home.</p>",
+            "link_label": "Shop Star Treasures",
+            "shop_link": ""
+          }
+        },
+        "compass": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/df62e0b10d3b34c99ea886c1ac7083bf.jpg",
+            "title": "The Compass",
+            "tagline": "Adventure • Guidance • Finding Your Way",
+            "description": "<p>The Compass symbolizes adventure, discovery, and the courage to follow your own path, reminding us to trust our instincts as every journey begins with a single step.</p>",
+            "link_label": "Shop Compass Treasures",
+            "shop_link": ""
+          }
+        },
+        "moon": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/fef3b443962ef5faa34a184714e97278.jpg",
+            "title": "The Moon",
+            "tagline": "Intuition • Feminine Energy • Cycles",
+            "description": "<p>Symbolizing intuition and the ever-changing cycles of life, the Moon invites us to trust our inner wisdom and honor each season of our personal journey.</p>",
+            "link_label": "Shop Moon Treasures",
+            "shop_link": ""
+          }
+        },
+        "star": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/83786e531ff75ea613e6a57845866886.jpg",
+            "title": "Celestial Star",
+            "tagline": "Hope • Dreams • Inspiration",
+            "description": "<p>Stars have guided travelers and inspired dreamers for generations. They symbolize hope, inspiration, and believing in possibilities beyond the horizon.</p>",
+            "link_label": "Shop Star Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "north_star",
+        "compass",
+        "moon",
+        "star"
+      ],
+      "settings": {
+        "title": "Celestial Symbols",
+        "title_size": "small",
+        "subtitle": "Treasures inspired by the stars, sun, moon, and cosmic guidance.",
+        "subtitle_size": "medium",
+        "description": "<p>Look to the skies for direction and inspiration. Explore celestial medallions, stars, and compasses designed to guide your heart and remind you of endless possibilities.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

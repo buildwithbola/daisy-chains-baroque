@@ -1,0 +1,176 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-symbols-hub",
+      "blocks": {
+        "love": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Simple_jewelry_collection_motifs_202608082252.jpg",
+            "title": "Love & Connection",
+            "featured_symbols": "Heart, Rose, Infinity Symbol, Rabbit, Fu Bead, Fire Element",
+            "portal_link": "shopify://pages/love-connection"
+          }
+        },
+        "protection": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Jewelry_collection_with_protecti__202608082249.jpg",
+            "title": "Protection & Guidance",
+            "featured_symbols": "Evil Eye, Hamsa Hand, Feather, Dragonfly, Scarab, Shield, Tiger's Eye",
+            "portal_link": "shopify://pages/protection-guidance"
+          }
+        },
+        "luck": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Lucky_symbols_jewelry_collection_202608082230.jpg",
+            "title": "Luck & Abundance",
+            "featured_symbols": "Four-Leaf Clover, Ladybug, Horseshoe, Lucky Coin, Acorn, Bamboo, Pixiu",
+            "portal_link": "shopify://pages/luck-abundance"
+          }
+        },
+        "strength": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Simple_jewelry_collection_featur__202608082247.jpg",
+            "title": "Strength & Courage",
+            "featured_symbols": "Lion, Dragon, Wolf, Bear, Elephant, Oak Tree, Mountain, Arrow, Sword, Phoenix",
+            "portal_link": "shopify://pages/strength-courage"
+          }
+        },
+        "growth": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Simple_jewelry_collection_design_202608082235.jpg",
+            "title": "Growth & New Beginnings",
+            "featured_symbols": "Crescent Moon, Butterfly, Leaf, Daffodil, African Turquoise",
+            "portal_link": "shopify://pages/growth-new-beginnings"
+          }
+        },
+        "wisdom": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Simple_jewelry_collection_202608082237.jpg",
+            "title": "Wisdom & Intuition",
+            "featured_symbols": "Baroque Pearls, Moonstone, Owl, Sodalite, Lapis Lazuli, Afghanite",
+            "portal_link": "shopify://pages/wisdom-intuition"
+          }
+        },
+        "joy": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Simple_gemstone_jewelry_collection_202608082239.jpg",
+            "title": "Joy & Creativity",
+            "featured_symbols": "Dalmatian Jasper, Strawberry Quartz, Sun, Dolphin, Marigold",
+            "portal_link": "shopify://pages/joy-creativity"
+          }
+        },
+        "celestial": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Celestial_simple_jewelry_collection_202608082241.jpg",
+            "title": "Celestial Symbols",
+            "featured_symbols": "Moon, Sun, Star, Crescent Moon, North Star, Compass",
+            "portal_link": "shopify://pages/celestial-symbols"
+          }
+        },
+        "ocean": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Ocean_jewelry_collection_design_202608082250.jpg",
+            "title": "Nature & Ocean Treasures",
+            "featured_symbols": "Sea Turtle, Seahorse, Starfish, Shell, Wave, Fish, Whale Tail, Mermaid, Octopus",
+            "portal_link": "shopify://pages/nature-ocean"
+          }
+        },
+        "asian": {
+          "type": "intention_portal",
+          "settings": {
+            "image": "shopify://shop_images/Simple_jewelry_collection_elements_202608082245.jpg",
+            "title": "Asian & Chinese Symbols",
+            "featured_symbols": "Clouds, Koi Fish, Dragon, Phoenix, Peony, Pixiu, Fu Bead, The Five Elements",
+            "portal_link": "shopify://pages/asian-symbols"
+          }
+        },
+        "guide_gemstones": {
+          "type": "master_guide",
+          "settings": {
+            "image": "shopify://shop_images/gemstones_202608082350.jpg",
+            "title": "Gem Stones A–Z Library",
+            "description": "<p>Browse our complete alphabetical library of 35+ natural gemstones, raw crystals, and their spiritual energies.</p>",
+            "link_label": "Explore Gemstone Library",
+            "guide_link": "shopify://pages/gemstones-a-z"
+          }
+        },
+        "guide_pearls": {
+          "type": "master_guide",
+          "settings": {
+            "image": "shopify://shop_images/pearls_202608082352.jpg",
+            "title": "The Pearl Guide",
+            "description": "<p>Discover the beauty of nature's perfect imperfections—baroque, keshi, coin, edison, and stick pearls.</p>",
+            "link_label": "Read Pearl Guide",
+            "guide_link": "shopify://pages/pearl-guide"
+          }
+        },
+        "guide_angels": {
+          "type": "master_guide",
+          "settings": {
+            "image": "shopify://shop_images/angel_numbers_jewelry_collection_202608082355.jpg",
+            "title": "Angel Numbers Guide",
+            "description": "<p>Explore the gentle signs and messages carried by repeating numbers (111, 222, 333, 444, 555, 777, 888).</p>",
+            "link_label": "Explore Angel Numbers",
+            "guide_link": "shopify://pages/angel-numbers"
+          }
+        },
+        "guide_birth": {
+          "type": "master_guide",
+          "settings": {
+            "image": "shopify://shop_images/flowers_and_gemstones_202608082358.jpg",
+            "title": "Birth Symbols & Flowers",
+            "description": "<p>Find your monthly birthstone and birth flower pairings to choose a deeply personal heirloom treasure.</p>",
+            "link_label": "Explore Birth Symbols",
+            "guide_link": "shopify://pages/birth-symbols"
+          }
+        }
+      },
+      "block_order": [
+        "love",
+        "protection",
+        "luck",
+        "strength",
+        "growth",
+        "wisdom",
+        "joy",
+        "celestial",
+        "ocean",
+        "asian",
+        "guide_gemstones",
+        "guide_pearls",
+        "guide_angels",
+        "guide_birth"
+      ],
+      "settings": {
+        "title": "Meanings & Symbolism",
+        "title_size": "small",
+        "hero_letter": "I've always loved hidden meanings. A gemstone chosen for courage. An angel number that appears at just the right moment. A pearl that reminds us to embrace our imperfections. A tiny charm carrying a message that only the wearer may know is there. Many of the elements used in Daisy Chains designs have long been associated with stories, symbolism, and intention. Whether you're drawn to a stone for its meaning or simply because it catches your eye, my hope is that you'll find something here that resonates with your own journey. After all, sometimes the smallest details carry the greatest meaning.",
+        "letter_size": "small",
+        "disclaimer": "The meanings shared throughout this guide are drawn from folklore, cultural traditions, and spiritual beliefs from around the world. They are offered as inspiration and personal reflection, allowing you to choose the stones and symbols that resonate with your own journey.",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

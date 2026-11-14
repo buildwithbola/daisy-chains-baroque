@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "hero-editorial",
+      "settings": {
+        "image": "shopify://shop_images/Woman_wearing_layered_jewelry_2K_202608081739.jpg",
+        "section_height": "large",
+        "heading": "Meaningful in the details.",
+        "heading_size": "small",
+        "subtext": "Every Daisy Chains design begins with beauty... but it's the unexpected details that make it unforgettable.",
+        "subtext_size": "small",
+        "button_label": "Discover Treasures",
+        "button_link": "shopify://collections/all",
+        "content_position": "bottom-left",
+        "text_alignment": "left"
+      }
+    },
+    "ethos": {
+      "type": "brand-ethos-text",
+      "settings": {
+        "text": "<p>Handcrafted in California with ethically gathered materials, asymmetrical pearls, and one-of-a-kind treasures from nature.</p>",
+        "text_size": "large",
+        "content_position": "left",
+        "text_alignment": "left",
+        "text_color": "#000000"
+      }
+    },
+    "dual_images": {
+      "type": "dual-editorial-images",
+      "settings": {
+        "card_height": "adapt",
+        "gap_size": "tiny",
+        "image_1": "shopify://shop_images/Female_model_standing_on_cliff_202608081805.jpg",
+        "title_1": "Pearl Guide",
+        "link_1": "shopify://pages/pearl-guide",
+        "image_2": "shopify://shop_images/Woman_sitting_on_sand_dune_202608081804.jpg",
+        "title_2": "Growth & New Beginnings",
+        "link_2": "shopify://pages/growth-new-beginnings"
+      }
+    },
+    "categories": {
+      "type": "featured-categories-grid",
+      "blocks": {
+        "cat_1": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Woman_wearing_shell_necklace_202608081926.jpg",
+            "title": "Necklaces",
+            "link": "shopify://collections/necklaces"
+          }
+        },
+        "cat_2": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/bikini_charms.jpg",
+            "title": "Bikini Charms",
+            "link": "shopify://pages/bikini-charms"
+          }
+        },
+        "cat_3": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Woman_holding_sea_shell_202608081928.jpg",
+            "title": "Bracelets",
+            "link": "shopify://collections/bracelets"
+          }
+        },
+        "cat_4": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/Woman_wearing_tiger_s_eye_choker_202608081930.jpg",
+            "title": "Symbols & Stories",
+            "link": "shopify://pages/meanings-symbolism"
+          }
+        }
+      },
+      "block_order": [
+        "cat_1",
+        "cat_2",
+        "cat_3",
+        "cat_4"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "products": {
+      "type": "chan-luu-product-grid",
+      "settings": {
+        "title": "",
+        "collection": "",
+        "product_limit": 4,
+        "side_padding": "compact",
+        "show_secondary_image": true
+      }
+    },
+    "quote": {
+      "type": "editorial-quote",
+      "settings": {
+        "quote": "I have always been attracted to a little detail. Something unexpected. That is my design philosophy...",
+        "author": "Jenny",
+        "quote_size": "small",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    },
+    "story_split": {
+      "type": "image-with-text-split",
+      "settings": {
+        "image": "shopify://shop_images/Woman_sitting_near_ocean_shore_202608081933.jpg",
+        "banner_height": "adapt",
+        "heading": "Found by the water",
+        "heading_size": "small",
+        "subtext": "",
+        "button_label": "shop now",
+        "button_link": "shopify://pages/nature-ocean",
+        "content_position": "bottom-left",
+        "text_alignment": "left"
+      }
+    },
+    "services": {
+      "type": "services-experience-grid",
+      "blocks": {
+        "srv_1": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Oval_Cut_Lab_Sapphire_Set___Multi-Color_Corundum_1_ct_10_pcs.jpg",
+            "title": "Gemstones A-Z",
+            "link_label": "Design Your Own",
+            "link": "shopify://pages/gemstones-a-z"
+          }
+        },
+        "srv_2": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Women_assembling_pearl_necklaces__202608081943.jpg",
+            "title": "Treasure Parties",
+            "link_label": "Host a Workshop",
+            "link": "shopify://pages/custom-treasures"
+          }
+        },
+        "srv_3": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Gemstones_and_journal_flat_lay_202608081944.jpg",
+            "title": "Meanings & Symbols",
+            "link_label": "Explore the Guide",
+            "link": "shopify://pages/meanings-symbolism"
+          }
+        },
+        "srv_4": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Woven_basket_with_jewelry_202608051014.jpg",
+            "title": "Materials & Care",
+            "link_label": "Learn More",
+            "link": "shopify://pages/materials-care"
+          }
+        }
+      },
+      "block_order": [
+        "srv_1",
+        "srv_2",
+        "srv_3",
+        "srv_4"
+      ],
+      "settings": {
+        "full_width": false,
+        "max_width": 1440,
+        "columns_desktop": 4,
+        "aspect_ratio": "3 / 4",
+        "title_size": "medium",
+        "button_size": "medium",
+        "grid_gap_desktop": 20,
+        "grid_gap_mobile": 12
+      }
+    },
+    "gallery_strip": {
+      "type": "editorial-image-strip",
+      "blocks": {
+        "img_1": {
+          "type": "image",
+          "settings": {}
+        },
+        "img_2": {
+          "type": "image",
+          "settings": {}
+        },
+        "img_3": {
+          "type": "image",
+          "settings": {}
+        },
+        "img_4": {
+          "type": "image",
+          "settings": {}
+        },
+        "img_5": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "img_1",
+        "img_2",
+        "img_3",
+        "img_4",
+        "img_5"
+      ],
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "ethos",
+    "dual_images",
+    "categories",
+    "products",
+    "quote",
+    "story_split",
+    "services",
+    "gallery_strip"
+  ]
+}

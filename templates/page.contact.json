@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "settings": {
+        "title": "Get in Touch",
+        "title_size": "medium",
+        "subtitle": "We'd love to hear from you. Whether you have a question about a treasure, need sizing guidance, or wish to inquire about custom designs.",
+        "contact_email": "hello@daisy-chains.com",
+        "studio_location": "San Francisco Bay Area, California",
+        "response_note": "Jenny and our studio team respond within 24–48 hours.",
+        "show_faqs": true,
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": ["main"]
+}

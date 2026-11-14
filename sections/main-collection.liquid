@@ -1,0 +1,172 @@
+{%- style -%}
+  .collection-page {
+    padding: clamp(2rem, 4vw, 4rem) 1.5rem clamp(4rem, 6vw, 6rem) 1.5rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .collection-meta {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .collection-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+    text-transform: capitalize;
+  }
+
+  .collection-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .collection-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.02em;
+  }
+
+  .collection-description {
+    font-family: var(--font-body-family);
+    font-size: 0.9rem;
+    color: #555555;
+    max-width: 650px;
+    line-height: 1.6;
+  }
+
+  .collection-filter-btn {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 3px;
+    position: relative;
+  }
+
+  .collection-filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-text);
+  }
+
+  .chan-luu-collection-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+    gap: 1rem 0.5rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .chan-luu-collection-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+      gap: 1.25rem 0.75rem;
+    }
+  }
+
+  .pagination-wrapper {
+    margin-top: clamp(4rem, 8vw, 6rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-body-family);
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+{%- endstyle -%}
+
+<div class="collection-page">
+  <div class="collection-meta">
+    <div class="collection-breadcrumb">Jewelry / {{ collection.title }}</div>
+    <div class="collection-header-row">
+      <div>
+        <h1 class="collection-title">{{ collection.title }}</h1>
+        {% if collection.description != blank %}
+          <div class="collection-description">{{ collection.description }}</div>
+        {% else %}
+          <div class="collection-description">
+            Jewelry that celebrates the beauty of the natural world. Made by hand using artisan techniques and ethically sourced materials.
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="collection-toolbar">
+        <button type="button" class="collection-filter-btn">Filter & Sort</button>
+      </div>
+    </div>
+  </div>
+
+  {% paginate collection.products by section.settings.products_per_page %}
+    <div class="chan-luu-collection-grid">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product, show_secondary_image: section.settings.show_secondary_image %}
+      {% else %}
+        {% for i in (1..8) %}
+          {% render 'product-card', product: nil %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <div class="pagination-wrapper">
+        {{ paginate | default_pagination }}
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</div>
+
+{% schema %}
+{
+  "name": "Collection Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 36,
+      "step": 4,
+      "default": 16,
+      "label": "Products per page"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 4,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        { "value": "1", "label": "1 column" },
+        { "value": "2", "label": "2 columns" }
+      ],
+      "default": "2",
+      "label": "Columns on mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": true,
+      "label": "Show secondary image on hover"
+    }
+  ]
+}
+{% endschema %}

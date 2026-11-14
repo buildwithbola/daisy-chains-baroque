@@ -1,0 +1,319 @@
+{%- style -%}
+  .wishlist-page-section {
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 4rem);
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .wishlist-breadcrumb {
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .wishlist-breadcrumb--align-left { justify-content: flex-start; }
+  .wishlist-breadcrumb--align-center { justify-content: center; }
+  .wishlist-breadcrumb--align-right { justify-content: flex-end; }
+
+  .wishlist-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+
+  .wishlist-breadcrumb a:hover {
+    color: var(--color-text);
+  }
+
+  /* Hero Header */
+  .wishlist-hero {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .wishlist-hero--position-left { margin-left: 0; margin-right: auto; }
+  .wishlist-hero--position-center { margin-left: auto; margin-right: auto; }
+  .wishlist-hero--position-right { margin-left: auto; margin-right: 0; }
+
+  .wishlist-hero--align-left { text-align: left; }
+  .wishlist-hero--align-center { text-align: center; }
+  .wishlist-hero--align-right { text-align: right; }
+
+  .wishlist-hero__title--small { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+  .wishlist-hero__title--medium { font-size: clamp(2.4rem, 4.8vw, 3.8rem); }
+  .wishlist-hero__title--large { font-size: clamp(3rem, 6vw, 4.8rem); }
+  .wishlist-hero__title--xlarge { font-size: clamp(3.5rem, 7.5vw, 5.5rem); }
+
+  .wishlist-hero__title {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .wishlist-hero__subtitle {
+    font-family: var(--font-heading-family);
+    font-style: italic;
+    color: var(--color-text);
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+  }
+
+  /* Wishlist Control Bar */
+  .wishlist-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+  }
+
+  .clear-wishlist-btn {
+    background: transparent;
+    border: none;
+    font-family: var(--font-body-family);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition: color 0.25s ease;
+  }
+
+  .clear-wishlist-btn:hover {
+    color: #b00000;
+  }
+
+  /* Grid Layout */
+  .wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .wishlist-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop | default: 4 }}, 1fr);
+      gap: 2.25rem 1.75rem;
+    }
+  }
+
+  /* Empty Wishlist Box */
+  .wishlist-empty-box {
+    text-align: center;
+    padding: 4.5rem 1.5rem;
+    background-color: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
+    max-width: 750px;
+    margin: 0 auto clamp(3.5rem, 6vw, 5rem) auto;
+  }
+
+  .wishlist-empty-icon {
+    font-size: 2.8rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .wishlist-empty-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+
+  .wishlist-empty-subtext {
+    font-family: var(--font-body-family);
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+{%- endstyle -%}
+
+<div class="wishlist-page-section">
+  <!-- Breadcrumb -->
+  <div class="wishlist-breadcrumb wishlist-breadcrumb--align-{{ section.settings.text_alignment }}">
+    <a href="/">Home</a>
+    <span style="font-size:0.5rem; opacity:0.4;">&#9679;</span>
+    <span>Saved Favorites</span>
+  </div>
+
+  <!-- Hero Header -->
+  <div class="wishlist-hero wishlist-hero--position-{{ section.settings.content_position }} wishlist-hero--align-{{ section.settings.text_alignment }}">
+    <h1 class="wishlist-hero__title wishlist-hero__title--{{ section.settings.title_size }}">{{ section.settings.title | escape }}</h1>
+    
+    {% if section.settings.subtitle != blank %}
+      <div class="wishlist-hero__subtitle">
+        "{{ section.settings.subtitle | escape }}"
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Control Bar -->
+  <div class="wishlist-bar" id="WishlistBar">
+    <span id="WishlistCountText">Saved Items (<span id="WishlistCount">0</span>)</span>
+    {% if section.settings.show_clear_all %}
+      <button type="button" class="clear-wishlist-btn" onclick="clearWishlist()">Clear All Favorites</button>
+    {% endif %}
+  </div>
+
+  <!-- Grid of Saved Products -->
+  <div class="wishlist-grid" id="WishlistGrid"></div>
+
+  <!-- Empty Wishlist State -->
+  <div class="wishlist-empty-box" id="WishlistEmptyBox" style="display:none;">
+    <div class="wishlist-empty-icon">🤍</div>
+    <h2 class="wishlist-empty-title">Your Favorites List is Empty</h2>
+    <div class="wishlist-empty-subtext">
+      You haven't saved any handcrafted treasures yet. Click the heart icon on any product card or detail page to save your favorites for later!
+    </div>
+    <a href="/collections/all" class="btn-solid" style="display:inline-block; padding:1.1rem 2.2rem; background:#1c1c1c; color:#fff; text-decoration:none; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.14em;">Discover All Treasures &rarr;</a>
+  </div>
+</div>
+
+<script>
+  async function renderWishlistItems() {
+    let wishlist = JSON.parse(localStorage.getItem('daisychains_wishlist') || '[]');
+    const countEl = document.getElementById('WishlistCount');
+    const emptyBox = document.getElementById('WishlistEmptyBox');
+    const grid = document.getElementById('WishlistGrid');
+
+    if (countEl) countEl.innerText = wishlist.length;
+
+    if (!wishlist || wishlist.length === 0) {
+      if (grid) grid.innerHTML = '';
+      if (emptyBox) emptyBox.style.display = 'block';
+      return;
+    }
+
+    if (emptyBox) emptyBox.style.display = 'none';
+    if (!grid) return;
+
+    grid.innerHTML = '<div style="grid-column: 1 / -1; text-align:center; padding: 2rem; color: #888;">Loading your saved treasures...</div>';
+
+    let cardsHtml = '';
+    for (const handle of wishlist) {
+      try {
+        const res = await fetch(`/products/${handle}.js`);
+        if (res.ok) {
+          const product = await res.json();
+          const imgUrl = product.featured_image || (product.images && product.images[0]) || '';
+          const priceFormatted = product.price ? '$' + (product.price / 100).toFixed(2) : '';
+          
+          cardsHtml += `
+            <div class="product-card" id="wishlist-card-${product.handle}">
+              <div class="product-card__image-wrapper">
+                <button type="button" class="product-card__wishlist is-active" aria-label="Remove from wishlist" onclick="event.preventDefault(); removeFromWishlist('${product.handle}');">
+                  <svg viewBox="0 0 24 24" width="20" height="20" style="fill:#b00000; stroke:#b00000;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+                <a href="${product.url}" class="product-card__image-link">
+                  <img src="${imgUrl}" alt="${product.title}" class="product-card__image" loading="lazy">
+                </a>
+              </div>
+              <a href="${product.url}" style="text-decoration:none; color:inherit;">
+                <h3 class="product-card__title">${product.title}</h3>
+                <div class="product-card__price">${priceFormatted}</div>
+              </a>
+            </div>
+          `;
+        }
+      } catch (err) {
+        console.warn('Could not load wishlist item:', handle, err);
+      }
+    }
+
+    if (cardsHtml !== '') {
+      grid.innerHTML = cardsHtml;
+    } else {
+      grid.innerHTML = '';
+      if (emptyBox) emptyBox.style.display = 'block';
+    }
+  }
+
+  function removeFromWishlist(handle) {
+    let wishlist = JSON.parse(localStorage.getItem('daisychains_wishlist') || '[]');
+    wishlist = wishlist.filter(h => h !== handle);
+    localStorage.setItem('daisychains_wishlist', JSON.stringify(wishlist));
+    renderWishlistItems();
+  }
+
+  function clearWishlist() {
+    if (confirm('Clear all saved favorites?')) {
+      localStorage.removeItem('daisychains_wishlist');
+      renderWishlistItems();
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', renderWishlistItems);
+</script>
+
+{% schema %}
+{
+  "name": "Wishlist Favorites Page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Your Saved Treasures" },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Keep track of your favorite baroque pearls, Abalone shells, and California intention chokers." },
+    { "type": "checkbox", "id": "show_clear_all", "label": "Show Clear All Favorites Button", "default": true },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [
+    { "name": "Wishlist Favorites Page" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-materials-care",
+      "settings": {
+        "title": "Materials & Care Guide",
+        "title_size": "small",
+        "subtitle": "Handcrafted with intention in California. Learn how to care for your organic baroque pearls, natural gemstones, and precious metals.",
+        "image_1": "shopify://shop_images/4A_Natural_Freshwater_Pearl_Beads_4-4_5mm_High_Luster_Genuine_Pearls_for_Jewelry_Making_Elegant_Bridal_Necklace_Bracelet_DIY_Supplies.jpg",
+        "image_2": "shopify://shop_images/colorful_cyrstals_on_white_background.jpg",
+        "image_3": "shopify://shop_images/Sterling_Silver.jpg",
+        "image_4": "shopify://shop_images/Stacq_Creations_Online_Shopping_is_under_construction.jpg",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Discover Handcrafted Treasures",
+        "heading_size": "medium",
+        "subtitle": "Explore pieces designed to last a lifetime.",
+        "text_alignment": "center",
+        "recommendation_type": "auto",
+        "product_list": [],
+        "fallback_collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations"
+  ]
+}

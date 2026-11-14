@@ -1,0 +1,220 @@
+{%- style -%}
+  .hero-editorial {
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 3rem 2rem;
+    background-color: var(--color-surface-warm);
+    overflow: hidden;
+  }
+
+  /* Height Options */
+  .hero-editorial--height-small { min-height: 60vh; height: 60vh; }
+  .hero-editorial--height-medium { min-height: 80vh; height: 80vh; }
+  .hero-editorial--height-large { min-height: 100vh; height: 100vh; }
+  .hero-editorial--height-adapt { min-height: auto; height: auto; aspect-ratio: 16 / 9; }
+
+  @media screen and (max-width: 767px) {
+    .hero-editorial--height-small { min-height: 50vh; height: 50vh; }
+    .hero-editorial--height-medium { min-height: 70vh; height: 70vh; }
+    .hero-editorial--height-large { min-height: 90vh; height: 90vh; }
+    .hero-editorial--height-adapt { aspect-ratio: 4 / 5; }
+  }
+
+  /* Content Alignment Options */
+  .hero-editorial--top-left { align-items: flex-start; justify-content: flex-start; }
+  .hero-editorial--top-center { align-items: flex-start; justify-content: center; }
+  .hero-editorial--top-right { align-items: flex-start; justify-content: flex-end; }
+  .hero-editorial--middle-left { align-items: center; justify-content: flex-start; }
+  .hero-editorial--middle-center { align-items: center; justify-content: center; }
+  .hero-editorial--middle-right { align-items: center; justify-content: flex-end; }
+  .hero-editorial--bottom-left { align-items: flex-end; justify-content: flex-start; }
+  .hero-editorial--bottom-center { align-items: flex-end; justify-content: center; }
+  .hero-editorial--bottom-right { align-items: flex-end; justify-content: flex-end; }
+
+  /* Text Alignment Options */
+  .hero-editorial__content--left { text-align: left; }
+  .hero-editorial__content--center { text-align: center; }
+  .hero-editorial__content--right { text-align: right; }
+
+  /* Heading Size Options */
+  .hero-editorial__heading--small { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  .hero-editorial__heading--medium { font-size: clamp(2rem, 4vw, 3.2rem); }
+  .hero-editorial__heading--large { font-size: clamp(2.5rem, 5.5vw, 4.2rem); }
+  .hero-editorial__heading--xlarge { font-size: clamp(3rem, 7vw, 5.5rem); }
+
+  /* Subtext Size Options */
+  .hero-editorial__subtext--small { font-size: 0.85rem; }
+  .hero-editorial__subtext--medium { font-size: 0.95rem; }
+  .hero-editorial__subtext--large { font-size: 1.1rem; }
+
+  .hero-editorial__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-editorial__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%);
+  }
+  .hero-editorial__content {
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+    max-width: 800px;
+    padding: 1.5rem;
+  }
+  .hero-editorial__heading {
+    font-family: var(--font-heading-family);
+    font-weight: 300;
+    line-height: 1.12;
+    margin-bottom: 1rem;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+  }
+  .hero-editorial__subtext {
+    font-family: var(--font-body-family);
+    font-weight: 300;
+    margin-bottom: 1.75rem;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: 0.03em;
+    max-width: 600px;
+  }
+  .hero-editorial__link {
+    font-family: var(--font-body-family);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px;
+    text-decoration: none;
+  }
+  .hero-editorial__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    transition: transform 0.35s ease;
+    transform-origin: right;
+  }
+  .hero-editorial__link:hover::after {
+    transform: scaleX(0);
+  }
+{%- endstyle -%}
+
+<div class="hero-editorial hero-editorial--height-{{ section.settings.section_height }} hero-editorial--{{ section.settings.content_position }}">
+  {% if section.settings.image != blank %}
+    <img src="{{ section.settings.image | image_url: width: 2000 }}" 
+         srcset="{{ section.settings.image | image_url: width: 750 }} 750w, {{ section.settings.image | image_url: width: 1200 }} 1200w, {{ section.settings.image | image_url: width: 2000 }} 2000w"
+         sizes="100vw"
+         alt="{{ section.settings.heading | escape }}" 
+         class="hero-editorial__image"
+         fetchpriority="high"
+         loading="eager"
+         decoding="async">
+  {% else %}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'hero-editorial__image placeholder-svg' }}
+  {% endif %}
+  <div class="hero-editorial__overlay"></div>
+  <div class="hero-editorial__content hero-editorial__content--{{ section.settings.text_alignment }}">
+    <h1 class="hero-editorial__heading hero-editorial__heading--{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h1>
+    {% if section.settings.subtext != blank %}
+      <p class="hero-editorial__subtext hero-editorial__subtext--{{ section.settings.subtext_size }}">{{ section.settings.subtext | escape }}</p>
+    {% endif %}
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link }}" class="hero-editorial__link">
+        {{ section.settings.button_label | escape }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Editorial",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Hero Image" },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "Hero Height (Image Size)",
+      "options": [
+        { "value": "small", "label": "Small (60vh)" },
+        { "value": "medium", "label": "Medium (80vh)" },
+        { "value": "large", "label": "Large (100vh / Full Screen)" },
+        { "value": "adapt", "label": "Adapt to image ratio" }
+      ],
+      "default": "large"
+    },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Meaningful in the details." },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Text Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "Extra Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Every Daisy Chains design begins with beauty... but it's the unexpected details that make it unforgettable." },
+    {
+      "type": "select",
+      "id": "subtext_size",
+      "label": "Subtext Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    { "type": "text", "id": "button_label", "label": "Button Label", "default": "Discover Treasures" },
+    { "type": "url", "id": "button_link", "label": "Button Link" },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content Position",
+      "options": [
+        { "value": "top-left", "label": "Top Left" },
+        { "value": "top-center", "label": "Top Center" },
+        { "value": "top-right", "label": "Top Right" },
+        { "value": "middle-left", "label": "Middle Left" },
+        { "value": "middle-center", "label": "Middle Center" },
+        { "value": "middle-right", "label": "Middle Right" },
+        { "value": "bottom-left", "label": "Bottom Left" },
+        { "value": "bottom-center", "label": "Bottom Center" },
+        { "value": "bottom-right", "label": "Bottom Right" }
+      ],
+      "default": "middle-center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "presets": [ { "name": "Hero Editorial" } ]
+}
+{% endschema %}

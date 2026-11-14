@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-about",
+      "settings": {
+        "title": "About Daisy Chains",
+        "title_size": "medium",
+        "greeting": "Hi, I'm Jenny, the founder and designer behind Daisy Chains Baroque Designs.",
+        "founder_image": "shopify://shop_images/Woman_profile_portrait_facing_right_202608042111.jpg",
+        "story_text": "<p>People often ask about the name Daisy Chains.</p><p>I've loved daisies for as long as I can remember. There's something beautiful about their simplicity—cheerful, resilient, and effortlessly beautiful. My very first baby doll was named Daisy, and years later, when my daughter was born, I named her Daisy Jaye. The daisy has been woven throughout my life, so when it came time to name my business, it felt like the perfect fit.</p><p>The name also reflects the spirit of my jewelry. Like a daisy chain woven one bloom at a time, each piece is thoughtfully created from individual elements that come together to tell a story. A gemstone chosen for its meaning, a pearl selected for its unique beauty, a charm carrying a special message—each detail becomes part of something larger, creating a connection that is both personal and lasting.</p><h2>Inspired by Nature & Extraordinary Women</h2><p>I've always been drawn to the beauty found in nature—the shimmer of a baroque pearl, the colors hidden within a gemstone, treasures washed ashore by the sea, and the imperfect details that make something truly one of a kind. Nature is my greatest muse, but inspiration also comes from the remarkable women in my life and throughout history whose strength, creativity, courage, and spirit inspire me.</p><p>When I'm designing, I often find myself imagining a woman I admire wearing the piece. Sometimes she's someone I know personally. Sometimes she's an artist, entrepreneur, activist, adventurer, or a woman whose confidence and authenticity leave a lasting impression. I think about her journey, the challenges she's overcome, the dreams she's pursuing, and the stories she carries with her. Rather than designing only what I would wear, I design for the extraordinary women who inspire me. In many ways, each piece becomes a tribute to the qualities I admire most—strength, resilience, curiosity, kindness, courage, and a life lived fully.</p><h2>Handcrafted in California with Intention</h2><p>What began as a creative outlet quickly became a passion. Self-taught, self-funded, and always pushing myself to learn new techniques and challenge my creativity, I spend countless hours designing, experimenting, and refining each piece. I believe jewelry should be more than something beautiful to wear. It should tell a story, celebrate a milestone, spark a memory, or serve as a reminder of something meaningful.</p><p>Every piece is handcrafted in my California studio. Preserving artisan craftsmanship is deeply important to me. In a world of fast fashion and mass-produced goods, I believe there is something special about owning a piece that has been thoughtfully designed and carefully created by human hands. Every wire wrap, hand-selected stone, and finished design carries a little piece of the maker's creativity, energy, and intention.</p><p>At Daisy Chains Baroque Designs, my hope is that you find more than jewelry. I hope you find a piece that speaks to you, reflects your journey, celebrates your individuality, and becomes part of your story.</p><p>Thank you for supporting handmade, meaningful design.</p>",
+        "content_position": "center",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

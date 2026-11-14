@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-bikini-charms",
+      "settings": {
+        "title": "Bikini & Beach Charm Collection",
+        "title_size": "small",
+        "subtitle": "Baroque Design Inspired by Mother Nature",
+        "description": "<p>Our waterproof bikini charms are displayed on textured natural cardstock that reflects their relaxed, beach-inspired spirit. Handmade with the help of Mother Nature, each shell is unique in its shape, color, and character—no two are ever exactly alike.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": "all-products"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

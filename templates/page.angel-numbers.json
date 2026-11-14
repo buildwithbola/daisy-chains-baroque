@@ -1,0 +1,117 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-intention-detail",
+      "blocks": {
+        "111": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/Gold_charm_on_woman_s_neck_202608081954.jpg",
+            "title": "111",
+            "tagline": "Manifestation • New Beginnings • Intention",
+            "description": "<p>A reminder that your thoughts are powerful. 111 encourages you to focus on your dreams, set clear intentions, and embrace new opportunities.</p>",
+            "link_label": "Shop 111 Treasures",
+            "shop_link": ""
+          }
+        },
+        "222": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/6e2474460bb52905673f31c48a5159ee.jpg",
+            "title": "222",
+            "tagline": "Balance • Trust • Harmony",
+            "description": "<p>A symbol of balance and faith, 222 reminds you to trust the journey, nurture your relationships, and believe everything is unfolding as it should.</p>",
+            "link_label": "Shop 222 Treasures",
+            "shop_link": ""
+          }
+        },
+        "333": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/67b63dfb927934f0ccd23916dde436f2.jpg",
+            "title": "333",
+            "tagline": "Creativity • Growth • Support",
+            "description": "<p>333 represents encouragement and creative expression. It reminds you that you are supported as you grow into your highest potential.</p>",
+            "link_label": "Shop 333 Treasures",
+            "shop_link": ""
+          }
+        },
+        "444": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/fb714078c3163b9b80c1fcc2726ab6ea.jpg",
+            "title": "444",
+            "tagline": "Protection • Stability • Strength",
+            "description": "<p>Often seen as a sign of protection, 444 symbolizes a strong foundation and serves as a reminder that you are supported through life's challenges.</p>",
+            "link_label": "Shop 444 Treasures",
+            "shop_link": ""
+          }
+        },
+        "555": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/31b44cfefe63ce45b352e822d7a78542.jpg",
+            "title": "555",
+            "tagline": "Transformation • Change • Adventure",
+            "description": "<p>555 signals exciting change and new possibilities. It encourages you to embrace transformation with confidence and an open heart.</p>",
+            "link_label": "Shop 555 Treasures",
+            "shop_link": ""
+          }
+        },
+        "777": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/c7763e4b2fafbef769bc55024dc935f2.jpg",
+            "title": "777",
+            "tagline": "Wisdom • Spiritual Growth • Good Fortune",
+            "description": "<p>A symbol of inner wisdom and spiritual awakening, 777 encourages you to trust your intuition and recognize the blessings along your path.</p>",
+            "link_label": "Shop 777 Treasures",
+            "shop_link": ""
+          }
+        },
+        "888": {
+          "type": "symbol_detail",
+          "settings": {
+            "image": "shopify://shop_images/498f8068598fb4a821bd55c9c018c51b.jpg",
+            "title": "888",
+            "tagline": "Abundance • Success • Prosperity",
+            "description": "<p>888 is associated with abundance in all forms—love, opportunity, happiness, and financial well-being. It reminds you to welcome prosperity with gratitude.</p>",
+            "link_label": "Shop 888 Treasures",
+            "shop_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "111",
+        "222",
+        "333",
+        "444",
+        "555",
+        "777",
+        "888"
+      ],
+      "settings": {
+        "title": "Angel Numbers Guide",
+        "title_size": "small",
+        "subtitle": "Explore the gentle signs, repeating digits, and cosmic reminders carried close to your heart.",
+        "subtitle_size": "medium",
+        "description": "<p>For many people, angel numbers are gentle reminders to pause, reflect, and trust the journey. Whether you see them as signs from the universe or meaningful coincidences, let them serve as a reminder of where you've been and where you're going.</p>",
+        "content_position": "center",
+        "text_alignment": "center",
+        "collection": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
